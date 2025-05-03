@@ -1,0 +1,218 @@
+/* GERAL */
+:root {
+    --primary-color: #00A3FF;
+    --secondary-color: #121212;
+    --text-color: #FFFFFF;
+
+}
+
+body {
+    font-family: monospace;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* NAVBAR */
+.navbar-container {
+    width: 100%;
+    height: 80px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    color: var(--text-color);
+}
+
+.logo-dot {
+    color: var(--primary-color);
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-items a {
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.navbar-items a:hover {
+    color: var(--primary-color);
+}
+
+.default-btn {
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.navbar-items .default-btn {
+    color: var(--secondary-color);
+}
+
+.default-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+/* MAIN BANNER */
+.main-banner {
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 0;
+}
+
+.main-text {
+    color: var(--text-color);
+    text-align: left;
+}
+
+.bottoms-main {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaço entre o botão e os ícones */
+    margin-top: 20px;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 28px;
+}
+
+.text-main h1 {
+    color: var(--primary-color);
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 75px;
+}
+
+.text-secundaria {
+    color: var(--text-color);
+  }
+  
+.text-destaque {
+    color: var(--primary-color);
+  }  
+
+.main-image {
+    text-align: right;
+}
+
+.bottom-baixar-cv {
+    background-color: var(--primary-color);
+    padding: 15px 40px;
+    color: var(--secondary-color);
+    font-size: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 40px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+
+}
+
+.bi-download {
+    font-size: 28px;
+}
+
+.bottom-baixar-cv:hover {
+    transform: scale(1.1);
+}
+
+
+.bottom-linkedin a,
+.bottom-github a {
+    color: var(--primary-color);
+    font-size: 28px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+}
+
+.bottom-linkedin a:hover,
+.bottom-github a:hover {
+    transform: scale(1.1);
+}
+
+.main-image img {
+    width: 400px; /* ou qualquer valor desejado, como %, rem, etc. */
+    height: auto; /* mantém a proporção original */
+}
+
+/* Torna o conteúdo principal em layout horizontal */
+.main-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* ajuda na responsividade */
+    gap: 2rem;
+}
+
+/* Garante que o texto e a imagem ocupem bem o espaço */
+.main-text, .main-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.nome {
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+/* RODAPÉ */
+footer {
+    font-family: arial;
+    text-align: center;
+    font-weight: lighter;
+    opacity: 85%;
+    background-color: transparent;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
