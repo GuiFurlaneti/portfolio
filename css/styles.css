@@ -235,7 +235,7 @@ body.light-mode {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; /* ajuda na responsividade */
-    gap: 2rem;
+    gap: 11rem;
 }
 
 /* Garante que o texto e a imagem ocupem bem o espaço */
@@ -260,3 +260,102 @@ footer {
     margin-top: 6px;
 }
 
+/* TABLETS E LAPTOPS (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .main-banner {
+      display: flex;
+      flex-direction: row; /* mantém lado a lado */
+      justify-content: center; /* centraliza horizontalmente */
+      align-items: center; /* alinha verticalmente */
+      gap: 40px; /* opcional: espaço entre imagem e texto */
+      padding: 80px 40px;
+      text-align: left; /* ou center, conforme preferir */
+    }
+  
+    .text-main {
+      max-width: 500px; /* opcional: controla a largura do texto */
+    }
+
+    .text-main h1 {
+        font-size: 65px;
+    }
+  
+    .main-image img {
+      width: 320px;
+    }
+  
+    .bottoms-main {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .bottom-baixar-cv,
+    .bottom-ver-projetos {
+      font-size: 16px;
+    }
+  }  
+
+/* CELULARES PADRÃO (481px - 768px) */
+@media (max-width: 768px) {
+    .main-banner {
+      flex-direction: column;
+      padding: 60px 30px;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .text-main h1 {
+      font-size: 50px;
+      line-height: 55px;
+    }
+  
+    .main-image img {
+      width: 280px;
+    }
+  
+    .bottoms-main {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .bottom-baixar-cv,
+    .bottom-ver-projetos {
+      padding: 10px 40px;
+      font-size: 20px;
+    }
+  }
+  
+/* MOBILE PEQUENO (ATÉ 480px) */
+@media (max-width: 480px) {
+    .main-banner {
+      flex-direction: column;
+      padding: 40px 20px;
+      text-align: center;
+      align-items: center;
+    }
+  
+    .text-main h1 {
+      font-size: 40px;
+      line-height: 45px;
+    }
+  
+    .main-image img {
+      width: 220px;
+    }
+  
+    .bottoms-main {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .bottom-baixar-cv,
+    .bottom-ver-projetos {
+      padding: 10px 30px;
+      font-size: 18px;
+    }
+  }
+  
+
+  

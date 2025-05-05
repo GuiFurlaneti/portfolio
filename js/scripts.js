@@ -1,21 +1,23 @@
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Verifica se há tema salvo no localStorage
+// Verifica se há tema salvo
 if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
-    toggleBtn.textContent = '🌙'; // modo escuro
+    toggleBtn.textContent = '🌙'; // indica que o modo atual é claro
+} else {
+    toggleBtn.textContent = '☀️'; // indica que o modo atual é escuro
 }
 
-// Alterna o tema ao clicar
 toggleBtn.addEventListener('click', () => {
     body.classList.toggle('light-mode');
 
+    // Salvar preferência
     if (body.classList.contains('light-mode')) {
-        toggleBtn.textContent = '🌙'; // volta para escuro
         localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙';
     } else {
-        toggleBtn.textContent = '☀️'; // volta para claro
         localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️';
     }
 });
