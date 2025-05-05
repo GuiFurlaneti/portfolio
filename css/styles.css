@@ -3,14 +3,24 @@
     --primary-color: #00A3FF;
     --secondary-color: #121212;
     --text-color: #FFFFFF;
+    --glow-circle: #ffffff6c;
 
 }
 
+/* MODO ESCURO (PADRÃO) */
 body {
     font-family: monospace;
     background-color: var(--secondary-color);
     color: var(--text-color);
     line-height: 1.6;
+}
+
+/* MODO CLARO */
+body.light-mode {
+    --primary-color: #007bff;
+    --secondary-color: #E7EFF3;
+    --text-color: #121212;
+    --glow-circle: #00a2ff94;
 }
 
 .glow-circle {
@@ -19,15 +29,13 @@ body {
     left: 94%;
     width: 150px;
     height: 150px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.425), transparent 90%);
+    background: radial-gradient(circle, var(--glow-circle), transparent 90%);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     filter: blur(80px); /* reduzido */
     pointer-events: none;
     z-index: 0;
   }
-  
-  
 
 * {
     margin: 0;
@@ -106,6 +114,26 @@ body {
     color: var(--secondary-color);
     cursor: pointer;
 }
+
+/* BOTTOM DARK MODE */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+    background: #00a2ff4b;
+    border-radius: 50%;
+    font-size: 18px;
+    padding: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 2px solid #12121248;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
 
 /* MAIN BANNER */
 .main-banner {
@@ -229,6 +257,6 @@ footer {
     opacity: 85%;
     background-color: transparent;
     font-size: 12px;
-    margin-top: 8px;
+    margin-top: 6px;
 }
 
