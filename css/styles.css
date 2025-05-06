@@ -117,21 +117,51 @@ body.light-mode {
 
 /* BOTTOM DARK MODE */
 .theme-toggle-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 999;
-    background: #00a2ff4b;
-    border-radius: 50%;
-    font-size: 18px;
-    padding: 4px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-    border: 2px solid #12121248;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 35px;
+  background: rgba(54, 54, 54, 0.745); /* cor azul com transparência */
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  font-size: 16px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .theme-toggle-btn:hover {
-    transform: scale(1.1);
+  transform: scale(1.08);
+  background: rgba(0, 163, 255, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 163, 255, 0.3);
+  color: var(--primary-color);
+}
+
+#theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+#theme-toggle i {
+  font-size: 18px;
+}
+
+#icon-sun {
+  display: none; /* aparece apenas no modo claro */
+}
+
+body.light-mode #icon-moon {
+  display: none;
+}
+
+body.light-mode #icon-sun {
+  display: inline;
 }
 
 
@@ -248,114 +278,3 @@ body.light-mode {
     white-space: nowrap;
     display: inline-block;
   }
-
-/* RODAPÉ */
-footer {
-    font-family: arial;
-    text-align: center;
-    font-weight: lighter;
-    opacity: 85%;
-    background-color: transparent;
-    font-size: 12px;
-    margin-top: 6px;
-}
-
-/* TABLETS E LAPTOPS (769px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
-    .main-banner {
-      display: flex;
-      flex-direction: row; /* mantém lado a lado */
-      justify-content: center; /* centraliza horizontalmente */
-      align-items: center; /* alinha verticalmente */
-      gap: 40px; /* opcional: espaço entre imagem e texto */
-      padding: 80px 40px;
-      text-align: left; /* ou center, conforme preferir */
-    }
-  
-    .text-main {
-      max-width: 500px; /* opcional: controla a largura do texto */
-    }
-
-    .text-main h1 {
-        font-size: 65px;
-    }
-  
-    .main-image img {
-      width: 320px;
-    }
-  
-    .bottoms-main {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-  
-    .bottom-baixar-cv,
-    .bottom-ver-projetos {
-      font-size: 16px;
-    }
-  }  
-
-/* CELULARES PADRÃO (481px - 768px) */
-@media (max-width: 768px) {
-    .main-banner {
-      flex-direction: column;
-      padding: 60px 30px;
-      text-align: center;
-      align-items: center;
-    }
-  
-    .text-main h1 {
-      font-size: 50px;
-      line-height: 55px;
-    }
-  
-    .main-image img {
-      width: 280px;
-    }
-  
-    .bottoms-main {
-      flex-direction: column;
-      gap: 12px;
-    }
-  
-    .bottom-baixar-cv,
-    .bottom-ver-projetos {
-      padding: 10px 40px;
-      font-size: 20px;
-    }
-  }
-  
-/* MOBILE PEQUENO (ATÉ 480px) */
-@media (max-width: 480px) {
-    .main-banner {
-      flex-direction: column;
-      padding: 40px 20px;
-      text-align: center;
-      align-items: center;
-    }
-  
-    .text-main h1 {
-      font-size: 40px;
-      line-height: 45px;
-    }
-  
-    .main-image img {
-      width: 220px;
-    }
-  
-    .bottoms-main {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    .bottom-baixar-cv,
-    .bottom-ver-projetos {
-      padding: 10px 30px;
-      font-size: 18px;
-    }
-  }
-  
-
-  
