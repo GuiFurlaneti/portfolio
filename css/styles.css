@@ -49,10 +49,10 @@ body.light-mode {
   padding: 0 2rem;
   display: flex;
   align-items: center;
-  position: sticky; /* Torna o navbar fixo no topo ao rolar */
-  top: 0; /* Garante que o navbar ficará no topo */
-  z-index: 5; /* Ajuste para um valor menor, abaixo do glow-circle */
-  background-color: var(--secondary-color); /* Cor de fundo */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: var(--secondary-color); 
 }
 
 
@@ -95,8 +95,15 @@ body.light-mode {
   transition: 0.3s;
 }
 
+.navbar-items a.active {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 4px;
+  color: var(--primary-color);
+}
+
 .navbar-items a:hover {
   color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .default-btn {
@@ -282,5 +289,43 @@ body.light-mode #icon-sun {
 }
 
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 70px;
+}
+
+/* SERVICES */
+.servicos-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 3.5rem 0;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.servico-item {
+  flex: 1 1 calc(50% - 1rem);
+  background-color: #00a2ff0e;
+  border: 1px solid #00A3FF;
+  padding: 2rem;
+  border-radius: 35px;
+  box-sizing: border-box;
+}
+
+.servico-item .bi-code-slash {
+  display: flex;
+  text-align: right;
+  font-size: 38px;
+  color: var(--primary-color);
+}
+
+.servico-item h3 {
+  font-weight: bold;
+  font-size: 35px;
+  color: var(--primary-color);
+}
+
+.servico-item p {
+  font-size: 14px;
+  font-weight: lighter;
 }
