@@ -361,14 +361,22 @@ section {
     color: var(--secondary-color);
   }
   
+  .secao-conteudo {
+    display: none;
+  }
+
+  .secao-conteudo.ativa {
+    display: block;
+  }
+
  /* EXPERIÊNCIAS */
 .experiencias-container {
     display: flex;
     justify-content: center;
     gap: 80px;
     margin-top: 40px;
-    flex-wrap: wrap; /* se quiser responsividade */
-    padding-bottom: 6rem; /* 4rem = 64px */
+    flex-wrap: wrap;
+    padding-bottom: 6rem;
   }
   
   .experiencias-item {
@@ -396,43 +404,54 @@ section {
     width: 40px;
     height: 40px;
     border-radius: 10px;
+    border: 1.5px solid var(--primary-color);
     background-color: var(--text-color);
   }
   
   h2 {
     margin: 0;
-    font-size: 24px; /* 1.5rem = 24px */
+    font-size: 22px;
     color: var(--text-color);
   }
   
   h3 {
     margin: 0;
-    font-size: 14.4px; /* 0.9rem = 14.4px */
+    font-size: 14.4px;
     color: var(--text-color);
     font-weight: normal;
     opacity: 80%;
   }
   
-  .experiencias-item ul {
-    background: linear-gradient(to bottom, #00a2ff19, #00a2ff0e);
-    padding: 15px;
-    border-radius: 16px;
-    margin: 0 0 15px 0;
-    list-style: disc inside;
-    color: var(--text-color);
-    font-size: 14px; /* 0.95rem = 15.2px */
-    line-height: 1.6;
-  }
+.experiencias-item ul {
+  position: relative;
+  min-height: 180px;
+  padding: 15px;
+  border-radius: 16px;
+  margin: 0 0 15px 0;
+  list-style: disc inside;
+  color: var(--text-color);
+  font-size: 14.4px;
+  line-height: 1.6;
+  background: none;
+}
 
-  .experiencias-item ul li {
-    margin-bottom: 8px; /* ou o valor que preferir */
-  }
-  
-  
-  .experiencias-item p {
-    font-weight: bold;
-    color: var(--text-color);
-    font-size: 14.4px; /* 0.9rem = 14.4px */
-    text-align: center;
-  }
+.experiencias-item ul::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #00a2ff19, #00a2ff0e);
+  z-index: -1;
+}
+
+.experiencias-item ul li {
+  margin-bottom: 8px;
+}
+
+.experiencias-item p {
+  font-weight: bold;
+  color: var(--text-color);
+  font-size: 14.4px;
+  text-align: center;
+}
   
