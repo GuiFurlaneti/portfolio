@@ -374,7 +374,7 @@ section {
     display: flex;
     justify-content: center;
     gap: 80px;
-    margin-top: 40px;
+    margin-top: 20px;
     flex-wrap: wrap;
     padding-bottom: 6rem;
   }
