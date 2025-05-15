@@ -54,7 +54,6 @@ body.light-mode {
   background-color: var(--secondary-color); 
 }
 
-
 .nav {
   display: flex;
   justify-content: space-between;
@@ -173,7 +172,7 @@ body.light-mode #icon-sun {
   display: inline;
 }
 
-/* MAIN BANNER */
+/* SEÇÃO - INÍCIO */
 .main-banner {
   background-size: cover;
   background-position: center;
@@ -288,7 +287,7 @@ section {
   scroll-margin-top: 70px;
 }
 
-/* SERVICES */
+/* SEÇÃO - SERVIÇOS */
 .servicos-container {
   display: flex;
   flex-wrap: wrap;
@@ -326,7 +325,7 @@ section {
   font-weight: lighter;
 }
 
-/* SEÇÕES CURRÍCULO */
+/* SEÇÃO CURRÍCULO - FILTRO */
 .secoes {
     display: flex;
     justify-content: center;
@@ -369,7 +368,7 @@ section {
     display: block;
   }
 
- /* EXPERIÊNCIAS */
+ /* SEÇÃO CURRÍCULO - EXPERIÊNCIAS */
 .experiencias-container {
     display: flex;
     justify-content: center;
@@ -455,7 +454,7 @@ section {
   text-align: center;
 }
 
-/* EDUCAÇÃO */
+/* SEÇÃO CURRÍCULO - EDUCAÇÃO */
 .formacao-container,
 .certificados-container {
     display: flex;
@@ -484,6 +483,7 @@ section {
   color: var(--text-color);
   font-size: 2rem;
   opacity: 80%;
+  font-weight: bold;
 }
 
 .formacao-topo {
@@ -491,7 +491,6 @@ section {
   align-items: center;
   gap: 1rem;
 }
-
 
 .formacao-item,
 .certificados-item {
@@ -539,4 +538,82 @@ section {
   font-weight: bold;
   text-align: center;
   width: 100%;
+}
+
+/* SEÇÃO CURRÍCULO - HABILIDADES */
+.conhecimentos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 20px;
+    padding-bottom: 6rem;
+}
+
+.conhecimentos-container-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.conhecimentos-container h2 {
+  color: var(--text-color);
+  font-size: 2rem;
+  opacity: 80%;
+  font-weight: bold;
+}
+
+.conhecimentos-item .imagem-titulo {
+    width: 60px;
+    height: 60px;
+    border-radius: none;
+    border: none;
+    background-color: transparent;
+}
+
+.conhecimentos-item h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+  color:var(--text-color);
+  opacity: 80%;
+}
+
+.conhecimentos-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: linear-gradient(145deg,  #00a2ff0e, #00a2ff19);
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  padding: 0.5rem 1rem 0.5rem 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+  width: 300px;
+  align-items: center;
+  border-radius: 3rem;
+}
+
+/* SEÇÃO CURRÍCULO - SOBRE MIM */
+.sobre-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  flex: 1 1 calc(50% - 1rem);
+  background-color: #00a2ff0e;
+  border: 1px solid #00A3FF;
+  padding: 5rem 3rem;
+  border-radius: 35px;
+  box-sizing: border-box;
+  margin: 2rem 0 4rem 0;
+}
+
+.sobre-container p {
+  font-size: 24px;
+  font-weight: lighter;
 }
