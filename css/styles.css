@@ -602,7 +602,6 @@ section {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  width: 100%;
   margin: 0 auto;
   flex: 1 1 calc(50% - 1rem);
   background-color: #00a2ff0e;
@@ -610,10 +609,11 @@ section {
   padding: 5rem 3rem;
   border-radius: 35px;
   box-sizing: border-box;
-  margin: 2rem 0 4rem 0;
+  margin: 2rem 10rem 4rem 10rem;
 }
 
 .sobre-container p {
   font-size: 24px;
   font-weight: lighter;
+  opacity: 80%;
 }
