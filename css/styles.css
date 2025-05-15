@@ -331,7 +331,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    padding: 5rem 0 0 0;
   }  
 
 .secoes ul {
@@ -454,4 +454,89 @@ section {
   font-size: 14.4px;
   text-align: center;
 }
-  
+
+/* EDUCAÇÃO */
+.formacao-container,
+.certificados-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+.formacao-container-cards,
+.certificados-container-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 640px; 
+    margin: 0 auto;
+}
+
+.certificados-container-cards {
+  padding-bottom: 5rem;
+}
+
+.formacao-container h2,
+.certificados-container h2 {
+  color: var(--text-color);
+  font-size: 2rem;
+  opacity: 80%;
+}
+
+.formacao-topo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+.formacao-item,
+.certificados-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: linear-gradient(145deg,  #00a2ff0e, #00a2ff19);
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  padding: 0.7rem 1rem 0 1rem;
+  gap: .5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+  width: 300px;
+}
+
+.imagem-titulo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1.5px solid var(--primary-color);
+    background-color: var(--text-color);
+}
+
+.formacao-item h2,
+.certificados-item h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color:var(--text-color);
+}
+
+.formacao-item h3,
+.certificados-item h3 {
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 80%;
+  margin-top: 0.3rem;
+}
+
+.formacao-item p,
+.certificados-item p {
+  font-size: 0.9rem;
+  color:var(--text-color);
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
