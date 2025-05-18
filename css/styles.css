@@ -228,6 +228,7 @@ body.light-mode #icon-sun {
   display: flex;
   align-items: center;
   gap: 10px;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
   transition: transform 0.3s ease;
 }
 
@@ -305,6 +306,7 @@ section {
   padding: 2rem;
   border-radius: 35px;
   box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 .servico-item .bi-code-slash {
@@ -610,6 +612,7 @@ section {
   border-radius: 35px;
   box-sizing: border-box;
   margin: 2rem 10rem 4rem 10rem;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 .sobre-container p {
@@ -630,13 +633,13 @@ section {
 .projetos-container {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .projeto-card {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: space-between;
   margin: 0 auto;
   flex: 1 1 calc(50% - 1rem);
@@ -646,11 +649,7 @@ section {
   box-sizing: border-box;
   margin: 1rem;
   overflow: hidden;
-  transition: transform 0.3s ease; 
-}
-
-.projeto-card:hover {
-    transform: scale(1.01);
+  padding: 1rem;
 }
 
 .projeto-preview {
@@ -661,11 +660,11 @@ section {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .projeto-imagem {
-  max-width: 80%;
+  max-width: 120%;
   height: auto;
 }
 
@@ -688,6 +687,7 @@ section {
   align-items: center;
   gap: 10px;
   transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
 }
 
 .projeto-botao:hover {
@@ -732,14 +732,14 @@ section {
   border: 3px solid var(--text-color);
   border-radius: 12px;
   background-color: transparent;
-  cursor: pointer;
+  cursor: default;
   box-sizing: content-box;
 }
 
 .projeto-info p {
   font-size: 1rem;
   color: var(--text-color);
-  opacity: 80%;
+  opacity: 90%;
 }
 
 .projeto-info h4 {
