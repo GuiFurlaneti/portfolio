@@ -43,6 +43,43 @@ body.light-mode {
   z-index: 10;
 }
 
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-top {
+  transform: translateY(-40px);
+}
+
+.reveal-bottom {
+  transform: translateY(40px);
+}
+
+.reveal-zoom {
+  transform: scale(0.85);
+}
+
+.reveal-fade-up {
+  transform: translateY(30px);
+}
+
+
 /* NAVBAR */
 .navbar-container {
   width: 100%;
@@ -309,6 +346,11 @@ section {
   border-radius: 35px;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.servico-item:hover {
+  transform: scale(1.01);
 }
 
 .servico-item .bi-code-slash {
@@ -380,9 +422,9 @@ section {
     margin-top: 20px;
     flex-wrap: wrap;
     padding-bottom: 6rem;
-  }
+}
   
-  .experiencias-item {
+.experiencias-item {
     background: #00a2ff0e;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
@@ -390,11 +432,17 @@ section {
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
     transition: transform 0.3s ease;
-  }
+}
   
-  .card-meio {
+.card-meio {
+    transition: transform 0.3s ease;
     transform: translateY(30px);
   }
+
+.experiencias-item:hover,
+.card-meio:hover {
+  transform: scale(1.01);
+}
   
   .titulo-subtitulo-container {
     display: flex;
@@ -510,6 +558,12 @@ section {
   flex-wrap: wrap;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
   width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.formacao-item:hover,
+.certificados-item:hover {
+  transform: scale(1.03);
 }
 
 .imagem-titulo {
@@ -598,6 +652,11 @@ section {
   width: 300px;
   align-items: center;
   border-radius: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.conhecimentos-item:hover {
+  transform: scale(1.03);
 }
 
 /* SEÇÃO CURRÍCULO - SOBRE MIM */
@@ -652,7 +711,7 @@ section {
   box-sizing: border-box;
   margin: 1rem;
   overflow: hidden;
-  padding: 1rem;
+  padding: 1rem 1.6rem;
 }
 
 .projeto-preview {
@@ -669,6 +728,11 @@ section {
 .projeto-imagem {
   max-width: 120%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.projeto-imagem:hover {
+  transform: scale(1.02);
 }
 
 .projeto-botoes {
@@ -694,7 +758,7 @@ section {
 }
 
 .projeto-botao:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
 }
 
 .bi-github,
@@ -746,9 +810,10 @@ section {
 }
 
 .projeto-info h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--text-color);
   font-weight: bold;
+  padding: .5rem 0 0 0;
 }
 
 .projeto-info ul {
