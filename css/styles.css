@@ -43,6 +43,43 @@ body.light-mode {
   z-index: 10;
 }
 
+/* SCROLL ANIMATION */
+.reveal {
+  opacity: 0;
+  transition: all 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.reveal-left {
+  transform: translateX(-40px);
+}
+
+.reveal-right {
+  transform: translateX(40px);
+}
+
+.reveal-top {
+  transform: translateY(-40px);
+}
+
+.reveal-bottom {
+  transform: translateY(40px);
+}
+
+.reveal-zoom {
+  transform: scale(0.85);
+}
+
+.reveal-fade-up {
+  transform: translateY(30px);
+}
+
+
 /* NAVBAR */
 .navbar-container {
   width: 100%;
@@ -309,6 +346,11 @@ section {
   border-radius: 35px;
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.servico-item:hover {
+  transform: scale(1.01);
 }
 
 .servico-item .bi-code-slash {
@@ -380,9 +422,9 @@ section {
     margin-top: 20px;
     flex-wrap: wrap;
     padding-bottom: 6rem;
-  }
+}
   
-  .experiencias-item {
+.experiencias-item {
     background: #00a2ff0e;
     border: 1px solid var(--primary-color);
     border-radius: 20px;
@@ -390,11 +432,17 @@ section {
     width: 300px;
     box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
     transition: transform 0.3s ease;
-  }
+}
   
-  .card-meio {
+.card-meio {
+    transition: transform 0.3s ease;
     transform: translateY(30px);
   }
+
+.experiencias-item:hover,
+.card-meio:hover {
+  transform: scale(1.01);
+}
   
   .titulo-subtitulo-container {
     display: flex;
@@ -510,6 +558,12 @@ section {
   flex-wrap: wrap;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
   width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.formacao-item:hover,
+.certificados-item:hover {
+  transform: scale(1.03);
 }
 
 .imagem-titulo {
@@ -598,6 +652,11 @@ section {
   width: 300px;
   align-items: center;
   border-radius: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.conhecimentos-item:hover {
+  transform: scale(1.03);
 }
 
 /* SEÇÃO CURRÍCULO - SOBRE MIM */
@@ -652,7 +711,7 @@ section {
   box-sizing: border-box;
   margin: 1rem;
   overflow: hidden;
-  padding: 1rem;
+  padding: 1rem 1.6rem;
 }
 
 .projeto-preview {
@@ -669,6 +728,11 @@ section {
 .projeto-imagem {
   max-width: 120%;
   height: auto;
+  transition: transform 0.3s ease;
+}
+
+.projeto-imagem:hover {
+  transform: scale(1.02);
 }
 
 .projeto-botoes {
@@ -694,7 +758,7 @@ section {
 }
 
 .projeto-botao:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
 }
 
 .bi-github,
@@ -746,9 +810,10 @@ section {
 }
 
 .projeto-info h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--text-color);
   font-weight: bold;
+  padding: .5rem 0 0 0;
 }
 
 .projeto-info ul {
@@ -842,4 +907,985 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+@media (min-width: 0px) and (max-width: 379px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 260px;
+    height: auto;
+    padding: 1em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: 900;
+    line-height: 50px;
+
+
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 1rem;
+}
+
+.secoes-btn {
+    padding: 3px 10px;
+}
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: auto;
+    margin: 1em 0;
+}
+
+.formacao-item, .certificados-item {
+    width: 300px;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+
+.conhecimentos-item h2 {
+    font-size: 0.9rem;
+    padding-left: 5px;
+}
+
+.conhecimentos-item .imagem-titulo {
+    width: 25px;
+    height: 25px;
+}
+
+.conhecimentos-container h2 {
+  padding-top: 0.2em;
+}
+
+.conhecimentos-container, .certificados-container-cards, .experiencias-container  {
+    padding-bottom: 3rem;
+}
+
+.secoes {
+    padding: 3rem 0 0 0;
+}
+
+.secoes-btn {
+    font-size: 0.9em;
+    width: 120px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.projetos-container {
+    padding-bottom: 3rem;
+}
+
+.navbar-container {
+    display: none;
+}
+
+.secoes ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secoes {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.servico-item {
+    padding: 1rem;
+}
+
+.projeto-botoes {
+    gap: 0.3em;
+}
+
+.projeto-preview {
+    padding: 0.5em;
+    gap: 1.2rem;
+}
+
+.conhecimentos-container-cards {
+    gap: 1rem;
+}
+
+.bottom-baixar-cv {
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    color: var(--secondary-color);
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 40px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.bi-download {
+    font-size: 16px;
+}
+
+.servico-item h3 {
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+
+.projeto-card {
+    padding: 0.1em;
+    display: block;
+}
+
+.projeto-preview {
+     min-width: 80px; 
+}
+
+.projeto-imagem {
+    max-width: 80%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.projeto-botao {
+    padding: 5px 10px;
+    font-size: 1em;
+}
+
+.conhecimentos-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 130px;
+    gap: 0rem;
+    padding: 0.5rem;
+
+}
+.contatos-botao i {
+    font-size: 3rem;
+}
+
+}
+
+@media (min-width: 380px) and (max-width: 434px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.projeto-card {
+    display: block;
+}
+
+.projeto-imagem {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 450px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+        font-size: 5em;
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 2em;;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 1rem;
+}
+
+.secoes-btn {
+    padding: 3px 10px;
+}
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: auto;
+    margin: 1em 0;
+}
+
+.formacao-item, .certificados-item {
+    width: 300px;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+.conhecimentos-item {
+  width: 160px;
+  gap: 0rem;
+  padding: 0.5rem;
+}
+
+.conhecimentos-item h2 {
+    font-size: 0.9rem;
+    padding-left: 5px;
+}
+
+.conhecimentos-item .imagem-titulo {
+    width: 25px;
+    height: 25px;
+}
+
+.conhecimentos-container h2 {
+  padding-top: 0.2em;
+}
+
+.conhecimentos-container, .certificados-container-cards, .experiencias-container  {
+    padding-bottom: 3rem;
+}
+
+.secoes {
+    padding: 3rem 0 0 0;
+}
+
+.secoes-btn {
+    font-size: 0.9em;
+    width: 155px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.text-main h1 {
+    font-size: 4em;
+}
+
+
+.main-image img {
+    width: 340px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.projetos-container {
+    padding-bottom: 3rem;
+}
+
+.navbar-container {
+    display: none;
+}
+
+.text-main p {
+    font-size: 1.5em;
+}
+
+.text-main h1 {
+    font-size: 3em;
+}
+
+.secoes ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secoes {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.bottom-baixar-cv {
+    font-size: 14px;
+}
+
+.servico-item {
+    padding: 1rem;
+}
+
+.projeto-botoes {
+    gap: 0.3em;
+}
+
+.projeto-preview {
+    padding: 0.5em;
+    gap: 1.2rem;
+}
+
+.conhecimentos-container-cards {
+    gap: 1rem;
+}
+
+}
+
+@media (min-width: 435px) and (max-width: 499px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.projeto-card {
+    display: block;
+}
+
+.projeto-imagem {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 450px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+        font-size: 5em;
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 2em;;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 1rem;
+}
+
+.secoes-btn {
+    padding: 3px 10px;
+}
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: auto;
+    margin: 1em 0;
+}
+
+.formacao-item, .certificados-item {
+    width: 300px;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+.conhecimentos-item {
+  width: 180px;
+  gap: 0rem;
+}
+
+.conhecimentos-item h2 {
+    font-size: 1rem;
+    padding-left: 5px;
+}
+
+.conhecimentos-item .imagem-titulo {
+    width: 30px;
+    height: 30px;
+}
+
+.conhecimentos-container h2 {
+  padding-top: 0.2em;
+}
+
+.conhecimentos-container, .certificados-container-cards, .experiencias-container  {
+    padding-bottom: 3rem;
+}
+
+.secoes {
+    padding: 3rem 0 0 0;
+}
+
+.secoes-btn {
+    font-size: 0.9em;
+    width: 170px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.text-main h1 {
+    font-size: 4em;
+}
+
+
+.main-image img {
+    width: 400px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.projetos-container {
+    padding-bottom: 3rem;
+}
+
+.navbar-container {
+    display: none;
+}
+
+.text-main p {
+    font-size: 1.5em;
+}
+
+.text-main h1 {
+    font-size: 3em;
+}
+
+.secoes ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.secoes {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+
+}
+
+@media (min-width: 500px) and (max-width: 669px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.projeto-card {
+    display: block;
+}
+
+.projeto-imagem {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 450px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+        font-size: 5em;
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 2em;;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 1rem;
+}
+
+.secoes-btn {
+    padding: 3px 10px;
+}
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: auto;
+    margin: 1em 0;
+}
+
+.formacao-item, .certificados-item {
+    width: 210px;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+.conhecimentos-item {
+  width: 200px;
+  gap: 0rem;
+}
+
+.conhecimentos-item h2 {
+    font-size: 1.2rem;
+}
+
+.conhecimentos-item .imagem-titulo {
+    width: 40px;
+    height: 40px;
+}
+
+.conhecimentos-container h2 {
+  padding-top: 0.2em;
+}
+
+.conhecimentos-container, .certificados-container-cards, .experiencias-container  {
+    padding-bottom: 3rem;
+}
+
+.secoes {
+    padding: 3rem 0 0 0;
+}
+
+.secoes-btn {
+    font-size: 0.9em;
+}
+
+.text-main h1 {
+    font-size: 4em;
+}
+
+
+.main-image img {
+    width: 400px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.projetos-container {
+    padding-bottom: 3rem;
+}
+
+.navbar-container {
+    display: none;
+}
+
+}
+
+@media (min-width: 670px) and (max-width: 769px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.projeto-card {
+    display: block;
+}
+
+.projeto-imagem {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 450px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+        font-size: 5em;
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 2em;;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 1rem;
+}
+
+.secoes-btn {
+    padding: 3px 10px;
+}
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: auto;
+    margin: 1em 0;
+}
+
+.formacao-item, .certificados-item {
+    width: 210px;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+}
+
+@media (min-width: 770px) and (max-width: 850px){
+
+/* Scroll horizontal*/
+body, html {
+  overflow-x: hidden;
+}
+
+.projeto-card {
+    display: block;
+}
+
+.projeto-imagem {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.main-image {
+    text-align: center;
+}
+
+.main-image img {
+    width: 450px;
+    height: auto;
+    padding: 1.5em 0;
+}
+
+.main-banner {
+    display: block;
+    padding: 0;
+}
+
+.text-main h1 {
+    text-align: center;
+        font-size: 5em;
+}
+
+.bottoms-main {
+    justify-content: center;
+}
+
+.text-main p {
+    opacity: 80%;
+    font-size: 2em;;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.servicos-container {
+    padding: 2rem 0;
+}
+
+.secoes ul {
+    gap: 2rem;
+}
+
+
+.experiencias-container {
+    display: block;
+}
+
+.experiencias-item {
+    width: 700px;
+    margin: 1em 0;
+}
+
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.conhecimentos-container-cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sobre-container {
+    margin: 2em 1em 2rem 1em;
+}
+
+}
+
+@media (min-width: 851px) and (max-width: 999px){
+  /* Scroll horizontal*/
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .text-main h1 {
+    font-size: 70px;
+}
+
+.sobre-container {
+    padding: 3rem 2rem;
+    margin: 2rem 4em 2rem 4rem;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.secoes ul {
+    gap: 3rem;
+}
+
+.experiencias-item {
+    width: 700px;
+}
+
+.projeto-card {
+    display: block;
+  }
+
+  .projeto-imagem {
+    max-width: 90%;
+}
+
+.conhecimentos-item {
+    width: 280px;
+}
+
+@media (min-width: 851px) and (max-width: 991px){ .conhecimentos-container-cards { grid-template-columns: repeat(2, 1fr) } }
+
+@media (min-width: 851px) and (max-width: 869px){ 
+  .main-banner {
+    gap: 6rem;
+  }
+
+  .text-main h1 {
+      font-size: 55px;
+      line-height: 65px;
+  }
+
+  .main-image img {
+    width: 350px;
+}
+
+ }
+
+@media (min-width: 870px) and (max-width: 991px){ 
+  .main-banner {
+    gap: 6rem;
+  }
+
+  .text-main h1 {
+      font-size: 55px;
+      line-height: 65px;
+  }
+
+  .main-image img {
+    width: 375px;
+}
+
+ }
+
+}
+
+@media (min-width: 1000px) and (max-width: 1199px){
+  /* Scroll horizontal*/
+  body, html {
+    overflow-x: hidden;
+  }
+
+  .text-main h1 {
+    font-size: 70px;
+}
+
+.sobre-container {
+    padding: 3rem 2rem;
+    margin: 2rem 4em 2rem 4rem;
+}
+
+.card-meio {
+    transition: none;
+    transform: none;
+}
+
+.secoes ul {
+    gap: 3rem;
+}
+
+.experiencias-item {
+    width: 600px;
+}
+
 }
