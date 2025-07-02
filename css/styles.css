@@ -683,12 +683,20 @@ section {
 }
 
 /* SEÇÃO PROJETOS */
-.section-projetos h2 {
+.projetos-titulo h2 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color:var(--text-color);
   opacity: 80%;
+}
+
+.projetos-titulo p {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: normal;
+  color:var(--text-color);
+  opacity: 65%;
 }
 
 .projetos-container {
