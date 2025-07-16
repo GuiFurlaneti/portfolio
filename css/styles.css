@@ -792,11 +792,11 @@ section {
 
 .projeto-titulo span.projeto-em-colaboracao {
   font-size: 1.2rem;
-  color: var(--text-color);
-  opacity: 50%;
+  color: var(--primary-color);
+  opacity: 90%;
   font-weight: bold;
   padding: 0px 4px;
-  border: 3px solid var(--text-color);
+  border: 3px solid var(--primary-color);
   border-radius: 12px;
   background-color: transparent;
   cursor: default;
