@@ -14,10 +14,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="img/favicon_io/site.webmanifest">
     <title>Portfólio - Gui Furlaneti</title>
-    <meta name="description" content="Portfólio de Gui Furlaneti - Desenvolvedor Full Stack com foco em soluções web completas, APIs, sistemas escaláveis e interfaces modernas.">
+    <meta name="description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
 </head>
 <body>
-    <!-- NAVBAR -->
     <style>
         #screen-size {
         display: none;
@@ -35,7 +34,6 @@
     </style>
     <div id="screen-size"></div>
 
-
     <div class="container">
         <div class="navbar-container">
             <nav class="nav">
@@ -44,7 +42,7 @@
                 </a>
                 <ul class="navbar-items">
                     <li><a href="#inicio" class="default-btn">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#curriculo">Currículo</a></li>
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#contato">Contato</a></li>
@@ -61,14 +59,15 @@
                 <div class="main-banner">
                     <div class="main-text reveal" data-animate="left">
                         <div class="text-main">
-                            <p>Desenvolvedor Full Stack</p>
+                            <p>Desenvolvedor Back-end</p>
                             <h1 class="titulo-principal">
-                                <span class="text-secundaria">Olá, eu sou</span>
-                                <span class="text-destaque nome"> Gui Furlaneti</span>
+                                <span class="text-secundaria">Guilherme</span>
+                                <span class="text-destaque nome">Furlaneti</span>
                             </h1>
+                            <p class="hero-stack">C# · .NET Core · ASP.NET Core · SQL Server</p>
                         </div>
                         <div class="bottoms-main">
-                            <a href="docs/guilherme-furlaneti-curriculo.pdf" download class="bottom-baixar-cv">
+                        <a href="docs/curriculo-guilherme-furlaneti.pdf" download target="_blank" rel="noopener noreferrer" class="bottom-baixar-cv">
                                 Baixar CV <i class="bi bi-download"></i>
                             </a>
                             <div class="bottom-linkedin">
@@ -84,55 +83,37 @@
                         </div>
                     </div>
                     <div class="main-image reveal" data-animate="right">
-                        <img src="img/foto-principal.png" alt="Foto de Gui Furlaneti, Desenvolvedor Front-end">
+                        <img src="img/foto-principal.png" alt="Foto de Gui Furlaneti, Desenvolvedor Backend">
                     </div>
                 </div>
             </section>
 
-            <!-- SEÇÃO SERVIÇOS -->
-            <section id="servicos" class="section-servicos">
-                <div class="servicos-container reveal">
-                    <div class="servico-item">
-                        <i class="bi bi-code-slash"></i>
-                        <h3>Desenvolvimento Web</h3>
-                        <p>Desenvolvimento de aplicações web completas e responsivas, atuando tanto no front-end com React.js, 
-                            quanto no back-end com Node.js, PHP e C# (.NET), sempre focando na escalabilidade e performance.
-                        </p>
-                    </div>
-                    <div class="servico-item">
-                        <i class="bi bi-code-slash"></i>
-                        <h3>Design UI/UX</h3>
-                        <p>Planejamento e desenvolvimento de interfaces 
-                        intuitivas e atraentes, garantindo a melhor experiência para os usuários.
+            <!-- SEÇÃO SOBRE -->
+            <section id="sobre" class="section-sobre">
+                <div class="sobre-standalone-container reveal">
+                    <p> Olá me chamo Guilherme!</p>
+                    <p>
+                        Tenho 21 anos, sou de São Paulo capital e estou em transição para desenvolvimento backend.
+                        Trabalho com C#, .NET e SQL Server. Tenho projetos reais nessa stack, feitos em parceria com outros devs.
                     </p>
-                    </div>
-                    <div class="servico-item">
-                        <i class="bi bi-code-slash"></i>
-                        <h3>Automação e Integrações</h3>
-                        <p>Integração com APIs REST, automação de fluxos e desenvolvimento de 
-                            funcionalidades que conectam sistemas de forma eficaz e segura.
-                        </p>
-                    </div>
-                    <div class="servico-item">
-                        <i class="bi bi-code-slash"></i>
-                        <h3>SEO</h3>
-                        <p>Implementação de técnicas para melhorar a 
-                        performance dos sites e aumentar sua visibilidade nos motores de busca.
-                        </p>
-                    </div>
-                </div>                          
+                    <p>
+                        Antes de virar dev, trabalhei com administração e coordenação de projetos digitais.
+                        Isso me ajudou a entender como sistemas precisam funcionar na prática, não só no papel.
+                    </p>
+                    <p>
+                        Atualmente estou no 4º semestre de ADS na UNICID e buscando minha primeira vaga formal como desenvolvedor.
+                    </p>
+                </div>
             </section>
 
             <!-- SEÇÃO CURRÍCULO - FILTROS -->
             <section id="curriculo" class="section-curriculo">
-                <!-- FILTROS -->
                 <div class="secoes">
                     <ul>
                         <li class="secoes-btn ativo" data-target="experiencias">Experiências</li>
                         <li class="secoes-btn" data-target="educacao">Educação</li>
                         <li class="secoes-btn" data-target="habilidades">Habilidades</li>
-                        <li class="secoes-btn" data-target="sobre">Sobre mim</li>
-                      </ul>                      
+                    </ul>
                 </div>
 
             <!-- SEÇÃO CURRÍCULO - EXPERIÊNCIAS -->
@@ -192,7 +173,7 @@
                     <div class="formacao-container-cards">
                         <div class="formacao-item">
                         <div class="formacao-topo">
-                            <img src="img/logos-empresas/unicid-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                            <img src="img/logos-empresas/unicid-logo.png" alt="Unicid - Logotipo" class="imagem-titulo">
                             <div>
                                 <h2>Unicid</h2>
                                 <h3>Análise e Desenvolvimento de Sistemas</h3>
@@ -202,7 +183,7 @@
                     </div>
                     <div class="formacao-item">
                         <div class="formacao-topo">
-                            <img src="img/logos-empresas/etec-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                            <img src="img/logos-empresas/etec-logo.png" alt="ETEC - Logotipo" class="imagem-titulo">
                             <div>
                                 <h2>ETEC</h2>
                                 <h3>Curso técnico em Administração</h3>
@@ -217,7 +198,7 @@
                     <div class="certificados-container-cards">
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                            <img src="img/logos-empresas/alura-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                            <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo">
                                 <div>
                                     <h2>Alura</h2>
                                     <h3>JavaScript e HTML: desenvolva um jogo e pratique lógica de programação</h3>
@@ -227,7 +208,7 @@
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                                <img src="img/logos-empresas/alura-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                                <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo">
                                 <div>
                                     <h2>Alura</h2>
                                     <h3>Lógica de programação: mergulhe em programação com JavaScript</h3>
@@ -237,7 +218,7 @@
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                                <img src="img/logos-empresas/alura-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                                <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo">
                                 <div>
                                     <h2>Alura</h2>
                                     <h3>JavaScript: utilizando tipos, variáveis e funções</h3>
@@ -247,7 +228,7 @@
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                                <img src="img/logos-empresas/alura-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                                <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo">
                                 <div>
                                     <h2>Alura</h2>
                                     <h3>JavaScript: conhecendo arrays</h3>
@@ -257,7 +238,7 @@
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                                <img src="img/logos-empresas/alura-logo.png" alt="Classe A - Logotipo" class="imagem-titulo">
+                                <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo">
                                 <div>
                                     <h2>Alura</h2>
                                     <h3>HTML e CSS: Classes, posicionamento e Flexbox</h3>
@@ -282,7 +263,41 @@
             <!-- SEÇÃO CURRÍCULO - HABILIDADES -->
             <section id="habilidades" class="secao-conteudo">
                 <div class="conhecimentos-container reveal">
-                    <h2>Conhecimentos</h2>
+
+                    <div class="habilidades-grupo">
+                        <h3 class="habilidades-grupo-titulo">Backend</h3>
+                        <div class="conhecimentos-container-cards">
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/csharp-logo.png" alt="C# - Logotipo" class="imagem-titulo">
+                                <h2>C#</h2>
+                            </div>
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/dotnet-logo.png" alt=".NET - Logotipo" class="imagem-titulo">
+                                <h2>.NET</h2>
+                            </div>
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/aspnet-logo.png" alt="ASP.NET - Logotipo" class="imagem-titulo">
+                                <h2>ASP.NET</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades-grupo">
+                        <h3 class="habilidades-grupo-titulo">Banco de Dados</h3>
+                        <div class="conhecimentos-container-cards">
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/sql-logo.png" alt="SQL Server - Logotipo" class="imagem-titulo">
+                                <h2>SQL SERVER</h2>
+                            </div>
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/sql-logo.png" alt="MySQL - Logotipo" class="imagem-titulo">
+                                <h2>MYSQL</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habilidades-grupo">
+                        <h3 class="habilidades-grupo-titulo">Frontend & UI</h3>
                         <div class="conhecimentos-container-cards">
                             <div class="conhecimentos-item">
                                 <img src="img/logos-empresas/html-5-logo.png" alt="HTML 5 - Logotipo" class="imagem-titulo">
@@ -297,54 +312,42 @@
                                 <h2>JAVASCRIPT</h2>
                             </div>
                             <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/figma-logo.png" alt="FIGMA - Logotipo" class="imagem-titulo">
-                                <h2>FIGMA</h2>
+                                <img src="img/logos-empresas/react-logo.png" alt="REACT JS - Logotipo" class="imagem-titulo">
+                                <h2>REACT JS</h2>
                             </div>
                             <div class="conhecimentos-item">
                                 <img src="img/logos-empresas/bootstrap-logo.png" alt="BOOTSTRAP - Logotipo" class="imagem-titulo">
                                 <h2>BOOTSTRAP</h2>
                             </div>
                             <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/react-logo.png" alt="REACT JS - Logotipo" class="imagem-titulo">
-                                <h2>REACT JS</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/python-logo.png" alt="PYTHON - Logotipo" class="imagem-titulo">
-                                <h2>PYTHON</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/sql-logo.png" alt="SQL - Logotipo" class="imagem-titulo">
-                                <h2>SQL</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/photoshop-logo.png" alt="PHOTOSHOP - Logotipo" class="imagem-titulo">
-                                <h2>PHOTOSHOP</h2>
+                                <img src="img/logos-empresas/figma-logo.png" alt="FIGMA - Logotipo" class="imagem-titulo">
+                                <h2>FIGMA</h2>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="habilidades-grupo">
+                        <h3 class="habilidades-grupo-titulo">Ferramentas</h3>
+                        <div class="conhecimentos-container-cards">
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/git-logo.png" alt="GIT - Logotipo" class="imagem-titulo">
+                                <h2>GIT</h2>
+                            </div>
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/github-logo.png" alt="GITHUB - Logotipo" class="imagem-titulo">
+                                <h2>GITHUB</h2>
+                            </div>
+                            <div class="conhecimentos-item">
+                                <img src="img/logos-empresas/postman-logo.png" alt="POSTMAN - Logotipo" class="imagem-titulo">
+                                <h2>POSTMAN</h2>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
-            <!-- SEÇÃO CURRÍCULO - SOBRE MIM -->
-            <section id="sobre" class="secao-conteudo">
-                <div class="sobre-container reveal">
-                    <p>
-                        👋 Oi, eu sou o Guilherme!
-                    </p>
-                    <p>
-                        Sou Desenvolvedor Full Stack com foco em soluções web modernas e funcionais. 
-                        Trabalho com tecnologias como HTML, CSS, JavaScript, React, Node.js, .NET C#, SQL e APIs, 
-                        sempre buscando a melhor performance e experiência para o usuário.
-                    </p>
-                    <p>
-                        Minha trajetória começou na administração e projetos digitais, o que fortaleceu minha visão 
-                        analítica e capacidade de organização. Hoje, aplico esse background no desenvolvimento de aplicações 
-                        escaláveis e bem estruturadas.
-                    </p>
-                    <p>Estou sempre em evolução, estudando novas linguagens, frameworks e melhores práticas. 
-                        Meu objetivo é criar soluções inteligentes que realmente façam a diferença.
-                    </p>
-                </div>
-            </section>   
+            </section>
 
             <!-- SEÇÃO PROJETOS -->
             <section id="projetos" class="section-projetos">
@@ -356,92 +359,16 @@
                         <span class="bolinha"></span>
                         <span class="bolinha"></span>
                         <span class="bolinha"></span>
-                        <span class="bolinha"></span>
                         <button class="seta proxima" aria-label="Próximo projeto"><i class="bi bi-caret-right-fill"></i></button>
                     </div>
                 </div>
                 <div class="carrossel-wrapper">
                     <div class="projetos-container">
+
+                        <!-- PROJETO 1: MENU DIGITAL (mais forte no backend) -->
                         <article class="projeto-card reveal" data-animate="left">
                             <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Sistema para Empresa de Transportes Aéreos" class="projeto-imagem">
-                                <div class="projeto-botoes">
-                                    <a href="https://grupovegas.azurewebsites.net" class="projeto-botao" target="_blank" rel="noopener noreferrer">SITE <i class="bi bi-globe"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/VegasTransportes" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Vegas Transportes - Sistema para Empresa de Transportes Aéreos</h3>
-                                    <span class="projeto-em-colaboracao">Projeto profissional</span>
-                                </div>
-                                <p>Site institucional para apresentar os serviços da Vegas e 
-                                permitir que clientes solicitem orçamentos e agendamentos.
-                                </p>
-                                <h4>📌 Principais Funcionalidades:</h4>
-                                <ul>
-                                    <li>✅ Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
-                                    <li>✅ Simulador de cotação integrado à tabela de preços</li>
-                                    <li>✅ Página de dúvidas frequentes e contatos</li>
-                                    <li>✅ Contatos e canais de atendimento integrados</li>
-                                    <li>✅ Seção institucional com história, clientes e feedbacks</li>
-                                </ul>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                    <span class="projeto-tag">.NET C#</span>
-                                    <span class="projeto-tag">JQUERY</span>
-                                    <span class="projeto-tag">AJAX</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="projeto-card reveal" data-animate="right">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Plataforma de Gestão de Reservas" class="projeto-imagem">
-                                <div class="projeto-botoes">
-                                    <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/AlugaSimples" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Aluga Simples – Plataforma de Gestão de Reservas</h3>
-                                    <span class="projeto-em-colaboracao">Projeto colaborativo</span>
-                                </div>
-                                <p>Plataforma completa para locadores e clientes realizarem e 
-                                gerenciarem reservas de espaços para eventos.
-                                </p>
-                                <h4>📌 Principais Funcionalidades (Cliente):</h4>
-                                <ul>
-                                    <li>✅ Visualização de disponibilidade por data</li>
-                                    <li>✅ Solicitação de reserva com dados completos</li>
-                                    <li>✅ Exibição de fotos e localização no mapa</li>
-                                    <li>✅ Contato direto com o proprietário</li>
-                                </ul>
-                                <h4>📌 Principais Funcionalidades (Admin):</h4>
-                                <ul>
-                                    <li>✅ Painel de gerenciamento protegido por login</li>
-                                    <li>✅ Aprovação ou rejeição de solicitações de reserva</li>
-                                    <li>✅ CRUD completo de reservas</li>
-                                    <li>✅ Validações de formulário para dados consistentes</li>
-                                </ul>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">JQUERY</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                    <span class="projeto-tag">.NET C#</span>
-                                    <span class="projeto-tag">SQL SERVER</span>
-                                    <span class="projeto-tag">AZURE</span>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="projeto-card reveal" data-animate="left">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Web App para Estabelecimentos" class="projeto-imagem">
+                                <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Menu Digital – Web App para Estabelecimentos" class="projeto-imagem">
                                 <div class="projeto-botoes">
                                     <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&p=f&t=el5knHteCfYNrofS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
                                     <a href="https://github.com/GuiFurlaneti/MenuDigital" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
@@ -452,38 +379,118 @@
                                     <h3>Menu Digital – Web App para Estabelecimentos</h3>
                                     <span class="projeto-em-colaboracao">Projeto colaborativo</span>
                                 </div>
-                                <p>Aplicativo web para bares, restaurantes e estabelecimentos exibirem 
-                                seus produtos em um cardápio digital moderno e responsivo.
+                                <p>Aplicação web completa para bares e restaurantes gerenciarem cardápios digitais.
+                                Fui responsável pelo desenvolvimento backend: modelagem do banco, endpoints da API REST e lógica de CRUD de produtos e categorias.
                                 </p>
-                                <h4>📌 Principais Funcionalidades (Cliente):</h4>
+                                <h4>📌 Funcionalidades (Cliente):</h4>
                                 <ul>
                                     <li>✅ Visualização de produtos com foto, descrição e preço</li>
                                     <li>✅ Filtro por categoria e subcategoria</li>
                                     <li>✅ Barra de pesquisa inteligente</li>
                                 </ul>
-                                <h4>📌 Principais Funcionalidades (Admin):</h4>
+                                <h4>📌 Funcionalidades (Admin):</h4>
                                 <ul>
                                     <li>✅ CRUD completo de produtos e categorias</li>
-                                    <li>✅ Validação de campos obrigatórios</li>
+                                    <li>✅ Painel com login e validação de campos</li>
                                     <li>✅ Clonagem de produtos com sufixo automático</li>
-                                    <li>✅ Painel totalmente responsivo para gestão</li>
                                 </ul>
                                 <div class="projeto-tags">
+                                    <span class="projeto-tag">C#</span>
+                                    <span class="projeto-tag">ASP.NET CORE</span>
+                                    <span class="projeto-tag">ENTITY FRAMEWORK CORE</span>
+                                    <span class="projeto-tag">SQL SERVER</span>
                                     <span class="projeto-tag">HTML</span>
                                     <span class="projeto-tag">CSS</span>
                                     <span class="projeto-tag">JAVASCRIPT</span>
                                     <span class="projeto-tag">BOOTSTRAP</span>
-                                    <span class="projeto-tag">.NET C#</span>
-                                    <span class="projeto-tag">JQUERY</span>
-                                    <span class="projeto-tag">AJAX</span>
-                                    <span class="projeto-tag">SQL SERVER</span>
-                                    <span class="projeto-tag">ENTITY FRAMEWORK CORE</span>
                                 </div>
                             </div>
                         </article>
+
+                        <!-- PROJETO 2: ALUGA SIMPLES -->
                         <article class="projeto-card reveal" data-animate="right">
                             <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="Algum projeto ai" class="projeto-imagem">
+                                <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Aluga Simples – Plataforma de Gestão de Reservas" class="projeto-imagem">
+                                <div class="projeto-botoes">
+                                    <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
+                                    <a href="https://github.com/GuiFurlaneti/AlugaSimples" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="projeto-info">
+                                <div class="projeto-titulo">
+                                    <h3>Aluga Simples – Plataforma de Gestão de Reservas</h3>
+                                    <span class="projeto-em-colaboracao">Projeto colaborativo</span>
+                                </div>
+                                <p>Plataforma para locadores e clientes gerenciarem reservas de espaços para eventos.
+                                Contribuí com funcionalidades backend em C# e .NET e fui responsável pelo UI/UX completo no Figma — do wireframe ao protótipo navegável.
+                                </p>
+                                <h4>📌 Funcionalidades (Cliente):</h4>
+                                <ul>
+                                    <li>✅ Visualização de disponibilidade por data</li>
+                                    <li>✅ Solicitação de reserva com dados completos</li>
+                                    <li>✅ Exibição de fotos e localização no mapa</li>
+                                </ul>
+                                <h4>📌 Funcionalidades (Admin):</h4>
+                                <ul>
+                                    <li>✅ Painel protegido por login</li>
+                                    <li>✅ Aprovação ou rejeição de reservas</li>
+                                    <li>✅ CRUD completo de reservas</li>
+                                </ul>
+                                <div class="projeto-tags">
+                                    <span class="projeto-tag">C#</span>
+                                    <span class="projeto-tag">ASP.NET CORE</span>
+                                    <span class="projeto-tag">SQL SERVER</span>
+                                    <span class="projeto-tag">AZURE</span>
+                                    <span class="projeto-tag">HTML</span>
+                                    <span class="projeto-tag">CSS</span>
+                                    <span class="projeto-tag">JAVASCRIPT</span>
+                                    <span class="projeto-tag">BOOTSTRAP</span>
+                                    <span class="projeto-tag">FIGMA</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJETO 3: VEGAS TRANSPORTES -->
+                        <article class="projeto-card reveal" data-animate="left">
+                            <div class="projeto-preview">
+                                <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Vegas Transportes – Sistema de Cotação Online" class="projeto-imagem">
+                                <div class="projeto-botoes">
+                                    <a href="https://grupovegas.azurewebsites.net" class="projeto-botao" target="_blank" rel="noopener noreferrer">SITE <i class="bi bi-globe"></i></a>
+                                    <a href="https://github.com/GuiFurlaneti/VegasTransportes" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
+                                </div>
+                            </div>
+                            <div class="projeto-info">
+                                <div class="projeto-titulo">
+                                    <h3>Vegas Transportes – Sistema de Cotação Online</h3>
+                                    <span class="projeto-em-colaboracao">Projeto profissional</span>
+                                </div>
+                                <p>Site institucional com simulador de cotação integrado para empresa de transportes aéreos.
+                                Minha primeira experiência prática com backend em C# — participei do desenvolvimento do sistema de cotação e da integração com o frontend via jQuery e Ajax.
+                                </p>
+                                <h4>📌 Principais Funcionalidades:</h4>
+                                <ul>
+                                    <li>✅ Simulador de cotação integrado à tabela de preços</li>
+                                    <li>✅ Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
+                                    <li>✅ Seção institucional com história, clientes e feedbacks</li>
+                                    <li>✅ Canais de atendimento e dúvidas frequentes</li>
+                                </ul>
+                                <div class="projeto-tags">
+                                    <span class="projeto-tag">C#</span>
+                                    <span class="projeto-tag">.NET</span>
+                                    <span class="projeto-tag">HTML</span>
+                                    <span class="projeto-tag">CSS</span>
+                                    <span class="projeto-tag">JAVASCRIPT</span>
+                                    <span class="projeto-tag">JQUERY</span>
+                                    <span class="projeto-tag">AJAX</span>
+                                    <span class="projeto-tag">BOOTSTRAP</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- PROJETO 4: TO-DO APP -->
+                        <article class="projeto-card reveal" data-animate="right">
+                            <div class="projeto-preview">
+                                <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="To-do App – Gerenciador de Tarefas" class="projeto-imagem">
                                 <div class="projeto-botoes">
                                     <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&p=f&t=NdYVcKZ8eaUeujeG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
                                     <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
@@ -494,8 +501,8 @@
                                     <h3>To-do App – Gerenciador de Tarefas Pessoais</h3>
                                     <span class="projeto-em-colaboracao">Projeto autoral</span>
                                 </div>
-                                <p>Aplicativo web para organização de tarefas diárias, 
-                                    com foco em produtividade pessoal, gerenciamento por prioridade e controle visual intuitivo.
+                                <p>Aplicativo web para organização de tarefas diárias, com foco em produtividade pessoal,
+                                gerenciamento por prioridade e controle visual intuitivo. Primeiro projeto pessoal em React.
                                 </p>
                                 <h4>📌 Principais Funcionalidades:</h4>
                                 <ul>
@@ -503,7 +510,6 @@
                                     <li>✅ Edição de tarefas já existentes</li>
                                     <li>✅ Filtro por: tarefas do dia, atrasadas, pendentes ou concluídas</li>
                                     <li>✅ Ordenação automática por nível de prioridade</li>
-                                    <li>✅ Salvamento automático via localStorage (persistência de dados)</li>
                                     <li>✅ Navegação por abas: Início, Adicionar Tarefa e Tarefas Concluídas</li>
                                 </ul>
                                 <div class="projeto-tags">
@@ -515,39 +521,7 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="projeto-card reveal" data-animate="left">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-imperiale.png" alt="Catálogo Online de Camisetas de Futebol" class="projeto-imagem">
-                                <div class="projeto-botoes">
-                                    <a href="https://guifurlaneti.github.io/imperiale-st" class="projeto-botao" target="_blank" rel="noopener noreferrer">SITE <i class="bi bi-globe"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/imperiale-st" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Imperiale Store – Catálogo Online de Camisetas de Futebol</h3>
-                                    <span class="projeto-em-colaboracao">Projeto colaborativo</span>
-                                </div>
-                                <p>Site desenvolvido para exibir o catálogo de camisetas de time (primeira linha tailandesa) da loja Imperiale, 
-                                    com navegação intuitiva e filtros dinâmicos para facilitar a experiência do usuário.
-                                </p>
-                                <h4>📌 Principais Funcionalidades:</h4>
-                                <ul>
-                                    <li>✅ Catálogo com cards contendo imagem, nome e preço de cada camiseta</li>
-                                    <li>✅ Filtro por continente e país para navegação prática</li>
-                                    <li>✅ Navbar com logo clicável e botão de carrinho funcional</li>
-                                    <li>✅ Estrutura modular para responsividade (mobile e desktop)</li>
-                                    <li>✅ Código otimizado para futuras integrações (ex.: WhatsApp para pedidos)</li>
-                                </ul>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                    <span class="projeto-tag">FIGMA</span>
-                                </div>
-                            </div>
-                        </article>
+
                     </div>
                 </div>
             </section>
@@ -577,7 +551,7 @@
         </main>
         <div class="glow-circle"></div>
     </div>
-    <footer>Copyright © 2025 – Todos os Direitos Reservados.</footer>
+    <footer>Copyright © 2026 – Todos os Direitos Reservados.</footer>
     <script src="js/dark-mode.js"></script>
     <script src="js/nav-active.js"></script>
     <script src="js/curriculo-tabs.js"></script>
