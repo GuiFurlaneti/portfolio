@@ -1,9 +1,9 @@
-# 🧑‍💻 Portfólio Pessoal – Guilherme Furlaneti
+# Portfólio Pessoal – Guilherme Furlaneti
 
-🎯 Este é meu portfólio pessoal desenvolvido como **Desenvolvedor Full Stack Júnior**, onde apresento minha trajetória, experiências, habilidades, formação e principais projetos realizados. O foco do projeto é proporcionar uma experiência visual moderna, acessível e responsiva, com destaque para animações, temas claro/escuro e estrutura organizada por seções.
+Este é meu portfólio pessoal desenvolvido como **Desenvolvedor Full Stack Júnior**, onde apresento minha trajetória, experiências, habilidades, formação e principais projetos realizados. O foco do projeto é proporcionar uma experiência visual moderna, acessível e responsiva, com destaque para animações, temas claro/escuro e estrutura organizada por seções.
 
-🔗 **Acesse aqui o projeto online**:  
-➡️ [guifurlaneti.github.io/portfolio](https://guifurlaneti.github.io/portfolio)
+**Acesse aqui o projeto online**:  
+[guifurlaneti.github.io/portfolio](https://guifurlaneti.github.io/portfolio)
 
 ---
 
