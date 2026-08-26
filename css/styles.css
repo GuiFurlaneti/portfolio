@@ -201,7 +201,7 @@ body.light-mode {
   right: 20px;
   z-index: 999;
   width: 60px;
-  height: 35px;
+  height: 44px;
   background: rgba(54, 54, 54, 0.745);
   border: 1.5px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
@@ -241,8 +241,8 @@ body.light-mode #icon-sun  { display: inline; }
 
 .mobile-menu-toggle {
   display: none;
-  width: 40px;
-  height: 35px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   background: rgba(54, 54, 54, 0.745);
@@ -956,11 +956,15 @@ h3 {
 .bolinha {
   width: 12px;
   height: 12px;
+  padding: 6px;
+  margin: -6px;
   background-color: var(--primary-color);
+  background-clip: content-box;
   opacity: 50%;
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-sizing: content-box;
 }
 
 .bolinha.ativa {
@@ -1139,14 +1143,16 @@ footer {
 
   /* Currículo filtros */
   .secoes ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     padding: 0;
     margin: 0;
   }
 
   .secoes-btn {
+    flex: 0 1 calc(50% - 5px);
     font-size: 0.82rem;
     padding: 4px 6px;
     text-align: center;
@@ -1314,12 +1320,13 @@ footer {
 
   /* Currículo filtros */
   .secoes ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
   }
 
-  .secoes-btn { font-size: 0.85rem; }
+  .secoes-btn { flex: 0 1 calc(50% - 5px); font-size: 0.85rem; }
 
   /* Experiências */
   .experiencias-container {
