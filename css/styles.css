@@ -13,28 +13,19 @@
   --footer-color: #2A2A2A;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --section-y: 6rem;
-  --card-bg: linear-gradient(145deg, rgba(0, 163, 255, 0.08), rgba(0, 163, 255, 0.16));
-  --card-glow: 0 0 22px rgba(0, 163, 255, 0.25), inset 0 0 20px rgba(0, 163, 255, 0.04);
-  --card-glow-hover: 0 0 32px rgba(0, 163, 255, 0.45), inset 0 0 24px rgba(0, 163, 255, 0.08);
+  --card-radius: 18px;
+  --card-bg: linear-gradient(145deg, rgba(0, 163, 255, 0.06), rgba(0, 163, 255, 0.11));
+  --card-glow: 0 2px 18px rgba(0, 163, 255, 0.12);
+  --card-glow-hover: 0 4px 24px rgba(0, 163, 255, 0.22);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 12px rgba(0, 163, 255, 0.35); }
-  50%      { box-shadow: 0 0 26px rgba(0, 163, 255, 0.7); }
-}
-
-@keyframes dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 163, 255, 0.55); }
-  50%      { box-shadow: 0 0 0 7px rgba(0, 163, 255, 0); }
-}
-
 @keyframes glow-breathe {
-  0%, 100% { opacity: 0.75; transform: translate(-50%, -50%) scale(1); }
-  50%      { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 0.9; transform: translate(-50%, -50%) scale(1.05); }
 }
 
 /* MODO ESCURO (PADRÃO) */
@@ -97,7 +88,6 @@ body {
   height: 4px;
   border-radius: 2px;
   background: var(--primary-color);
-  box-shadow: 0 0 10px var(--primary-color), 0 0 20px rgba(0, 163, 255, 0.5);
   transition: width 0.7s ease 0.15s;
 }
 
@@ -119,8 +109,8 @@ body.light-mode {
   position: absolute;
   top: 10%;
   left: 94%;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
   background: radial-gradient(circle, var(--glow-circle), transparent 90%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -208,7 +198,6 @@ body.light-mode {
   width: 0;
   height: 2px;
   background: var(--primary-color);
-  box-shadow: 0 0 8px var(--primary-color);
   transition: width 0.3s ease;
 }
 
@@ -401,16 +390,15 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  animation: pulse-glow 2.5s ease-in-out infinite;
-  transition: transform 0.3s ease;
+  box-shadow: var(--card-glow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .bi-download { font-size: 18px; }
 
 .bottom-baixar-cv:hover {
-  transform: scale(1.06);
-  animation-play-state: paused;
-  box-shadow: 0 0 30px rgba(0, 163, 255, 0.75);
+  transform: scale(1.04);
+  box-shadow: var(--card-glow-hover);
 }
 
 .link-ver-projetos {
@@ -462,11 +450,11 @@ section {
 ───────────────────────────────────────────── */
 .sobre-content {
   position: relative;
-  max-width: 740px;
+  max-width: 600px;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 30px;
-  padding: 2.5rem 3rem;
+  border-radius: var(--card-radius);
+  padding: 2rem 2.2rem;
   box-shadow: var(--card-glow);
   transition: box-shadow 0.4s ease;
 }
@@ -515,13 +503,11 @@ section {
 
 .secoes-btn:hover {
   background-color: rgba(0, 191, 255, 0.1);
-  box-shadow: 0 0 12px rgba(0, 163, 255, 0.35);
 }
 
 .secoes-btn.ativo {
   background-color: var(--primary-color);
   color: var(--secondary-color);
-  box-shadow: 0 0 16px rgba(0, 163, 255, 0.55);
 }
 
 .secao-conteudo        { display: none; }
@@ -562,13 +548,12 @@ section {
   border-radius: 50%;
   background: var(--primary-color);
   border: 3px solid var(--secondary-color);
-  animation: dot-pulse 2.2s ease-in-out infinite;
 }
 
 .timeline-content {
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 16px;
+  border-radius: var(--card-radius);
   padding: 1.4rem 1.6rem;
   box-shadow: var(--card-glow);
   transition: box-shadow 0.4s ease, transform 0.3s ease, margin-left 0.3s ease;
@@ -579,12 +564,14 @@ section {
   transform: translateX(4px);
 }
 
-/* Efeito escada: cada card entra mais pra direita e um pouco mais estreito */
+/* Efeito escada: o item mais antigo (ultimo da lista) e o maior/mais a esquerda;
+   subindo em direcao ao mais recente, os cards ficam menores e mais indentados.
+   Usa nth-last-child para funcionar independente de quantas experiencias existirem. */
 @media (min-width: 700px) {
-  .timeline-item:nth-child(2) .timeline-content { margin-left: 2.5rem; max-width: calc(100% - 2.5rem); }
-  .timeline-item:nth-child(3) .timeline-content { margin-left: 5rem;   max-width: calc(100% - 5rem); }
-  .timeline-item:nth-child(4) .timeline-content { margin-left: 7.5rem; max-width: calc(100% - 7.5rem); }
-  .timeline-item:nth-child(5) .timeline-content { margin-left: 10rem;  max-width: calc(100% - 10rem); }
+  .timeline-item:nth-last-child(2) .timeline-content { margin-left: 2.5rem;  max-width: calc(100% - 2.5rem); }
+  .timeline-item:nth-last-child(3) .timeline-content { margin-left: 5rem;    max-width: calc(100% - 5rem); }
+  .timeline-item:nth-last-child(4) .timeline-content { margin-left: 7.5rem;  max-width: calc(100% - 7.5rem); }
+  .timeline-item:nth-last-child(5) .timeline-content { margin-left: 10rem;   max-width: calc(100% - 10rem); }
 }
 
 .timeline-header {
@@ -700,7 +687,7 @@ h3 {
   justify-content: space-between;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 30px;
+  border-radius: var(--card-radius);
   padding: 0.7rem 1rem 0 1rem;
   gap: .5rem;
   flex-wrap: wrap;
@@ -804,7 +791,7 @@ h3 {
   justify-content: flex-start;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 16px;
+  border-radius: var(--card-radius);
   padding: 0.6rem 1rem;
   gap: 0.8rem;
   box-shadow: var(--card-glow);
@@ -837,21 +824,9 @@ h3 {
    SEÇÃO PROJETOS (grade de cards compactos)
 ───────────────────────────────────────────── */
 .projetos-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
-  align-items: start;
-}
-
-@media (min-width: 700px) {
-  .projetos-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  /* quebra a grade perfeita: cards pares descem um pouco, criando ritmo */
-  .projeto-card:nth-child(even) {
-    margin-top: 1.75rem;
-  }
 }
 
 .projeto-card {
@@ -859,26 +834,25 @@ h3 {
   flex-direction: column;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 20px;
+  border-radius: var(--card-radius);
   overflow: hidden;
   box-shadow: var(--card-glow);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition: box-shadow 0.35s ease;
 }
 
 .projeto-card:hover {
-  transform: translateY(-8px) rotate(-0.6deg);
   box-shadow: var(--card-glow-hover);
 }
 
 .projeto-imagem-wrap {
   width: 100%;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
   background: radial-gradient(circle, rgba(0, 163, 255, 0.1), rgba(0, 0, 0, 0.25));
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 1rem;
 }
 
 .projeto-imagem {
@@ -886,17 +860,36 @@ h3 {
   height: 100%;
   object-fit: contain;
   display: block;
-  transition: transform 0.4s ease;
+  transition: transform 0.5s ease;
 }
 
-.projeto-card:hover .projeto-imagem { transform: scale(1.05); }
+.projeto-card:hover .projeto-imagem { transform: scale(1.06); }
 
 .projeto-info {
   flex: 1;
-  padding: 1.1rem 1.2rem;
+  padding: 1.2rem 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+/* A partir daqui, imagem e informações ficam lado a lado */
+@media (min-width: 640px) {
+  .projeto-card {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .projeto-imagem-wrap {
+    width: 40%;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .projeto-info {
+    width: 60%;
+    justify-content: center;
+  }
 }
 
 .projeto-titulo {
@@ -971,14 +964,7 @@ h3 {
   color: var(--primary-color);
   font-weight: bold;
   border: 1px solid var(--primary-color);
-  background-color: rgba(0, 163, 255, 0.1);
-  box-shadow: 0 0 8px rgba(0, 163, 255, 0.25);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.projeto-tag:hover {
-  box-shadow: 0 0 14px rgba(0, 163, 255, 0.6);
-  transform: translateY(-1px);
+  background-color: rgba(0, 163, 255, 0.08);
 }
 
 .projeto-links {
@@ -1006,10 +992,9 @@ h3 {
 ───────────────────────────────────────────── */
 .contatos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;
 }
 
 .contatos-botao {
@@ -1024,13 +1009,13 @@ h3 {
   opacity: 80%;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
-  border-radius: 24px;
+  border-radius: var(--card-radius);
   transition: transform 0.3s ease, box-shadow 0.4s ease;
   box-shadow: var(--card-glow);
 }
 
 .contatos-botao:hover {
-  transform: scale(1.04);
+  transform: scale(1.03);
   box-shadow: var(--card-glow-hover);
 }
 .contatos-botao span  { font-size: 1.5rem; }
