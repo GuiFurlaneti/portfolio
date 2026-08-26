@@ -513,7 +513,7 @@ section {
 }
 
 .secoes-btn {
-  padding: 3px 20px;
+  padding: 10px 20px;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
   border-radius: 12px;
@@ -1170,11 +1170,15 @@ footer {
 
   .navbar-items li {
     width: 100%;
-    padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .navbar-items li:last-child { border-bottom: none; }
+
+  .navbar-items a {
+    display: block;
+    padding: 12px 0;
+  }
 
   .navbar-items .default-btn {
     display: inline-block;
@@ -1248,7 +1252,7 @@ footer {
   .secoes-btn {
     flex: 0 1 calc(50% - 5px);
     font-size: 0.82rem;
-    padding: 4px 6px;
+    padding: 10px 6px;
     text-align: center;
   }
 
@@ -1310,11 +1314,15 @@ footer {
 
   .navbar-items li {
     width: 100%;
-    padding: 12px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .navbar-items li:last-child { border-bottom: none; }
+
+  .navbar-items a {
+    display: block;
+    padding: 12px 0;
+  }
 
   .navbar-items .default-btn {
     display: inline-block;
