@@ -1,4 +1,10 @@
 /* GERAL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-color: #00A3FF;
   --secondary-color: #121212;
@@ -6,6 +12,7 @@
   --glow-circle: #ffffff6c;
   --footer-color: #2A2A2A;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --section-y: 6rem;
 }
 
 html {
@@ -21,7 +28,7 @@ body {
 }
 
 /* Texto corrido usa fonte legível; titulos/botoes/tags mantem monospace (identidade visual) */
-.sobre-standalone-container p,
+.sobre-detalhe,
 .projeto-info p,
 .projeto-info ul li,
 .experiencias-item ul li {
@@ -34,6 +41,39 @@ body {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 0.75rem;
+}
+
+/* RITMO VERTICAL: todas as secoes de conteudo usam o mesmo espacamento externo */
+.section-sobre,
+.section-projetos,
+.section-curriculo,
+.section-contatos {
+  padding: var(--section-y) 0;
+}
+
+.section-apresentacao {
+  padding: 3rem 0 var(--section-y);
+}
+
+/* Rotulo pequeno acima do titulo de cada secao (hierarquia visual consistente) */
+.section-eyebrow {
+  display: block;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  margin: 0 0 2.5rem 0;
 }
 
 /* MODO CLARO */
@@ -238,7 +278,6 @@ section {
   gap: 9rem;
   background-size: cover;
   background-position: center;
-  padding: 6rem 0;
 }
 
 .main-text {
@@ -362,10 +401,6 @@ section {
 /* ─────────────────────────────────────────────
    SEÇÃO SOBRE (standalone)
 ───────────────────────────────────────────── */
-.section-sobre {
-  padding: 4rem 0 2rem 0;
-}
-
 .sobre-standalone-container {
   display: flex;
   flex-direction: column;
@@ -375,21 +410,40 @@ section {
   padding: 3rem 4rem;
   border-radius: 35px;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
-  max-width: 100%;
+  max-width: 780px;
   margin: 0 auto;
 }
 
-.sobre-standalone-container p {
+.sobre-lead p {
+  font-size: 22px;
+  font-weight: bold;
+  opacity: 100%;
+  margin: 0;
+}
+
+.sobre-fatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sobre-fato {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.sobre-detalhe {
   font-size: 18px;
   font-weight: lighter;
   opacity: 85%;
   margin: 0;
-}
-
-.sobre-standalone-container p:first-child {
-  font-size: 22px;
-  font-weight: bold;
-  opacity: 100%;
 }
 
 /* ─────────────────────────────────────────────
@@ -399,7 +453,6 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5rem 0 0 0;
 }
 
 .secoes ul {
@@ -439,7 +492,6 @@ section {
   gap: 80px;
   margin-top: 20px;
   flex-wrap: wrap;
-  padding-bottom: 6rem;
 }
 
 .experiencias-item {
@@ -542,7 +594,6 @@ h3 {
   margin: 0 auto;
 }
 
-.certificados-container-cards { padding-bottom: 5rem; }
 
 .formacao-container h2,
 .certificados-container h2 {
@@ -619,7 +670,6 @@ h3 {
   align-items: center;
   gap: 2rem;
   margin-top: 20px;
-  padding-bottom: 6rem;
 }
 
 .habilidades-grupo {
@@ -687,12 +737,16 @@ h3 {
 /* ─────────────────────────────────────────────
    SEÇÃO PROJETOS
 ───────────────────────────────────────────── */
+.projetos-titulo {
+  margin-bottom: 2.5rem;
+}
+
 .projetos-titulo h2 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: var(--text-color);
-  opacity: 80%;
+  margin: 0;
 }
 
 .projeto-card {
@@ -812,10 +866,23 @@ h3 {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0.45rem;
   color: var(--text-color);
   font-weight: lighter;
   font-size: .95rem;
+}
+
+/* Quando o projeto tem funcionalidades Cliente/Admin, mostra lado a lado no desktop */
+.projeto-funcionalidades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0 2rem;
+}
+
+@media (min-width: 1024px) {
+  .projeto-funcionalidades {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .projeto-tags {
@@ -826,15 +893,15 @@ h3 {
 }
 
 .projeto-tag {
-  padding: 0.1rem 0.4rem;
-  border-radius: .8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  color: var(--text-color);
-  opacity: 50%;
+  letter-spacing: 0.5px;
+  font-size: 0.72rem;
+  color: var(--primary-color);
   font-weight: bold;
-  border: 3px solid var(--text-color);
-  background-color: transparent;
+  border: 1px solid rgba(0, 163, 255, 0.35);
+  background-color: rgba(0, 163, 255, 0.08);
 }
 
 /* CARROSSEL */
@@ -901,8 +968,6 @@ h3 {
   opacity: 100%;
 }
 
-.section-projetos { margin-bottom: 5rem; }
-
 /* ─────────────────────────────────────────────
    SEÇÃO CONTATOS
 ───────────────────────────────────────────── */
@@ -911,7 +976,7 @@ h3 {
   font-size: 2rem;
   font-weight: bold;
   color: var(--text-color);
-  opacity: 80%;
+  margin: 0;
 }
 
 .contatos-container {
@@ -919,7 +984,7 @@ h3 {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: space-between;
-  padding: 5rem 0;
+  padding: 2.5rem 0 0 0;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -969,6 +1034,17 @@ footer {
 @media (max-width: 479px) {
   body, html { overflow-x: hidden; }
 
+  .section-sobre,
+  .section-projetos,
+  .section-curriculo,
+  .section-contatos {
+    padding: 3rem 0;
+  }
+
+  .section-apresentacao { padding: 1.5rem 0 3rem; }
+
+  .section-heading { margin-bottom: 1.5rem; font-size: 1.6rem; }
+
   .navbar-container { padding: 0 1.2rem; }
 
   .theme-toggle-btn { position: static; }
@@ -1006,7 +1082,6 @@ footer {
 
   .main-banner {
     display: block;
-    padding: 2rem 0 0 0;
     gap: 0;
   }
 
@@ -1058,14 +1133,11 @@ footer {
     border-radius: 20px;
   }
 
-  .sobre-standalone-container p { font-size: 15px; }
-  .sobre-standalone-container p:first-child { font-size: 17px; }
+  .sobre-lead p { font-size: 17px; }
+  .sobre-detalhe { font-size: 15px; }
+  .sobre-fato { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
 
   /* Currículo filtros */
-  .secoes {
-    padding: 2.5rem 0 0 0;
-  }
-
   .secoes ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1085,7 +1157,6 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-bottom: 3rem;
   }
 
   .experiencias-item { width: 100%; }
@@ -1095,10 +1166,8 @@ footer {
   .formacao-item,
   .certificados-item { width: 100%; }
 
-  .certificados-container-cards { padding-bottom: 3rem; }
-
   /* Habilidades */
-  .conhecimentos-container { gap: 2rem; padding-bottom: 3rem; }
+  .conhecimentos-container { gap: 2rem; }
 
   .conhecimentos-item {
     min-width: 130px;
@@ -1142,7 +1211,7 @@ footer {
   .projeto-tag  { font-size: 0.7rem; }
 
   /* Contatos */
-  .contatos-container { padding: 2rem 0; }
+  .contatos-container { padding: 1.5rem 0 0 0; }
   .contatos-botao i   { font-size: 2.5rem; }
   .contatos-botao span{ font-size: 1rem; }
 }
@@ -1150,6 +1219,17 @@ footer {
 /* ── 480px – 767px (telefones grandes e tablets) ── */
 @media (min-width: 480px) and (max-width: 767px) {
   body, html { overflow-x: hidden; }
+
+  .section-sobre,
+  .section-projetos,
+  .section-curriculo,
+  .section-contatos {
+    padding: 4rem 0;
+  }
+
+  .section-apresentacao { padding: 2rem 0 4rem; }
+
+  .section-heading { margin-bottom: 2rem; }
 
   .navbar-container { padding: 0 1.5rem; }
 
@@ -1188,7 +1268,6 @@ footer {
 
   .main-banner {
     display: block;
-    padding: 2rem 0 0 0;
     gap: 0;
   }
 
@@ -1234,8 +1313,6 @@ footer {
   }
 
   /* Currículo filtros */
-  .secoes { padding: 3rem 0 0 0; }
-
   .secoes ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1248,7 +1325,6 @@ footer {
   .experiencias-container {
     flex-direction: column;
     gap: 1rem;
-    padding-bottom: 3rem;
   }
 
   .experiencias-item { width: 100%; }
@@ -1278,7 +1354,7 @@ footer {
   .projeto-titulo h3 { font-size: 1.2rem; }
 
   /* Contatos */
-  .contatos-container { padding: 2.5rem 0; }
+  .contatos-container { padding: 2rem 0 0 0; }
 }
 
 /* ── 768px – 1023px (tablets landscape / notebooks pequenos) ── */
