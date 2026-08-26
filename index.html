@@ -15,24 +15,30 @@
     <link rel="manifest" href="img/favicon_io/site.webmanifest">
     <title>Portfólio - Gui Furlaneti</title>
     <meta name="description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
+
+    <!-- OPEN GRAPH / COMPARTILHAMENTO -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://guifurlaneti.github.io/portfolio/">
+    <meta property="og:title" content="Portfólio - Gui Furlaneti">
+    <meta property="og:description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
+    <meta property="og:image" content="https://guifurlaneti.github.io/portfolio/img/foto-principal.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfólio - Gui Furlaneti">
+    <meta name="twitter:description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
+    <meta name="twitter:image" content="https://guifurlaneti.github.io/portfolio/img/foto-principal.png">
 </head>
 <body>
-    <style>
-        #screen-size {
-        display: none;
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        padding: 8px 12px;
-        font-family: monospace;
-        font-size: 14px;
-        border-radius: 8px;
-        z-index: 9999;
-        }
-    </style>
-    <div id="screen-size"></div>
+    <script>
+        // Aplica o tema salvo antes do primeiro paint, evitando flash de tema errado
+        (function () {
+            try {
+                if (localStorage.getItem('theme') === 'light') {
+                    document.body.classList.add('light-mode');
+                }
+            } catch (e) {}
+        })();
+    </script>
 
     <div class="container">
         <div class="navbar-container">
@@ -47,10 +53,16 @@
                     <li><a href="#projetos">Projetos</a></li>
                     <li><a href="#contato">Contato</a></li>
                 </ul>
-                <button id="theme-toggle" class="theme-toggle-btn">
-                    <i class="bi bi-moon-fill" id="icon-moon"></i>
-                    <i class="bi bi-sun-fill" id="icon-sun"></i>
-                </button>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
+                        <i class="bi bi-moon-fill" id="icon-moon"></i>
+                        <i class="bi bi-sun-fill" id="icon-sun"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
+                        <i class="bi bi-list" id="icon-menu-open"></i>
+                        <i class="bi bi-x-lg" id="icon-menu-close"></i>
+                    </button>
+                </div>
             </nav>
         </div>
         <main>
@@ -71,12 +83,12 @@
                                 Baixar CV <i class="bi bi-download"></i>
                             </a>
                             <div class="bottom-linkedin">
-                                <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer">
+                                <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn">
                                     <i class="bi bi-linkedin"></i>
                                 </a>
                             </div>
                             <div class="bottom-github">
-                                <a href="https://github.com/GuiFurlaneti" target="_blank" rel="noopener noreferrer">
+                                <a href="https://github.com/GuiFurlaneti" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub">
                                     <i class="bi bi-github"></i>
                                 </a>
                             </div>
@@ -162,8 +174,9 @@
                         <li>Implementação de sistemas internos e melhorias operacionais</li>
                         <li>Desenvolvimento de soluções estratégicas e gestão de equipe técnica</li>
                     </ul>
-                    <p>Nov 2023 – Jan 2025</p>                
+                    <p>Nov 2023 – Jan 2025</p>
                 </div>
+            </div>
             </section>
 
             <!-- SEÇÃO CURRÍCULO - EDUCAÇÃO -->
@@ -289,10 +302,6 @@
                                 <img src="img/logos-empresas/sql-logo.png" alt="SQL Server - Logotipo" class="imagem-titulo">
                                 <h2>SQL SERVER</h2>
                             </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/sql-logo.png" alt="MySQL - Logotipo" class="imagem-titulo">
-                                <h2>MYSQL</h2>
-                            </div>
                         </div>
                     </div>
 
@@ -382,17 +391,17 @@
                                 <p>Aplicação web completa para bares e restaurantes gerenciarem cardápios digitais.
                                 Fui responsável pelo desenvolvimento backend: modelagem do banco, endpoints da API REST e lógica de CRUD de produtos e categorias.
                                 </p>
-                                <h4>📌 Funcionalidades (Cliente):</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Cliente):</h4>
                                 <ul>
-                                    <li>✅ Visualização de produtos com foto, descrição e preço</li>
-                                    <li>✅ Filtro por categoria e subcategoria</li>
-                                    <li>✅ Barra de pesquisa inteligente</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Visualização de produtos com foto, descrição e preço</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Filtro por categoria e subcategoria</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Barra de pesquisa inteligente</li>
                                 </ul>
-                                <h4>📌 Funcionalidades (Admin):</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Admin):</h4>
                                 <ul>
-                                    <li>✅ CRUD completo de produtos e categorias</li>
-                                    <li>✅ Painel com login e validação de campos</li>
-                                    <li>✅ Clonagem de produtos com sufixo automático</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>CRUD completo de produtos e categorias</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Painel com login e validação de campos</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Clonagem de produtos com sufixo automático</li>
                                 </ul>
                                 <div class="projeto-tags">
                                     <span class="projeto-tag">C#</span>
@@ -424,17 +433,17 @@
                                 <p>Plataforma para locadores e clientes gerenciarem reservas de espaços para eventos.
                                 Contribuí com funcionalidades backend em C# e .NET e fui responsável pelo UI/UX completo no Figma — do wireframe ao protótipo navegável.
                                 </p>
-                                <h4>📌 Funcionalidades (Cliente):</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Cliente):</h4>
                                 <ul>
-                                    <li>✅ Visualização de disponibilidade por data</li>
-                                    <li>✅ Solicitação de reserva com dados completos</li>
-                                    <li>✅ Exibição de fotos e localização no mapa</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Visualização de disponibilidade por data</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Solicitação de reserva com dados completos</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Exibição de fotos e localização no mapa</li>
                                 </ul>
-                                <h4>📌 Funcionalidades (Admin):</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Admin):</h4>
                                 <ul>
-                                    <li>✅ Painel protegido por login</li>
-                                    <li>✅ Aprovação ou rejeição de reservas</li>
-                                    <li>✅ CRUD completo de reservas</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Painel protegido por login</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Aprovação ou rejeição de reservas</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>CRUD completo de reservas</li>
                                 </ul>
                                 <div class="projeto-tags">
                                     <span class="projeto-tag">C#</span>
@@ -467,12 +476,12 @@
                                 <p>Site institucional com simulador de cotação integrado para empresa de transportes aéreos.
                                 Minha primeira experiência prática com backend em C# — participei do desenvolvimento do sistema de cotação e da integração com o frontend via jQuery e Ajax.
                                 </p>
-                                <h4>📌 Principais Funcionalidades:</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Principais Funcionalidades:</h4>
                                 <ul>
-                                    <li>✅ Simulador de cotação integrado à tabela de preços</li>
-                                    <li>✅ Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
-                                    <li>✅ Seção institucional com história, clientes e feedbacks</li>
-                                    <li>✅ Canais de atendimento e dúvidas frequentes</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Simulador de cotação integrado à tabela de preços</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Seção institucional com história, clientes e feedbacks</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Canais de atendimento e dúvidas frequentes</li>
                                 </ul>
                                 <div class="projeto-tags">
                                     <span class="projeto-tag">C#</span>
@@ -504,13 +513,13 @@
                                 <p>Aplicativo web para organização de tarefas diárias, com foco em produtividade pessoal,
                                 gerenciamento por prioridade e controle visual intuitivo. Primeiro projeto pessoal em React.
                                 </p>
-                                <h4>📌 Principais Funcionalidades:</h4>
+                                <h4><i class="bi bi-pin-angle-fill"></i>Principais Funcionalidades:</h4>
                                 <ul>
-                                    <li>✅ Cadastro de tarefas com título, descrição, prioridade e data limite</li>
-                                    <li>✅ Edição de tarefas já existentes</li>
-                                    <li>✅ Filtro por: tarefas do dia, atrasadas, pendentes ou concluídas</li>
-                                    <li>✅ Ordenação automática por nível de prioridade</li>
-                                    <li>✅ Navegação por abas: Início, Adicionar Tarefa e Tarefas Concluídas</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Cadastro de tarefas com título, descrição, prioridade e data limite</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Edição de tarefas já existentes</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Filtro por: tarefas do dia, atrasadas, pendentes ou concluídas</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Ordenação automática por nível de prioridade</li>
+                                    <li><i class="bi bi-check-circle-fill"></i>Navegação por abas: Início, Adicionar Tarefa e Tarefas Concluídas</li>
                                 </ul>
                                 <div class="projeto-tags">
                                     <span class="projeto-tag">REACT</span>
@@ -557,5 +566,6 @@
     <script src="js/curriculo-tabs.js"></script>
     <script src="js/scroll-animation.js"></script>
     <script src="js/projetos-slider.js"></script>
+    <script src="js/mobile-menu.js"></script>
 </body>
 </html>
