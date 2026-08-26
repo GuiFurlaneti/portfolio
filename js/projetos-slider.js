@@ -11,11 +11,23 @@
 
     let indiceAtual = 0;
 
-    function mostrarProjeto(indice) {
+    // Mantem a altura do wrapper sincronizada com a altura real do card ativo
+    // o tempo todo (inclusive depois que uma imagem lazy termina de carregar),
+    // em vez de medir uma unica vez — evita que a borda inferior do card fique
+    // cortada por uma altura calculada cedo demais.
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        wrapper.style.height = `${entry.target.offsetHeight}px`;
+      }
+    });
+
+    function irPara(indice) {
       const largura = wrapper.offsetWidth;
 
+      resizeObserver.disconnect();
       track.style.transform = `translateX(-${indice * largura}px)`;
       wrapper.style.height = `${cards[indice].offsetHeight}px`;
+      resizeObserver.observe(cards[indice]);
 
       dots.forEach((dot, i) => {
         dot.classList.toggle('ativa', i === indice);
@@ -24,22 +36,23 @@
 
     btnAnterior.addEventListener('click', () => {
       indiceAtual = (indiceAtual - 1 + cards.length) % cards.length;
-      mostrarProjeto(indiceAtual);
+      irPara(indiceAtual);
     });
 
     btnProxima.addEventListener('click', () => {
       indiceAtual = (indiceAtual + 1) % cards.length;
-      mostrarProjeto(indiceAtual);
+      irPara(indiceAtual);
     });
 
     dots.forEach((dot, i) => {
       dot.addEventListener('click', () => {
         indiceAtual = i;
-        mostrarProjeto(indiceAtual);
+        irPara(indiceAtual);
       });
     });
 
-    window.addEventListener('load', () => mostrarProjeto(indiceAtual));
-    window.addEventListener('resize', () => mostrarProjeto(indiceAtual));
+    window.addEventListener('resize', () => irPara(indiceAtual));
+
+    irPara(indiceAtual);
   });
 })();
