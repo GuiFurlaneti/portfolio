@@ -78,11 +78,11 @@
                             <p class="hero-stack">C# · .NET Core · ASP.NET Core · SQL Server</p>
                         </div>
                         <div class="bottoms-main">
-                        <a href="docs/curriculo-guilherme-furlaneti.pdf" download target="_blank" rel="noopener noreferrer" class="bottom-baixar-cv">
+                            <a href="docs/curriculo-guilherme-furlaneti.pdf" download target="_blank" rel="noopener noreferrer" class="bottom-baixar-cv">
                                 Baixar CV <i class="bi bi-download"></i>
                             </a>
-                            <a href="#projetos" class="bottom-ver-projetos">
-                                Ver Projetos
+                            <a href="#projetos" class="link-ver-projetos">
+                                Ver Projetos <i class="bi bi-arrow-down-short"></i>
                             </a>
                             <div class="bottom-linkedin">
                                 <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn">
@@ -104,12 +104,9 @@
 
             <!-- SEÇÃO SOBRE -->
             <section id="sobre" class="section-sobre">
-                <span class="section-eyebrow reveal">Sobre</span>
-                <h2 class="section-heading reveal">Sobre mim</h2>
-                <div class="sobre-standalone-container reveal">
-                    <div class="sobre-lead">
-                        <p>Olá, me chamo Guilherme! Tenho 21 anos e estou em transição para desenvolvimento backend, trabalhando com C#, .NET e SQL Server.</p>
-                    </div>
+                <h2 class="section-title reveal">Sobre mim</h2>
+                <div class="sobre-content reveal">
+                    <p class="sobre-lead">Olá, me chamo Guilherme! Tenho 21 anos e estou em transição para desenvolvimento backend, trabalhando com C#, .NET e SQL Server.</p>
                     <div class="sobre-fatos">
                         <span class="sobre-fato"><i class="bi bi-geo-alt-fill"></i>São Paulo, SP</span>
                         <span class="sobre-fato"><i class="bi bi-mortarboard-fill"></i>ADS na UNICID — 4º semestre</span>
@@ -123,198 +120,145 @@
 
             <!-- SEÇÃO PROJETOS -->
             <section id="projetos" class="section-projetos">
-                <div class="projetos-titulo">
-                    <span class="section-eyebrow reveal">Portfólio</span>
-                    <h2 class="reveal">Projetos</h2>
-                    <div class="indicadores">
-                        <button class="seta anterior" aria-label="Projeto anterior"><i class="bi bi-caret-left-fill"></i></button>
-                        <span class="bolinha ativa"></span>
-                        <span class="bolinha"></span>
-                        <span class="bolinha"></span>
-                        <span class="bolinha"></span>
-                        <button class="seta proxima" aria-label="Próximo projeto"><i class="bi bi-caret-right-fill"></i></button>
-                    </div>
-                </div>
-                <div class="carrossel-wrapper">
-                    <div class="projetos-container">
+                <h2 class="section-title reveal">Projetos</h2>
+                <div class="projetos-grid">
 
-                        <!-- PROJETO 1: MENU DIGITAL (mais forte no backend) -->
-                        <article class="projeto-card reveal" data-animate="left">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Menu Digital – Web App para Estabelecimentos" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <div class="projeto-botoes">
-                                    <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&p=f&t=el5knHteCfYNrofS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/MenuDigital" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
+                    <!-- PROJETO 1: MENU DIGITAL -->
+                    <article class="projeto-card reveal">
+                        <div class="projeto-imagem-wrap">
+                            <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Menu Digital – Web App para Estabelecimentos" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <div class="projeto-titulo">
+                                <h3>Menu Digital</h3>
+                                <span class="projeto-em-colaboracao">Colaborativo</span>
                             </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Menu Digital – Web App para Estabelecimentos</h3>
-                                    <span class="projeto-em-colaboracao">Projeto colaborativo</span>
-                                </div>
-                                <p>Aplicação web completa para bares e restaurantes gerenciarem cardápios digitais.
-                                Fui responsável pelo desenvolvimento backend: modelagem do banco, endpoints da API REST e lógica de CRUD de produtos e categorias.
-                                </p>
-                                <div class="projeto-funcionalidades">
-                                    <div class="projeto-funcionalidades-col">
-                                        <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Cliente):</h4>
-                                        <ul>
-                                            <li><i class="bi bi-check-circle-fill"></i>Visualização de produtos com foto, descrição e preço</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Filtro por categoria e subcategoria</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Barra de pesquisa inteligente</li>
-                                        </ul>
-                                    </div>
-                                    <div class="projeto-funcionalidades-col">
-                                        <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Admin):</h4>
-                                        <ul>
-                                            <li><i class="bi bi-check-circle-fill"></i>CRUD completo de produtos e categorias</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Painel com login e validação de campos</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Clonagem de produtos com sufixo automático</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">C#</span>
-                                    <span class="projeto-tag">ASP.NET CORE</span>
-                                    <span class="projeto-tag">ENTITY FRAMEWORK CORE</span>
-                                    <span class="projeto-tag">SQL SERVER</span>
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                </div>
+                            <p>Aplicação web completa para bares e restaurantes gerenciarem cardápios digitais. Responsável pelo backend: modelagem do banco, endpoints da API REST e CRUD de produtos e categorias.</p>
+                            <ul class="projeto-destaques">
+                                <li><i class="bi bi-check-circle-fill"></i>CRUD completo de produtos e categorias</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Painel admin com login e validação de campos</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Filtro por categoria, subcategoria e busca inteligente</li>
+                            </ul>
+                            <div class="projeto-tags">
+                                <span class="projeto-tag">C#</span>
+                                <span class="projeto-tag">ASP.NET CORE</span>
+                                <span class="projeto-tag">ENTITY FRAMEWORK CORE</span>
+                                <span class="projeto-tag">SQL SERVER</span>
+                                <span class="projeto-tag">HTML</span>
+                                <span class="projeto-tag">CSS</span>
+                                <span class="projeto-tag">JAVASCRIPT</span>
+                                <span class="projeto-tag">BOOTSTRAP</span>
                             </div>
-                        </article>
+                            <div class="projeto-links">
+                                <a href="https://github.com/GuiFurlaneti/MenuDigital" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
+                                <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&p=f&t=el5knHteCfYNrofS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
+                            </div>
+                        </div>
+                    </article>
 
-                        <!-- PROJETO 2: ALUGA SIMPLES -->
-                        <article class="projeto-card reveal" data-animate="right">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Aluga Simples – Plataforma de Gestão de Reservas" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <div class="projeto-botoes">
-                                    <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/AlugaSimples" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
+                    <!-- PROJETO 2: ALUGA SIMPLES -->
+                    <article class="projeto-card reveal">
+                        <div class="projeto-imagem-wrap">
+                            <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Aluga Simples – Plataforma de Gestão de Reservas" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <div class="projeto-titulo">
+                                <h3>Aluga Simples</h3>
+                                <span class="projeto-em-colaboracao">Colaborativo</span>
                             </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Aluga Simples – Plataforma de Gestão de Reservas</h3>
-                                    <span class="projeto-em-colaboracao">Projeto colaborativo</span>
-                                </div>
-                                <p>Plataforma para locadores e clientes gerenciarem reservas de espaços para eventos.
-                                Contribuí com funcionalidades backend em C# e .NET e fui responsável pelo UI/UX completo no Figma — do wireframe ao protótipo navegável.
-                                </p>
-                                <div class="projeto-funcionalidades">
-                                    <div class="projeto-funcionalidades-col">
-                                        <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Cliente):</h4>
-                                        <ul>
-                                            <li><i class="bi bi-check-circle-fill"></i>Visualização de disponibilidade por data</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Solicitação de reserva com dados completos</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Exibição de fotos e localização no mapa</li>
-                                        </ul>
-                                    </div>
-                                    <div class="projeto-funcionalidades-col">
-                                        <h4><i class="bi bi-pin-angle-fill"></i>Funcionalidades (Admin):</h4>
-                                        <ul>
-                                            <li><i class="bi bi-check-circle-fill"></i>Painel protegido por login</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>Aprovação ou rejeição de reservas</li>
-                                            <li><i class="bi bi-check-circle-fill"></i>CRUD completo de reservas</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">C#</span>
-                                    <span class="projeto-tag">ASP.NET CORE</span>
-                                    <span class="projeto-tag">SQL SERVER</span>
-                                    <span class="projeto-tag">AZURE</span>
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                    <span class="projeto-tag">FIGMA</span>
-                                </div>
+                            <p>Plataforma para locadores e clientes gerenciarem reservas de espaços para eventos. Contribuí com funcionalidades backend em C# e .NET e fui responsável pelo UI/UX completo no Figma.</p>
+                            <ul class="projeto-destaques">
+                                <li><i class="bi bi-check-circle-fill"></i>CRUD completo de reservas com aprovação/rejeição</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Painel protegido por login</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Disponibilidade por data e localização no mapa</li>
+                            </ul>
+                            <div class="projeto-tags">
+                                <span class="projeto-tag">C#</span>
+                                <span class="projeto-tag">ASP.NET CORE</span>
+                                <span class="projeto-tag">SQL SERVER</span>
+                                <span class="projeto-tag">AZURE</span>
+                                <span class="projeto-tag">HTML</span>
+                                <span class="projeto-tag">CSS</span>
+                                <span class="projeto-tag">JAVASCRIPT</span>
+                                <span class="projeto-tag">BOOTSTRAP</span>
+                                <span class="projeto-tag">FIGMA</span>
                             </div>
-                        </article>
+                            <div class="projeto-links">
+                                <a href="https://github.com/GuiFurlaneti/AlugaSimples" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
+                                <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
+                            </div>
+                        </div>
+                    </article>
 
-                        <!-- PROJETO 3: VEGAS TRANSPORTES -->
-                        <article class="projeto-card reveal" data-animate="left">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Vegas Transportes – Sistema de Cotação Online" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <div class="projeto-botoes">
-                                    <a href="https://grupovegas.azurewebsites.net" class="projeto-botao" target="_blank" rel="noopener noreferrer">SITE <i class="bi bi-globe"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/VegasTransportes" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
+                    <!-- PROJETO 3: VEGAS TRANSPORTES -->
+                    <article class="projeto-card reveal">
+                        <div class="projeto-imagem-wrap">
+                            <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Vegas Transportes – Sistema de Cotação Online" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <div class="projeto-titulo">
+                                <h3>Vegas Transportes</h3>
+                                <span class="projeto-em-colaboracao">Profissional</span>
                             </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>Vegas Transportes – Sistema de Cotação Online</h3>
-                                    <span class="projeto-em-colaboracao">Projeto profissional</span>
-                                </div>
-                                <p>Site institucional com simulador de cotação integrado para empresa de transportes aéreos.
-                                Minha primeira experiência prática com backend em C# — participei do desenvolvimento do sistema de cotação e da integração com o frontend via jQuery e Ajax.
-                                </p>
-                                <h4><i class="bi bi-pin-angle-fill"></i>Principais Funcionalidades:</h4>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Simulador de cotação integrado à tabela de preços</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Seção institucional com história, clientes e feedbacks</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Canais de atendimento e dúvidas frequentes</li>
-                                </ul>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">C#</span>
-                                    <span class="projeto-tag">.NET</span>
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">JQUERY</span>
-                                    <span class="projeto-tag">AJAX</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                </div>
+                            <p>Site institucional com simulador de cotação integrado para empresa de transportes aéreos. Minha primeira experiência prática com backend em C#, com integração ao frontend via jQuery e Ajax.</p>
+                            <ul class="projeto-destaques">
+                                <li><i class="bi bi-check-circle-fill"></i>Simulador de cotação integrado à tabela de preços</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Seção institucional com histórico e canais de atendimento</li>
+                            </ul>
+                            <div class="projeto-tags">
+                                <span class="projeto-tag">C#</span>
+                                <span class="projeto-tag">.NET</span>
+                                <span class="projeto-tag">HTML</span>
+                                <span class="projeto-tag">CSS</span>
+                                <span class="projeto-tag">JAVASCRIPT</span>
+                                <span class="projeto-tag">JQUERY</span>
+                                <span class="projeto-tag">AJAX</span>
+                                <span class="projeto-tag">BOOTSTRAP</span>
                             </div>
-                        </article>
+                            <div class="projeto-links">
+                                <a href="https://github.com/GuiFurlaneti/VegasTransportes" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
+                                <a href="https://grupovegas.azurewebsites.net" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-globe"></i>Site</a>
+                            </div>
+                        </div>
+                    </article>
 
-                        <!-- PROJETO 4: TO-DO APP -->
-                        <article class="projeto-card reveal" data-animate="right">
-                            <div class="projeto-preview">
-                                <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="To-do App – Gerenciador de Tarefas" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <div class="projeto-botoes">
-                                    <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&p=f&t=NdYVcKZ8eaUeujeG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-botao" target="_blank" rel="noopener noreferrer">PROTÓTIPO <i class="bi bi-vector-pen"></i></a>
-                                    <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-botao" target="_blank" rel="noopener noreferrer">GITHUB <i class="bi bi-github"></i></a>
-                                </div>
+                    <!-- PROJETO 4: TO-DO APP -->
+                    <article class="projeto-card reveal">
+                        <div class="projeto-imagem-wrap">
+                            <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="To-do App – Gerenciador de Tarefas" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                        </div>
+                        <div class="projeto-info">
+                            <div class="projeto-titulo">
+                                <h3>To-do App</h3>
+                                <span class="projeto-em-colaboracao">Autoral</span>
                             </div>
-                            <div class="projeto-info">
-                                <div class="projeto-titulo">
-                                    <h3>To-do App – Gerenciador de Tarefas Pessoais</h3>
-                                    <span class="projeto-em-colaboracao">Projeto autoral</span>
-                                </div>
-                                <p>Aplicativo web para organização de tarefas diárias, com foco em produtividade pessoal,
-                                gerenciamento por prioridade e controle visual intuitivo. Primeiro projeto pessoal em React.
-                                </p>
-                                <h4><i class="bi bi-pin-angle-fill"></i>Principais Funcionalidades:</h4>
-                                <ul>
-                                    <li><i class="bi bi-check-circle-fill"></i>Cadastro de tarefas com título, descrição, prioridade e data limite</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Edição de tarefas já existentes</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Filtro por: tarefas do dia, atrasadas, pendentes ou concluídas</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Ordenação automática por nível de prioridade</li>
-                                    <li><i class="bi bi-check-circle-fill"></i>Navegação por abas: Início, Adicionar Tarefa e Tarefas Concluídas</li>
-                                </ul>
-                                <div class="projeto-tags">
-                                    <span class="projeto-tag">REACT</span>
-                                    <span class="projeto-tag">HTML</span>
-                                    <span class="projeto-tag">CSS</span>
-                                    <span class="projeto-tag">JAVASCRIPT</span>
-                                    <span class="projeto-tag">BOOTSTRAP</span>
-                                </div>
+                            <p>Aplicativo web para organização de tarefas diárias, com foco em produtividade pessoal e controle visual intuitivo. Primeiro projeto pessoal em React.</p>
+                            <ul class="projeto-destaques">
+                                <li><i class="bi bi-check-circle-fill"></i>Cadastro de tarefas com prioridade e data limite</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Ordenação automática por nível de prioridade</li>
+                                <li><i class="bi bi-check-circle-fill"></i>Filtros por status: do dia, atrasadas, pendentes ou concluídas</li>
+                            </ul>
+                            <div class="projeto-tags">
+                                <span class="projeto-tag">REACT</span>
+                                <span class="projeto-tag">HTML</span>
+                                <span class="projeto-tag">CSS</span>
+                                <span class="projeto-tag">JAVASCRIPT</span>
+                                <span class="projeto-tag">BOOTSTRAP</span>
                             </div>
-                        </article>
+                            <div class="projeto-links">
+                                <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
+                                <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&p=f&t=NdYVcKZ8eaUeujeG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
+                            </div>
+                        </div>
+                    </article>
 
-                    </div>
                 </div>
             </section>
 
             <!-- SEÇÃO CURRÍCULO - FILTROS -->
             <section id="curriculo" class="section-curriculo">
-                <span class="section-eyebrow reveal">Trajetória</span>
-                <h2 class="section-heading reveal">Currículo</h2>
+                <h2 class="section-title reveal">Currículo</h2>
                 <div class="secoes">
                     <ul>
                         <li class="secoes-btn ativo" data-target="experiencias">Experiências</li>
@@ -325,51 +269,66 @@
 
             <!-- SEÇÃO CURRÍCULO - EXPERIÊNCIAS -->
             <section id="experiencias" class="secao-conteudo ativa">
-            <div class="experiencias-container reveal">
-                <div class="experiencias-item">
-                    <div class="titulo-subtitulo-container">
-                        <img src="img/logos-empresas/classe-a-logo.png" alt="Classe A - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                        <div>
-                            <h2>Classe A</h2>
-                            <h3>Auxiliar Administrativo</h3>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-empresa">
+                                <img src="img/logos-empresas/classe-a-logo.png" alt="Classe A - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <div>
+                                    <h3>Classe A</h3>
+                                    <span class="timeline-cargo">Auxiliar Administrativo</span>
+                                </div>
+                            </div>
+                            <span class="timeline-data">Mar 2025 – Presente</span>
                         </div>
+                        <ul>
+                            <li>Suporte às rotinas administrativas e logísticas</li>
+                            <li>Organização de documentos e controle de planilhas</li>
+                            <li>Uso de auditoria e geomarketing (Onmaps) para otimizar distribuição de mídia</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Suporte às rotinas administrativas e logísticas</li>
-                        <li>Organização de documentos e controle de planilhas</li>
-                        <li>Uso de auditoria e geomarketing (Onmaps) para otimizar distribuição de mídia</li>
-                    </ul>
-                    <p>Mar 2025 – Presente</p>
                 </div>
-                <div class="experiencias-item card-meio">
-                    <div class="titulo-subtitulo-container">
-                        <img src="img/logos-empresas/matarazzo-logo.png" alt="Matarazzo Decor - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                        <div>
-                            <h2>Matarazzo Decor</h2>
-                            <h3>Auxiliar Administrativo</h3>
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-empresa">
+                                <img src="img/logos-empresas/matarazzo-logo.png" alt="Matarazzo Decor - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <div>
+                                    <h3>Matarazzo Decor</h3>
+                                    <span class="timeline-cargo">Auxiliar Administrativo</span>
+                                </div>
+                            </div>
+                            <span class="timeline-data">Jan 2025 – Mar 2025</span>
                         </div>
+                        <ul>
+                            <li>Atendimento ao cliente e emissão de notas fiscais</li>
+                            <li>Organização de produtos e suporte à equipe de produção</li>
+                            <li>Controle de planilhas e monitoramento de chamados em marketplaces</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Atendimento ao cliente e emissão de notas fiscais</li>
-                        <li>Organização de produtos e suporte à equipe de produção</li>
-                        <li>Controle de planilhas e monitoramento de chamados em marketplaces</li>
-                    </ul>
-                    <p>Jan 2025 – Mar 2025</p>
                 </div>
-                <div class="experiencias-item">
-                    <div class="titulo-subtitulo-container">
-                        <img src="img/logos-empresas/vegas-logo.png" alt="Vegas Transportes - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                        <div>
-                            <h2>Vegas Transportes</h2>
-                            <h3>Coordenador de Projetos Digitais</h3>
+                <div class="timeline-item">
+                    <span class="timeline-dot"></span>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div class="timeline-empresa">
+                                <img src="img/logos-empresas/vegas-logo.png" alt="Vegas Transportes - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <div>
+                                    <h3>Vegas Transportes</h3>
+                                    <span class="timeline-cargo">Coordenador de Projetos Digitais</span>
+                                </div>
+                            </div>
+                            <span class="timeline-data">Nov 2023 – Jan 2025</span>
                         </div>
+                        <ul>
+                            <li>Liderança em transformação digital e otimização de processos</li>
+                            <li>Implementação de sistemas internos e melhorias operacionais</li>
+                            <li>Desenvolvimento de soluções estratégicas e gestão de equipe técnica</li>
+                        </ul>
                     </div>
-                    <ul>
-                        <li>Liderança em transformação digital e otimização de processos</li>
-                        <li>Implementação de sistemas internos e melhorias operacionais</li>
-                        <li>Desenvolvimento de soluções estratégicas e gestão de equipe técnica</li>
-                    </ul>
-                    <p>Nov 2023 – Jan 2025</p>
                 </div>
             </div>
             </section>
@@ -515,8 +474,7 @@
 
             <!-- SEÇÃO CONTATOS -->
             <section id="contato" class="section-contatos">
-                <span class="section-eyebrow reveal">Vamos conversar</span>
-                <h2 class="reveal">Contatos</h2>
+                <h2 class="section-title reveal">Contatos</h2>
                 <div class="contatos-container reveal">
                     <a href="https://www.linkedin.com/in/gui-furlaneti/" class="contatos-botao" target="_blank" rel="noopener noreferrer">
                         <i class="bi bi-linkedin"></i>
@@ -544,7 +502,6 @@
     <script src="js/nav-active.js"></script>
     <script src="js/curriculo-tabs.js"></script>
     <script src="js/scroll-animation.js"></script>
-    <script src="js/projetos-slider.js"></script>
     <script src="js/mobile-menu.js"></script>
 </body>
 </html>
