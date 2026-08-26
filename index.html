@@ -115,7 +115,20 @@
 
             <!-- SEÇÃO PROJETOS -->
             <section id="projetos" class="section-projetos">
-                <h2 class="section-title reveal">Projetos</h2>
+                <div class="projetos-titulo">
+                    <h2 class="section-title reveal">Projetos</h2>
+                    <div class="carrossel-nav reveal">
+                        <button class="carrossel-seta anterior" aria-label="Projeto anterior"><i class="bi bi-chevron-left"></i></button>
+                        <div class="carrossel-indicadores">
+                            <span class="carrossel-dot ativa"></span>
+                            <span class="carrossel-dot"></span>
+                            <span class="carrossel-dot"></span>
+                            <span class="carrossel-dot"></span>
+                        </div>
+                        <button class="carrossel-seta proxima" aria-label="Próximo projeto"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="carrossel-wrapper">
                 <div class="projetos-grid">
 
                     <!-- PROJETO 1: MENU DIGITAL -->
@@ -248,6 +261,7 @@
                         </div>
                     </article>
 
+                </div>
                 </div>
             </section>
 
@@ -497,6 +511,7 @@
     <script src="js/nav-active.js"></script>
     <script src="js/curriculo-tabs.js"></script>
     <script src="js/scroll-animation.js"></script>
+    <script src="js/projetos-slider.js"></script>
     <script src="js/mobile-menu.js"></script>
 </body>
 </html>

@@ -450,21 +450,32 @@ section {
 ───────────────────────────────────────────── */
 .sobre-content {
   position: relative;
-  max-width: 600px;
+  width: 100%;
   background: var(--card-bg);
   border: 1px solid var(--primary-color);
   border-radius: var(--card-radius);
-  padding: 2rem 2.2rem;
+  padding: 2.5rem 3rem;
   box-shadow: var(--card-glow);
   transition: box-shadow 0.4s ease;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .sobre-content:hover { box-shadow: var(--card-glow-hover); }
 
+@media (min-width: 800px) {
+  .sobre-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
 .sobre-lead {
   font-size: 20px;
   font-weight: bold;
-  margin: 0 0 1.2rem 0;
+  margin: 0;
 }
 
 .sobre-detalhe {
@@ -556,7 +567,7 @@ section {
   border-radius: var(--card-radius);
   padding: 1.4rem 1.6rem;
   box-shadow: var(--card-glow);
-  transition: box-shadow 0.4s ease, transform 0.3s ease, margin-left 0.3s ease;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
 
 .timeline-content:hover {
@@ -564,14 +575,16 @@ section {
   transform: translateX(4px);
 }
 
-/* Efeito escada: o item mais antigo (ultimo da lista) e o maior/mais a esquerda;
-   subindo em direcao ao mais recente, os cards ficam menores e mais indentados.
+/* Efeito escada: todos os cards comecam alinhados na mesma linha a esquerda,
+   e a largura cresce da experiencia mais recente (topo, mais estreita) para
+   a mais antiga (base, largura total) — cresce da esquerda pra direita.
    Usa nth-last-child para funcionar independente de quantas experiencias existirem. */
 @media (min-width: 700px) {
-  .timeline-item:nth-last-child(2) .timeline-content { margin-left: 2.5rem;  max-width: calc(100% - 2.5rem); }
-  .timeline-item:nth-last-child(3) .timeline-content { margin-left: 5rem;    max-width: calc(100% - 5rem); }
-  .timeline-item:nth-last-child(4) .timeline-content { margin-left: 7.5rem;  max-width: calc(100% - 7.5rem); }
-  .timeline-item:nth-last-child(5) .timeline-content { margin-left: 10rem;   max-width: calc(100% - 10rem); }
+  .timeline-item:nth-last-child(5) .timeline-content { max-width: 40%; }
+  .timeline-item:nth-last-child(4) .timeline-content { max-width: 55%; }
+  .timeline-item:nth-last-child(3) .timeline-content { max-width: 70%; }
+  .timeline-item:nth-last-child(2) .timeline-content { max-width: 85%; }
+  .timeline-item:nth-last-child(1) .timeline-content { max-width: 100%; }
 }
 
 .timeline-header {
@@ -821,15 +834,84 @@ h3 {
 }
 
 /* ─────────────────────────────────────────────
-   SEÇÃO PROJETOS (grade de cards compactos)
+   SEÇÃO PROJETOS (carrossel)
 ───────────────────────────────────────────── */
+.projetos-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.projetos-titulo .section-title { margin-bottom: 0; }
+
+.carrossel-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carrossel-seta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carrossel-seta:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.carrossel-indicadores {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carrossel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 6px;
+  margin: -6px;
+  background-color: var(--primary-color);
+  background-clip: content-box;
+  opacity: 40%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  box-sizing: content-box;
+}
+
+.carrossel-dot.ativa { opacity: 100%; }
+
+.carrossel-wrapper {
+  overflow: hidden;
+  position: relative;
+  transition: height 0.4s ease;
+}
+
 .projetos-grid {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  transition: transform 0.5s ease;
 }
 
 .projeto-card {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
@@ -969,23 +1051,32 @@ h3 {
 
 .projeto-links {
   display: flex;
-  gap: 1.2rem;
-  margin-top: 0.2rem;
-  padding-top: 0.6rem;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
+  padding-top: 0.9rem;
   border-top: 1px solid rgba(0, 163, 255, 0.15);
 }
 
 .projeto-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.78rem;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 999px;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
-.projeto-link:hover { text-decoration: underline; }
+.projeto-link:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: translateY(-1px);
+}
 
 /* ─────────────────────────────────────────────
    SEÇÃO CONTATOS
