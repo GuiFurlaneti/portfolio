@@ -121,8 +121,9 @@
                 <!-- PROJETO EM DESTAQUE: CAMPIN -->
                 <span class="projeto-destaque-eyebrow reveal"><i class="bi bi-star-fill"></i>Projeto em destaque</span>
                 <article class="projeto-card projeto-card-destaque reveal">
-                    <div class="projeto-imagem-wrap">
+                    <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-campin.svg" role="button" tabindex="0" aria-label="Ampliar screenshots do Campin">
                         <img src="img/secao-projetos/projeto-preview-img-campin.svg" alt="Campin – SaaS de Gestão de Distribuição de Panfletos" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                        <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
                     </div>
                     <div class="projeto-info">
                         <div class="projeto-titulo">
@@ -170,8 +171,9 @@
 
                     <!-- PROJETO 1: MENU DIGITAL -->
                     <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap">
+                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-menu.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Menu Digital">
                             <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Menu Digital – Web App para Estabelecimentos" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
@@ -203,8 +205,9 @@
 
                     <!-- PROJETO 2: ALUGA SIMPLES -->
                     <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap">
+                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-aluga.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Aluga Simples">
                             <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Aluga Simples – Plataforma de Gestão de Reservas" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
@@ -237,8 +240,9 @@
 
                     <!-- PROJETO 3: VEGAS TRANSPORTES -->
                     <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap">
+                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-vegas.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Vegas Transportes">
                             <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Vegas Transportes – Sistema de Cotação Online" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
@@ -270,8 +274,9 @@
 
                     <!-- PROJETO 4: TO-DO APP -->
                     <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap">
+                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-todo.png" role="button" tabindex="0" aria-label="Ampliar screenshots do To-do App">
                             <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="To-do App – Gerenciador de Tarefas" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
@@ -545,11 +550,25 @@
         </div>
     </div>
     <footer>Copyright © 2026 – Todos os Direitos Reservados.</footer>
+
+    <!-- LIGHTBOX DE SCREENSHOTS DOS PROJETOS -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <div class="lightbox-overlay" data-lightbox-fechar></div>
+        <div class="lightbox-caixa" role="dialog" aria-modal="true" aria-label="Screenshots do projeto">
+            <button class="lightbox-fechar" data-lightbox-fechar aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
+            <button class="lightbox-seta anterior" aria-label="Screenshot anterior"><i class="bi bi-chevron-left"></i></button>
+            <img src="" alt="" class="lightbox-imagem">
+            <button class="lightbox-seta proxima" aria-label="Próximo screenshot"><i class="bi bi-chevron-right"></i></button>
+            <span class="lightbox-contador"></span>
+        </div>
+    </div>
+
     <script src="js/dark-mode.js"></script>
     <script src="js/nav-active.js"></script>
     <script src="js/curriculo-tabs.js"></script>
     <script src="js/scroll-animation.js"></script>
     <script src="js/projetos-slider.js"></script>
+    <script src="js/projeto-lightbox.js"></script>
     <script src="js/mobile-menu.js"></script>
 </body>
 </html>

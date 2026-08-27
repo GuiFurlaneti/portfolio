@@ -953,6 +953,7 @@ h3 {
 }
 
 .projeto-imagem-wrap {
+  position: relative;
   width: 100%;
   height: 180px;
   overflow: hidden;
@@ -961,6 +962,12 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  cursor: pointer;
+}
+
+.projeto-imagem-wrap:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
 }
 
 .projeto-imagem {
@@ -969,6 +976,31 @@ h3 {
   object-fit: contain;
   display: block;
   transition: transform var(--ease-slow);
+}
+
+.projeto-imagem-zoom {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.8rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  transition: opacity var(--ease-fast), transform var(--ease-fast), background-color var(--ease-fast);
+}
+
+.projeto-imagem-wrap:hover .projeto-imagem-zoom,
+.projeto-imagem-wrap:focus-visible .projeto-imagem-zoom {
+  opacity: 1;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  transform: scale(1.08);
 }
 
 .projeto-card:hover .projeto-imagem { transform: scale(1.06); }
@@ -998,6 +1030,104 @@ h3 {
     width: 60%;
     justify-content: center;
   }
+}
+
+/* ─────────────────────────────────────────────
+   LIGHTBOX DE SCREENSHOTS
+───────────────────────────────────────────── */
+body.lightbox-travado { overflow: hidden; }
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.aberto { display: flex; }
+
+.lightbox-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.lightbox-caixa {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-imagem {
+  max-width: min(90vw, 1100px);
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--card-radius);
+  border: 1px solid var(--primary-color);
+  box-shadow: var(--card-glow-hover);
+}
+
+.lightbox-fechar {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all var(--ease-fast);
+}
+
+.lightbox-fechar:hover { background: var(--primary-color); color: var(--secondary-color); }
+
+.lightbox-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all var(--ease-fast);
+}
+
+.lightbox-seta:hover { background: var(--primary-color); color: var(--secondary-color); }
+.lightbox-seta.anterior { left: -64px; }
+.lightbox-seta.proxima { right: -64px; }
+
+.lightbox-contador {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #fff;
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .lightbox-caixa { max-width: 95vw; }
+  .lightbox-fechar { top: auto; bottom: calc(100% - 44px); right: 8px; background: rgba(0, 0, 0, 0.55); border-color: transparent; }
+  .lightbox-seta.anterior { left: 8px; }
+  .lightbox-seta.proxima { right: 8px; }
+  .lightbox-seta { background: rgba(0, 0, 0, 0.55); border-color: transparent; }
+  .lightbox-contador { bottom: 8px; color: #fff; background: rgba(0, 0, 0, 0.55); padding: 2px 10px; border-radius: 999px; }
 }
 
 .projeto-titulo {
