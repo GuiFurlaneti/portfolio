@@ -822,6 +822,12 @@ h3 {
   border-radius: 10px;
   border: none;
   background-color: transparent;
+  filter: grayscale(100%);
+  transition: filter var(--ease-fast);
+}
+
+.conhecimentos-item:hover .imagem-titulo {
+  filter: grayscale(0%);
 }
 
 .conhecimentos-item h2 {
