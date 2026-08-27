@@ -1089,6 +1089,16 @@ body.lightbox-travado { overflow: hidden; }
   box-shadow: var(--card-glow-hover);
 }
 
+.lightbox-titulo {
+  position: absolute;
+  top: -52px;
+  left: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  pointer-events: none;
+}
+
 .lightbox-fechar {
   position: absolute;
   top: -52px;
@@ -1141,6 +1151,7 @@ body.lightbox-travado { overflow: hidden; }
 
 @media (max-width: 900px) {
   .lightbox-caixa { max-width: 95vw; }
+  .lightbox-titulo { top: 8px; left: 8px; right: 52px; color: #fff; background: rgba(0, 0, 0, 0.55); padding: 4px 10px; border-radius: 999px; font-size: 0.9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .lightbox-fechar { top: auto; bottom: calc(100% - 44px); right: 8px; background: rgba(0, 0, 0, 0.55); border-color: transparent; }
   .lightbox-seta.anterior { left: 8px; }
   .lightbox-seta.proxima { right: 8px; }

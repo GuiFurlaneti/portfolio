@@ -4,6 +4,7 @@
     if (!lightbox) return;
 
     const imagem = lightbox.querySelector('.lightbox-imagem');
+    const titulo = lightbox.querySelector('.lightbox-titulo');
     const contador = lightbox.querySelector('.lightbox-contador');
     const btnAnterior = lightbox.querySelector('.lightbox-seta.anterior');
     const btnProxima = lightbox.querySelector('.lightbox-seta.proxima');
@@ -14,18 +15,24 @@
 
     function mostrarSlide(indice) {
       indiceAtual = (indice + slides.length) % slides.length;
-      imagem.src = slides[indiceAtual];
+      const slide = slides[indiceAtual];
+      imagem.src = slide.src;
       const temVariasImagens = slides.length > 1;
       contador.textContent = temVariasImagens ? `${indiceAtual + 1} / ${slides.length}` : '';
       contador.style.display = temVariasImagens ? '' : 'none';
       btnAnterior.style.display = temVariasImagens ? '' : 'none';
       btnProxima.style.display = temVariasImagens ? '' : 'none';
+      titulo.textContent = slide.titulo;
+      titulo.style.display = slide.titulo ? '' : 'none';
     }
 
     function abrirLightbox(wrap) {
       const galeria = wrap.dataset.galeria;
       if (!galeria) return;
-      slides = galeria.split(',').map((src) => src.trim()).filter(Boolean);
+      slides = galeria.split(',').map((entrada) => {
+        const [src, titulo] = entrada.split('|');
+        return { src: (src || '').trim(), titulo: (titulo || '').trim() };
+      }).filter((slide) => slide.src);
       if (slides.length === 0) return;
 
       gatilho = wrap;
