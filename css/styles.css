@@ -113,19 +113,22 @@ body.light-mode {
   --glow-circle: #00a2ff94;
 }
 
-/* GLOW CIRCLE */
+/* GLOW CIRCLE — ancorado ao proprio wrapper da foto (.main-image-foto),
+   nao mais a altura da pagina inteira, entao nao se desalinha quando o
+   conteudo das outras secoes cresce. A suavidade vem do proprio
+   gradiente (fade bem gradual) em vez de um filter:blur pesado, que
+   podia deixar a borda com um contorno reto/quadrado em vez de macio. */
 .glow-circle {
   position: absolute;
-  top: 10%;
-  left: 94%;
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle, var(--glow-circle), transparent 90%);
+  top: 8%;
+  left: 100%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, var(--glow-circle) 0%, transparent 65%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  filter: blur(90px);
   pointer-events: none;
-  z-index: 10;
+  z-index: 0;
   animation: glow-breathe 5s ease-in-out infinite;
 }
 
@@ -338,9 +341,16 @@ section {
   min-width: 300px;
 }
 
+.main-image-foto {
+  position: relative;
+  display: inline-block;
+}
+
 .main-image img {
   width: 400px;
   height: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .text-main p {
