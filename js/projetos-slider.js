@@ -2,7 +2,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.querySelector('.carrossel-wrapper');
     const track = document.querySelector('.projetos-grid');
-    const cards = document.querySelectorAll('.projeto-card');
+    const cards = track.querySelectorAll('.projeto-card');
     const btnAnterior = document.querySelector('.carrossel-seta.anterior');
     const btnProxima = document.querySelector('.carrossel-seta.proxima');
     const dots = document.querySelectorAll('.carrossel-dot');
