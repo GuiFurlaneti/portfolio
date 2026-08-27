@@ -115,15 +115,18 @@ body.light-mode {
 
 /* GLOW CIRCLE — ancorado ao proprio wrapper da foto (.main-image-foto),
    nao mais a altura da pagina inteira, entao nao se desalinha quando o
-   conteudo das outras secoes cresce. A suavidade vem do proprio
-   gradiente (fade bem gradual) em vez de um filter:blur pesado, que
-   podia deixar a borda com um contorno reto/quadrado em vez de macio. */
+   conteudo das outras secoes cresce. Centralizado atras da propria foto
+   (em vez de "espiar" por um dos cantos) porque a foto fica encostada
+   na borda direita do container, que tem overflow-x:hidden — um glow
+   descentralizado cruzava essa borda e era cortado ao meio, deixando
+   uma linha reta em vez do circulo suave. Ficando concentrico a foto,
+   o glow nunca alcança nenhuma borda de corte. */
 .glow-circle {
   position: absolute;
-  top: 8%;
-  left: 100%;
-  width: 260px;
-  height: 260px;
+  top: 50%;
+  left: 50%;
+  width: 340px;
+  height: 340px;
   background: radial-gradient(circle, var(--glow-circle) 0%, transparent 65%);
   border-radius: 50%;
   transform: translate(-50%, -50%);
