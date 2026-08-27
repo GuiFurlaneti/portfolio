@@ -835,6 +835,39 @@ h3 {
 /* ─────────────────────────────────────────────
    SEÇÃO PROJETOS (carrossel)
 ───────────────────────────────────────────── */
+.section-title.section-title-compact { margin-bottom: 0.6rem; }
+
+.projeto-destaque-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin: 0 0 1.5rem 0;
+}
+
+.projeto-card-destaque {
+  box-shadow: var(--card-glow-hover);
+  margin-bottom: 3.5rem;
+}
+
+.projeto-stat {
+  color: var(--text-color);
+  border-color: rgba(0, 163, 255, 0.35);
+  background: var(--card-bg);
+}
+
+.projetos-subtitulo {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--text-color);
+  opacity: 70%;
+  margin: 0;
+}
+
 .projetos-titulo {
   display: flex;
   align-items: center;
