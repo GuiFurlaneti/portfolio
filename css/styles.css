@@ -10,7 +10,6 @@
   --secondary-color: #121212;
   --text-color: #FFFFFF;
   --glow-circle: #ffffff6c;
-  --footer-color: #2A2A2A;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --section-y: 6rem;
   --card-radius: 18px;
@@ -112,7 +111,6 @@ body.light-mode {
   --secondary-color: #E7EFF3;
   --text-color: #121212;
   --glow-circle: #00a2ff94;
-  --footer-color: #00a2ff94;
 }
 
 /* GLOW CIRCLE */
@@ -1279,15 +1277,82 @@ body.lightbox-travado { overflow: hidden; }
    FOOTER
 ───────────────────────────────────────────── */
 footer {
-  background-color: var(--footer-color);
+  background-color: var(--secondary-color);
+  border-top: 1px solid rgba(0, 163, 255, 0.2);
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+.footer-conteudo {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 163, 255, 0.12);
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: bold;
   color: var(--text-color);
+  text-decoration: none;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary-color);
+  border-radius: 50%;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all var(--ease-fast);
+}
+
+.footer-socials a:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.footer-topo {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--text-color);
+  opacity: 70%;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity var(--ease-fast), color var(--ease-fast);
+}
+
+.footer-topo:hover {
+  opacity: 100%;
+  color: var(--primary-color);
+}
+
+.footer-topo i { font-size: 1.3rem; }
+
+.footer-copyright {
+  max-width: 1320px;
+  margin: 0 auto;
   text-align: center;
-  font-weight: lighter;
-  font-size: .8rem;
-  padding: .3rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  font-size: 0.8rem;
+  color: var(--text-color);
+  opacity: 55%;
 }
 
 /* =====================================================
