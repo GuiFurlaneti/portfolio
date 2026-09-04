@@ -40,12 +40,17 @@ html {
 /* MODO ESCURO (PADRÃO) */
 body {
   font-family: monospace;
+  /* Sem isso, o navegador usa o tamanho padrao da fonte monoespacada
+     (13px no Chrome) em vez do padrao de 16px -- deixava o texto
+     do site inteiro menor do que deveria sem nenhuma regra pedindo isso. */
+  font-size: 16px;
   background-color: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
 }
 
 /* Texto corrido usa fonte legível; titulos/botoes/tags mantem monospace (identidade visual) */
+.sobre-lead,
 .sobre-detalhe,
 .projeto-info p,
 .projeto-destaques li,
@@ -1185,7 +1190,7 @@ body.lightbox-travado { overflow: hidden; }
 }
 
 .projeto-info p {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   color: var(--text-color);
   opacity: 90%;
   margin: 0;
@@ -1198,7 +1203,7 @@ body.lightbox-travado { overflow: hidden; }
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   color: var(--text-color);
 }
 
