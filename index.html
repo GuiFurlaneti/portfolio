@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // Marca que o JS está ativo: sem ele, o conteúdo .reveal fica visível (sem animação)
+        document.documentElement.classList.add('js');
+    </script>
+    <title>Guilherme Furlaneti | Desenvolvedor Backend C# .NET</title>
+    <meta name="description" content="Portfólio de Guilherme Furlaneti, desenvolvedor backend com foco em C#, .NET e APIs REST. Projetos com Node.js/Fastify, PostgreSQL/PostGIS e React. São Paulo, SP.">
+    <link rel="canonical" href="https://guifurlaneti.github.io/portfolio/">
+    <meta name="theme-color" content="#121212">
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
           integrity="sha384-Ay26V7L8bsJTsX9Sxclnvsn+hkdiwRnrjZJXqKmkIDobPgIIWBOVguEcQQLDuhfN" crossorigin="anonymous">
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="css/styles.css?v=9">
+    <link rel="stylesheet" href="css/styles.css?v=10">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="img/favicon_io/site.webmanifest">
-    <title>Portfólio - Gui Furlaneti</title>
-    <meta name="description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
 
     <!-- OPEN GRAPH / COMPARTILHAMENTO -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="Guilherme Furlaneti">
     <meta property="og:url" content="https://guifurlaneti.github.io/portfolio/">
-    <meta property="og:title" content="Portfólio - Gui Furlaneti">
-    <meta property="og:description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
+    <meta property="og:title" content="Guilherme Furlaneti | Desenvolvedor Backend C# .NET">
+    <meta property="og:description" content="Desenvolvedor backend com foco em C#, .NET e APIs REST. Conheça o Campin e outros projetos.">
     <meta property="og:image" content="https://guifurlaneti.github.io/portfolio/img/foto-principal.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Portfólio - Gui Furlaneti">
-    <meta name="twitter:description" content="Guilherme Furlaneti — Desenvolvedor Backend Júnior. C#, .NET Core, ASP.NET Core, SQL Server, API REST. Projetos reais. São Paulo, SP.">
+    <meta property="og:image:width" content="737">
+    <meta property="og:image:height" content="737">
+    <meta property="og:image:alt" content="Foto de Guilherme Furlaneti">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Guilherme Furlaneti | Desenvolvedor Backend C# .NET">
+    <meta name="twitter:description" content="Desenvolvedor backend com foco em C#, .NET e APIs REST. Conheça o Campin e outros projetos.">
     <meta name="twitter:image" content="https://guifurlaneti.github.io/portfolio/img/foto-principal.png">
+    <meta name="twitter:image:alt" content="Foto de Guilherme Furlaneti">
 </head>
 <body>
     <script>
@@ -39,13 +50,15 @@
         })();
     </script>
 
+    <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
     <div class="container">
-        <div class="navbar-container">
-            <nav class="nav">
-                <a href="#inicio" class="logo">
+        <header class="navbar-container">
+            <nav class="nav" aria-label="Navegação principal">
+                <a href="#inicio" class="logo" aria-label="Gui Furlaneti — início">
                     <span class="logo-text">Gui</span><span class="logo-dot">.</span>
                 </a>
-                <ul class="navbar-items">
+                <ul class="navbar-items" id="menu-principal">
                     <li><a href="#inicio" class="default-btn">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#projetos">Projetos</a></li>
@@ -53,282 +66,292 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Alternar entre tema claro e escuro">
-                        <i class="bi bi-moon-fill" id="icon-moon"></i>
-                        <i class="bi bi-sun-fill" id="icon-sun"></i>
+                    <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Tema claro" aria-pressed="false">
+                        <i class="bi bi-moon-fill" id="icon-moon" aria-hidden="true"></i>
+                        <i class="bi bi-sun-fill" id="icon-sun" aria-hidden="true"></i>
                     </button>
-                    <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false">
-                        <i class="bi bi-list" id="icon-menu-open"></i>
-                        <i class="bi bi-x-lg" id="icon-menu-close"></i>
+                    <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+                        <i class="bi bi-list" id="icon-menu-open" aria-hidden="true"></i>
+                        <i class="bi bi-x-lg" id="icon-menu-close" aria-hidden="true"></i>
                     </button>
                 </div>
             </nav>
-        </div>
+        </header>
         <div class="content-wrap">
-        <main>
+        <main id="conteudo">
             <!-- SEÇÃO INÍCIO -->
-            <section id="inicio" class="section-apresentacao">
+            <section id="inicio" class="section-apresentacao" aria-label="Apresentação">
                 <div class="main-banner">
                     <div class="main-text reveal" data-animate="left">
                         <div class="text-main">
-                            <p>Desenvolvedor Back-end</p>
                             <h1>
                                 <span class="text-secundaria">Guilherme</span>
                                 <span class="text-destaque nome">Furlaneti</span>
                             </h1>
-                            <p class="hero-stack">C# · .NET Core · ASP.NET Core · SQL Server</p>
+                            <p class="hero-cargo">Desenvolvedor Backend</p>
+                            <p class="hero-stack">C# · .NET · APIs REST · SQL</p>
+                            <p class="hero-descricao">Desenvolvo aplicações para resolver problemas reais e estou me especializando em backend C#/.NET.</p>
                         </div>
                         <div class="bottoms-main">
-                            <a href="docs/curriculo-guilherme-furlaneti.pdf" download target="_blank" rel="noopener noreferrer" class="bottom-baixar-cv">
-                                Baixar CV <i class="bi bi-download"></i>
+                            <a href="#projetos" class="hero-btn hero-btn-primario">
+                                Ver projetos <i class="bi bi-arrow-down-short" aria-hidden="true"></i>
                             </a>
-                            <a href="#projetos" class="link-ver-projetos">
-                                Ver Projetos <i class="bi bi-arrow-down-short"></i>
+                            <a href="docs/curriculo-guilherme-furlaneti.pdf" download="Curriculo-Guilherme-Furlaneti.pdf" type="application/pdf" class="hero-btn hero-btn-secundario">
+                                Baixar currículo <span class="visually-hidden">(PDF)</span> <i class="bi bi-download" aria-hidden="true"></i>
                             </a>
-                            <div class="bottom-linkedin">
-                                <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer" aria-label="Perfil no LinkedIn">
-                                    <i class="bi bi-linkedin"></i>
-                                </a>
-                            </div>
-                            <div class="bottom-github">
-                                <a href="https://github.com/GuiFurlaneti" target="_blank" rel="noopener noreferrer" aria-label="Perfil no GitHub">
-                                    <i class="bi bi-github"></i>
-                                </a>
+                            <div class="hero-sociais">
+                                <div class="bottom-github">
+                                    <a href="https://github.com/GuiFurlaneti" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)">
+                                        <i class="bi bi-github" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="bottom-linkedin">
+                                    <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)">
+                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="main-image reveal" data-animate="right">
                         <div class="main-image-foto">
-                            <img src="img/foto-principal.png" alt="Foto de Gui Furlaneti, Desenvolvedor Backend" width="737" height="737">
-                            <div class="glow-circle"></div>
+                            <img src="img/foto-principal.webp" alt="Foto de Guilherme Furlaneti" width="737" height="737" fetchpriority="high">
+                            <div class="glow-circle" aria-hidden="true"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
             <!-- SEÇÃO SOBRE -->
-            <section id="sobre" class="section-sobre">
-                <h2 class="section-title reveal">Sobre mim</h2>
+            <section id="sobre" class="section-sobre" aria-labelledby="sobre-titulo">
+                <h2 class="section-title reveal" id="sobre-titulo">Sobre mim</h2>
                 <div class="sobre-content reveal">
-                    <p class="sobre-lead">Olá, me chamo Guilherme! Tenho 21 anos, sou de São Paulo e estou em transição para desenvolvimento backend, trabalhando com C#, .NET e SQL Server.</p>
-                    <p class="sobre-detalhe">
-                        Tenho projetos reais nessa stack — incluindo o Campin, um SaaS que desenvolvi sozinho e está em produção na empresa onde trabalho. Também já construí sistemas em parceria com outros devs. Antes de virar dev, trabalhei com administração e coordenação de projetos digitais — isso me ajudou a entender como sistemas precisam funcionar na prática, não só no papel. Atualmente cursando ADS na UNICID, buscando minha primeira vaga formal como desenvolvedor.
-                    </p>
+                    <div class="sobre-coluna">
+                        <p class="sobre-lead">Sou estudante de Análise e Desenvolvimento de Sistemas na UNICID, com foco em desenvolvimento backend C#/.NET.</p>
+                        <dl class="sobre-fatos">
+                            <div>
+                                <dt>Objetivo</dt>
+                                <dd>Desenvolvedor Backend Júnior (C#/.NET)</dd>
+                            </div>
+                            <div>
+                                <dt>Formação</dt>
+                                <dd>ADS · UNICID · 2025 – 2027 (previsão)</dd>
+                            </div>
+                            <div>
+                                <dt>Localização</dt>
+                                <dd>São Paulo, SP</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div class="sobre-detalhe">
+                        <p>Idealizei e desenvolvo o Campin, uma plataforma de gestão operacional criada para atender a necessidades reais da empresa onde trabalho. No projeto, utilizo React, Node.js/Fastify e PostgreSQL/PostGIS para desenvolver funcionalidades web, APIs e integração de dados.</p>
+                        <p>Paralelamente, aprofundo meus conhecimentos em C#, ASP.NET Core, orientação a objetos e arquitetura de software por meio de estudos e projetos autorais.</p>
+                        <p>Busco minha primeira oportunidade formal como Desenvolvedor Backend Júnior e também considero posições Full Stack Júnior compatíveis com meus conhecimentos.</p>
+                    </div>
                 </div>
             </section>
 
             <!-- SEÇÃO PROJETOS -->
-            <section id="projetos" class="section-projetos">
-                <h2 class="section-title section-title-compact reveal">Projetos</h2>
+            <section id="projetos" class="section-projetos" aria-labelledby="projetos-titulo">
+                <h2 class="section-title section-title-compact reveal" id="projetos-titulo">Projetos</h2>
 
-                <!-- PROJETO EM DESTAQUE: CAMPIN -->
-                <span class="projeto-destaque-eyebrow reveal"><i class="bi bi-star-fill"></i>Projeto em destaque</span>
-                <article class="projeto-card projeto-card-destaque reveal">
-                    <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/previews-campin-1.png|Tela de Login, img/secao-projetos/previews-campin-2.png|Dashboard, img/secao-projetos/previews-campin-3.png|Mapa das campanhas, img/secao-projetos/previews-campin-4.png|Relatórios, img/secao-projetos/previews-campin-5.png|Tutoriais de uso do sistema" role="button" tabindex="0" aria-label="Ampliar screenshots do Campin">
-                        <img src="img/secao-projetos/projeto-preview-img-campin.png" alt="Campin – SaaS de Gestão de Distribuição de Panfletos" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                        <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                <!-- PROJETO PRINCIPAL: CAMPIN -->
+                <p class="projeto-destaque-eyebrow reveal"><i class="bi bi-star-fill" aria-hidden="true"></i>Projeto principal</p>
+                <article class="projeto-card projeto-card-destaque reveal" aria-labelledby="campin-titulo">
+                    <div class="projeto-midia">
+                        <button type="button" class="projeto-imagem-wrap"
+                                data-galeria="img/secao-projetos/previews-campin-1.webp|Tela de login, img/secao-projetos/previews-campin-2.webp|Dashboard, img/secao-projetos/previews-campin-3.webp|Mapa ao vivo, img/secao-projetos/previews-campin-4.webp|Relatórios por campanha, img/secao-projetos/previews-campin-5.webp|Central de tutoriais"
+                                data-galeria-nome="Campin"
+                                data-galeria-nota="Imagens demonstrativas. Dados fictícios, sem relação com operações reais."
+                                aria-label="Ampliar telas do Campin (5 imagens)">
+                            <img src="img/secao-projetos/projeto-preview-img-campin.webp" alt="Dashboard do Campin exibido em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                        </button>
+                        <p class="projeto-nota-imagem">Imagens demonstrativas. Dados fictícios, sem relação com operações reais.</p>
                     </div>
                     <div class="projeto-info">
                         <div class="projeto-titulo">
-                            <h3>Campin</h3>
-                            <span class="projeto-em-colaboracao">Autoral</span>
+                            <h3 class="projeto-nome" id="campin-titulo">Campin — Plataforma de Gestão Operacional</h3>
                         </div>
-                        <p>SaaS multi-tenant que venho desenvolvendo para a empresa em que trabalho, substituindo três ferramentas pagas e desconexas (geomarketing, rastreamento e grupos de WhatsApp) por uma única plataforma de gestão de distribuição de panfletos. Em produção com cliente real: uma agência com 350+ promotores em campo.</p>
+                        <div class="projeto-badges">
+                            <span class="projeto-badge badge-autoral">Projeto autoral</span>
+                            <span class="projeto-badge badge-uso-real">Software em uso real</span>
+                        </div>
+                        <p>Plataforma de gestão operacional que idealizei e desenvolvo a partir de necessidades identificadas na Classe A.</p>
+                        <p>Centraliza informações de campanhas, equipes e atividades de campo, integrando frontend, APIs REST e banco de dados em uma aplicação web utilizada em operações reais.</p>
                         <ul class="projeto-destaques">
-                            <li><i class="bi bi-check-circle-fill"></i>Geofencing com PostGIS valida check-in/check-out por GPS dentro da campanha</li>
-                            <li><i class="bi bi-check-circle-fill"></i>PWA para promotores em campo: câmera, mapa offline e sincronização posterior</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Isolamento multi-tenant por tenant_id e 116 testes automatizados (45 de segurança OWASP)</li>
+                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Gestão de campanhas</li>
+                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Controle de acesso e perfis de usuário</li>
+                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Registros operacionais e fotográficos</li>
+                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Informações geográficas em mapa</li>
+                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Relatórios e acompanhamento das operações</li>
                         </ul>
-                        <div class="projeto-tags">
-                            <span class="projeto-tag">REACT</span>
-                            <span class="projeto-tag">FASTIFY</span>
-                            <span class="projeto-tag">NODE.JS</span>
-                            <span class="projeto-tag">POSTGRESQL</span>
-                            <span class="projeto-tag">POSTGIS</span>
-                            <span class="projeto-tag">TAILWIND CSS</span>
-                            <span class="projeto-tag">PWA</span>
-                            <span class="projeto-tag">JWT</span>
-                        </div>
+                        <p class="projeto-arquitetura"><strong>Arquitetura:</strong> frontend em React, API REST em Node.js com Fastify e banco PostgreSQL com PostGIS para dados geográficos. Hospedagem em Cloudflare e Render.</p>
+                        <ul class="projeto-tags">
+                            <li class="projeto-tag">React</li>
+                            <li class="projeto-tag">JavaScript</li>
+                            <li class="projeto-tag">Node.js</li>
+                            <li class="projeto-tag">Fastify</li>
+                            <li class="projeto-tag">PostgreSQL</li>
+                            <li class="projeto-tag">PostGIS</li>
+                        </ul>
                         <div class="projeto-links">
-                            <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
+                            <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Showcase no GitHub</a>
+                            <span class="projeto-link-nota">Código-fonte privado. O showcase público reúne a descrição técnica e a arquitetura.</span>
                         </div>
                     </div>
                 </article>
 
                 <!-- OUTROS PROJETOS (carrossel) -->
                 <div class="projetos-titulo">
-                    <h3 class="projetos-subtitulo reveal">Outros projetos</h3>
+                    <h3 class="projetos-subtitulo reveal" id="outros-projetos-titulo">Outros projetos</h3>
                     <div class="carrossel-nav reveal">
-                        <button class="carrossel-seta anterior" aria-label="Projeto anterior"><i class="bi bi-chevron-left"></i></button>
-                        <div class="carrossel-indicadores">
-                            <span class="carrossel-dot ativa"></span>
-                            <span class="carrossel-dot"></span>
-                            <span class="carrossel-dot"></span>
-                            <span class="carrossel-dot"></span>
-                        </div>
-                        <button class="carrossel-seta proxima" aria-label="Próximo projeto"><i class="bi bi-chevron-right"></i></button>
+                        <button type="button" class="carrossel-seta anterior" aria-label="Projeto anterior" aria-controls="carrossel-projetos"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+                        <div class="carrossel-indicadores" role="group" aria-label="Escolher projeto"></div>
+                        <button type="button" class="carrossel-seta proxima" aria-label="Próximo projeto" aria-controls="carrossel-projetos"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
-                <div class="carrossel-wrapper">
+                <section class="carrossel-wrapper reveal" id="carrossel-projetos" aria-roledescription="carrossel" aria-labelledby="outros-projetos-titulo">
                 <div class="projetos-grid">
 
-                    <!-- PROJETO 1: MENU DIGITAL -->
-                    <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-menu.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Menu Digital">
-                            <img src="img/secao-projetos/projeto-preview-img-menu.png" alt="Menu Digital – Web App para Estabelecimentos" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                    <!-- CLASSE EVENTOS -->
+                    <article class="projeto-card" role="group" aria-roledescription="slide">
+                        <div class="projeto-midia">
+                            <button type="button" class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-classe-eventos.webp|Página inicial" data-galeria-nome="Classe Eventos" aria-label="Ampliar imagem do site Classe Eventos">
+                                <img src="img/secao-projetos/projeto-preview-img-classe-eventos.webp" alt="Página inicial do site Classe Eventos em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                                <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                            </button>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
-                                <h3>Menu Digital</h3>
-                                <span class="projeto-em-colaboracao">Colaborativo</span>
+                                <h4 class="projeto-nome" id="classe-eventos-titulo">Classe Eventos — Site Institucional</h4>
                             </div>
-                            <p>Aplicação web completa para bares e restaurantes gerenciarem cardápios digitais. Responsável pelo backend: modelagem do banco, endpoints da API REST e CRUD de produtos e categorias.</p>
+                            <div class="projeto-badges">
+                                <span class="projeto-badge badge-comercial">Projeto web comercial</span>
+                            </div>
+                            <p>Desenvolvimento de site institucional para agência de eventos, com foco em apresentação de serviços, experiência responsiva e geração de contatos comerciais por WhatsApp.</p>
                             <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill"></i>CRUD completo de produtos e categorias</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Painel admin com login e validação de campos</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Filtro por categoria, subcategoria e busca inteligente</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Catálogo de serviços organizado por categorias</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Contato por WhatsApp com mensagem pré-preenchida</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO técnico: Open Graph, dados estruturados e sitemap</li>
                             </ul>
-                            <div class="projeto-tags">
-                                <span class="projeto-tag">C#</span>
-                                <span class="projeto-tag">ASP.NET CORE</span>
-                                <span class="projeto-tag">ENTITY FRAMEWORK CORE</span>
-                                <span class="projeto-tag">SQL SERVER</span>
-                                <span class="projeto-tag">HTML</span>
-                                <span class="projeto-tag">CSS</span>
-                                <span class="projeto-tag">JAVASCRIPT</span>
-                                <span class="projeto-tag">BOOTSTRAP</span>
-                            </div>
+                            <ul class="projeto-tags">
+                                <li class="projeto-tag">HTML</li>
+                                <li class="projeto-tag">CSS</li>
+                                <li class="projeto-tag">JavaScript</li>
+                                <li class="projeto-tag">Tailwind CSS</li>
+                            </ul>
                             <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/MenuDigital" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
-                                <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&p=f&t=el5knHteCfYNrofS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
+                                <a href="https://classeeventos.com.br/" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Ver site</a>
+                                <a href="https://github.com/GuiFurlaneti/ClasseEventos" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
                             </div>
                         </div>
                     </article>
 
-                    <!-- PROJETO 2: ALUGA SIMPLES -->
-                    <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-aluga.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Aluga Simples">
-                            <img src="img/secao-projetos/projeto-preview-img-aluga.png" alt="Aluga Simples – Plataforma de Gestão de Reservas" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                    <!-- TO-DO APP -->
+                    <article class="projeto-card" role="group" aria-roledescription="slide">
+                        <div class="projeto-midia">
+                            <button type="button" class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-todo.webp|Lista de tarefas" data-galeria-nome="To-do App" aria-label="Ampliar imagem do To-do App">
+                                <img src="img/secao-projetos/projeto-preview-img-todo.webp" alt="Lista de tarefas do To-do App em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                                <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
+                            </button>
                         </div>
                         <div class="projeto-info">
                             <div class="projeto-titulo">
-                                <h3>Aluga Simples</h3>
-                                <span class="projeto-em-colaboracao">Colaborativo</span>
+                                <h4 class="projeto-nome" id="todo-titulo">To-do App</h4>
                             </div>
-                            <p>Plataforma para locadores e clientes gerenciarem reservas de espaços para eventos. Contribuí com funcionalidades backend em C# e .NET e fui responsável pelo UI/UX completo no Figma.</p>
+                            <div class="projeto-badges">
+                                <span class="projeto-badge badge-autoral">Autoral</span>
+                                <span class="projeto-badge badge-estudo">Projeto de aprendizado</span>
+                            </div>
+                            <p>Aplicação pessoal desenvolvida com React para organização de tarefas, com prioridades, datas-limite, filtros e persistência local.</p>
                             <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill"></i>CRUD completo de reservas com aprovação/rejeição</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Painel protegido por login</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Disponibilidade por data e localização no mapa</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Tarefas com prioridade e data-limite</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Filtros: do dia, atrasadas, pendentes e concluídas</li>
+                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Dados salvos no navegador com LocalStorage</li>
                             </ul>
-                            <div class="projeto-tags">
-                                <span class="projeto-tag">C#</span>
-                                <span class="projeto-tag">ASP.NET CORE</span>
-                                <span class="projeto-tag">SQL SERVER</span>
-                                <span class="projeto-tag">AZURE</span>
-                                <span class="projeto-tag">HTML</span>
-                                <span class="projeto-tag">CSS</span>
-                                <span class="projeto-tag">JAVASCRIPT</span>
-                                <span class="projeto-tag">BOOTSTRAP</span>
-                                <span class="projeto-tag">FIGMA</span>
-                            </div>
-                            <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/AlugaSimples" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
-                                <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&node-id=1-2" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJETO 3: VEGAS TRANSPORTES -->
-                    <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-vegas.png" role="button" tabindex="0" aria-label="Ampliar screenshots do Vegas Transportes">
-                            <img src="img/secao-projetos/projeto-preview-img-vegas.png" alt="Vegas Transportes – Sistema de Cotação Online" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
-                        </div>
-                        <div class="projeto-info">
-                            <div class="projeto-titulo">
-                                <h3>Vegas Transportes</h3>
-                                <span class="projeto-em-colaboracao">Profissional</span>
-                            </div>
-                            <p>Site institucional com simulador de cotação integrado para empresa de transportes aéreos. Minha primeira experiência prática com backend em C#, com integração ao frontend via jQuery e Ajax.</p>
-                            <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill"></i>Simulador de cotação integrado à tabela de preços</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Solicitação de serviços por tipo (Aéreo, Rodoviário, Envio Rápido)</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Seção institucional com histórico e canais de atendimento</li>
+                            <ul class="projeto-tags">
+                                <li class="projeto-tag">React</li>
+                                <li class="projeto-tag">JavaScript</li>
+                                <li class="projeto-tag">CSS</li>
+                                <li class="projeto-tag">LocalStorage</li>
+                                <li class="projeto-tag">Vite</li>
                             </ul>
-                            <div class="projeto-tags">
-                                <span class="projeto-tag">C#</span>
-                                <span class="projeto-tag">.NET</span>
-                                <span class="projeto-tag">HTML</span>
-                                <span class="projeto-tag">CSS</span>
-                                <span class="projeto-tag">JAVASCRIPT</span>
-                                <span class="projeto-tag">JQUERY</span>
-                                <span class="projeto-tag">AJAX</span>
-                                <span class="projeto-tag">BOOTSTRAP</span>
-                            </div>
                             <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/VegasTransportes" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- PROJETO 4: TO-DO APP -->
-                    <article class="projeto-card reveal">
-                        <div class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-todo.png" role="button" tabindex="0" aria-label="Ampliar screenshots do To-do App">
-                            <img src="img/secao-projetos/projeto-preview-img-todo.png" alt="To-do App – Gerenciador de Tarefas" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
-                        </div>
-                        <div class="projeto-info">
-                            <div class="projeto-titulo">
-                                <h3>To-do App</h3>
-                                <span class="projeto-em-colaboracao">Autoral</span>
-                            </div>
-                            <p>Aplicativo web para organização de tarefas diárias, com foco em produtividade pessoal e controle visual intuitivo. Primeiro projeto pessoal em React.</p>
-                            <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill"></i>Cadastro de tarefas com prioridade e data limite</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Ordenação automática por nível de prioridade</li>
-                                <li><i class="bi bi-check-circle-fill"></i>Filtros por status: do dia, atrasadas, pendentes ou concluídas</li>
-                            </ul>
-                            <div class="projeto-tags">
-                                <span class="projeto-tag">REACT</span>
-                                <span class="projeto-tag">HTML</span>
-                                <span class="projeto-tag">CSS</span>
-                                <span class="projeto-tag">JAVASCRIPT</span>
-                                <span class="projeto-tag">BOOTSTRAP</span>
-                            </div>
-                            <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i>GitHub</a>
-                                <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&p=f&t=NdYVcKZ8eaUeujeG-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen"></i>Protótipo</a>
+                                <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
+                                <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&amp;p=f&amp;t=NdYVcKZ8eaUeujeG-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo</a>
                             </div>
                         </div>
                     </article>
 
                 </div>
-                </div>
+                </section>
+                <p class="visually-hidden" aria-live="polite" id="carrossel-status"></p>
+
+                <!-- EM DESENVOLVIMENTO -->
+                <h3 class="projetos-subtitulo projetos-subtitulo-secao reveal">Em desenvolvimento</h3>
+                <article class="projeto-compacto reveal" aria-labelledby="waca-titulo">
+                    <div class="projeto-titulo">
+                        <h4 class="projeto-nome" id="waca-titulo">Waca — Projeto Backend .NET</h4>
+                        <span class="projeto-badge badge-dev">Em desenvolvimento</span>
+                    </div>
+                    <p>Projeto autoral voltado ao estudo de C#, ASP.NET Core, modelagem de domínio e organização de aplicações em camadas.</p>
+                    <p class="projeto-status"><strong>Estágio atual:</strong> solução organizada em camadas (Api, Application, Domain e Infrastructure) e primeiras entidades de domínio. Endpoints, persistência e testes ainda não foram implementados.</p>
+                    <ul class="projeto-tags">
+                        <li class="projeto-tag">C#</li>
+                        <li class="projeto-tag">.NET</li>
+                        <li class="projeto-tag">ASP.NET Core</li>
+                    </ul>
+                    <div class="projeto-links">
+                        <a href="https://github.com/GuiFurlaneti/Waca" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
+                    </div>
+                </article>
+
+                <!-- CONTRIBUIÇÕES EM DESIGN -->
+                <h3 class="projetos-subtitulo projetos-subtitulo-secao reveal">Contribuições em design de interfaces</h3>
+                <p class="projetos-intro reveal">Projetos colaborativos nos quais minha contribuição foi o design das interfaces (UI/UX).</p>
+                <ul class="contribuicoes-lista reveal">
+                    <li class="projeto-compacto">
+                        <div class="projeto-titulo">
+                            <h4 class="projeto-nome">Menu Digital</h4>
+                            <span class="projeto-badge badge-colaborativo">Colaborativo</span>
+                        </div>
+                        <p>Cardápio digital para bares e restaurantes. Minha participação: design das interfaces e protótipo navegável no Figma.</p>
+                        <div class="projeto-links">
+                            <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&amp;p=f&amp;t=el5knHteCfYNrofS-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo no Figma</a>
+                        </div>
+                    </li>
+                    <li class="projeto-compacto">
+                        <div class="projeto-titulo">
+                            <h4 class="projeto-nome">Aluga Simples (versão 2024)</h4>
+                            <span class="projeto-badge badge-colaborativo">Colaborativo</span>
+                        </div>
+                        <p>Plataforma de reservas de espaços para eventos. Minha participação: design das interfaces e protótipo navegável no Figma.</p>
+                        <div class="projeto-links">
+                            <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;node-id=1-2" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo no Figma</a>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
-            <!-- SEÇÃO CURRÍCULO - FILTROS -->
-            <section id="curriculo" class="section-curriculo">
-                <h2 class="section-title reveal">Currículo</h2>
-                <div class="secoes">
-                    <ul>
-                        <li class="secoes-btn ativo" data-target="experiencias">Experiências</li>
-                        <li class="secoes-btn" data-target="educacao">Educação</li>
-                        <li class="secoes-btn" data-target="habilidades">Habilidades</li>
-                    </ul>
+            <!-- SEÇÃO CURRÍCULO -->
+            <section id="curriculo" class="section-curriculo" aria-labelledby="curriculo-titulo">
+                <h2 class="section-title reveal" id="curriculo-titulo">Currículo</h2>
+                <div class="secoes" role="tablist" aria-label="Seções do currículo">
+                    <button type="button" class="secoes-btn ativo" role="tab" id="aba-experiencias" aria-selected="true" aria-controls="experiencias">Experiências</button>
+                    <button type="button" class="secoes-btn" role="tab" id="aba-educacao" aria-selected="false" aria-controls="educacao" tabindex="-1">Educação</button>
+                    <button type="button" class="secoes-btn" role="tab" id="aba-habilidades" aria-selected="false" aria-controls="habilidades" tabindex="-1">Habilidades</button>
                 </div>
 
-            <!-- SEÇÃO CURRÍCULO - EXPERIÊNCIAS -->
-            <section id="experiencias" class="secao-conteudo ativa">
+            <!-- CURRÍCULO - EXPERIÊNCIAS -->
+            <div id="experiencias" class="secao-conteudo ativa" role="tabpanel" aria-labelledby="aba-experiencias" tabindex="0">
             <div class="timeline reveal">
                 <div class="timeline-item">
-                    <span class="timeline-dot"></span>
+                    <span class="timeline-dot" aria-hidden="true"></span>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-empresa">
-                                <img src="img/logos-empresas/classe-a-logo.png" alt="Classe A - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <img src="img/logos-empresas/classe-a-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
                                 <div>
                                     <h3>Classe A</h3>
                                     <span class="timeline-cargo">Auxiliar Administrativo</span>
@@ -337,19 +360,19 @@
                             <span class="timeline-data">Mar 2025 – Presente</span>
                         </div>
                         <ul>
-                            <li>Idealizei e desenvolvi o Campin, SaaS interno de distribuição de panfletos</li>
                             <li>Suporte às rotinas administrativas e logísticas</li>
                             <li>Organização de documentos e controle de planilhas</li>
-                            <li>Uso de auditoria e geomarketing (Onmaps) para otimizar distribuição de mídia</li>
+                            <li>Uso de auditoria e geomarketing (Onmaps) para apoiar a distribuição de mídia</li>
+                            <li>Iniciativa própria: idealizei e desenvolvo o Campin, plataforma de gestão operacional utilizada pela empresa</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-dot"></span>
+                    <span class="timeline-dot" aria-hidden="true"></span>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-empresa">
-                                <img src="img/logos-empresas/matarazzo-logo.png" alt="Matarazzo Decor - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <img src="img/logos-empresas/matarazzo-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
                                 <div>
                                     <h3>Matarazzo Decor</h3>
                                     <span class="timeline-cargo">Auxiliar Administrativo</span>
@@ -365,219 +388,230 @@
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <span class="timeline-dot"></span>
+                    <span class="timeline-dot" aria-hidden="true"></span>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="timeline-empresa">
-                                <img src="img/logos-empresas/vegas-logo.png" alt="Vegas Transportes - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <img src="img/logos-empresas/vegas-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
                                 <div>
                                     <h3>Vegas Transportes</h3>
-                                    <span class="timeline-cargo">Coordenador de Projetos Digitais</span>
+                                    <span class="timeline-cargo">Atuação administrativa e coordenação de projeto digital</span>
                                 </div>
                             </div>
-                            <span class="timeline-data">Nov 2023 – Jan 2025</span>
+                            <span class="timeline-data">Set 2023 – Dez 2024</span>
                         </div>
                         <ul>
-                            <li>Liderança em transformação digital e otimização de processos</li>
-                            <li>Implementação de sistemas internos e melhorias operacionais</li>
-                            <li>Desenvolvimento de soluções estratégicas e gestão de equipe técnica</li>
+                            <li>Atuação inicial em atividades administrativas e operacionais</li>
+                            <li>Posterior participação na coordenação do projeto de criação do site institucional da empresa</li>
+                            <li>Colaboração no planejamento das interfaces, funcionalidades e organização das telas</li>
+                            <li>Acompanhamento das etapas do projeto e alinhamento das necessidades do negócio</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            </section>
+            </div>
 
-            <!-- SEÇÃO CURRÍCULO - EDUCAÇÃO -->
-            <section id="educacao" class="secao-conteudo">
+            <!-- CURRÍCULO - EDUCAÇÃO -->
+            <div id="educacao" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-educacao" tabindex="0" hidden>
                 <div class="formacao-container reveal">
-                    <h2>Formação acadêmica</h2>
+                    <h3 class="curriculo-subtitulo">Formação acadêmica</h3>
                     <div class="formacao-container-cards">
                         <div class="formacao-item">
-                        <div class="formacao-topo">
-                            <img src="img/logos-empresas/unicid-logo.png" alt="Unicid - Logotipo" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                            <div>
-                                <h2>Unicid</h2>
-                                <h3>Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+                            <div class="formacao-topo">
+                                <img src="img/logos-empresas/unicid-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
+                                <div>
+                                    <h4>UNICID</h4>
+                                    <p class="formacao-curso">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+                                </div>
                             </div>
+                            <p class="formacao-periodo">2025 – 2027 (previsão)</p>
                         </div>
-                        <p>jul de 2025 - jul de 2027</p>
-                    </div>
-                    <div class="formacao-item">
-                        <div class="formacao-topo">
-                            <img src="img/logos-empresas/etec-logo.png" alt="ETEC - Logotipo" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                            <div>
-                                <h2>ETEC</h2>
-                                <h3>Curso técnico em Administração</h3>
+                        <div class="formacao-item">
+                            <div class="formacao-topo">
+                                <img src="img/logos-empresas/etec-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
+                                <div>
+                                    <h4>ETEC</h4>
+                                    <p class="formacao-curso">Curso Técnico em Administração</p>
+                                </div>
                             </div>
+                            <p class="formacao-periodo">2020 – 2022</p>
                         </div>
-                        <p>jan de 2020 - dez de 2022</p>
-                    </div>
                     </div>
                 </div>
                 <div class="certificados-container reveal">
-                    <h2>Licenças e certificados</h2>
+                    <h3 class="curriculo-subtitulo">Licenças e certificados</h3>
                     <div class="certificados-container-cards">
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                            <img src="img/logos-empresas/balta-logo.png" alt="balta - Logotipo" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
+                                <img src="img/logos-empresas/balta-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
                                 <div>
-                                    <h2>balta</h2>
-                                    <h3>Fundamentos do C#</h3>
+                                    <h4>balta</h4>
+                                    <p class="formacao-curso">Fundamentos do C#</p>
                                 </div>
                             </div>
-                            <p>Emitida em jun de 2026</p>
+                            <p class="formacao-periodo">Emitido em jun de 2026</p>
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                            <img src="img/logos-empresas/alura-logo.png" alt="Alura - Logotipo" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
+                                <img src="img/logos-empresas/alura-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
                                 <div>
-                                    <h2>Alura</h2>
-                                    <h3>Trilha JavaScript e Lógica de Programação — 5 módulos</h3>
+                                    <h4>Alura</h4>
+                                    <p class="formacao-curso">Trilha JavaScript e Lógica de Programação — 5 módulos</p>
                                 </div>
                             </div>
-                            <p>Emitida em fev de 2024</p>
+                            <p class="formacao-periodo">Emitido em fev de 2024</p>
                         </div>
                         <div class="certificados-item">
                             <div class="formacao-topo">
-                                <img src="img/logos-empresas/fundacao-bradesco-logo.png" alt="Fundação Bradesco - Logotipo" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
+                                <img src="img/logos-empresas/fundacao-bradesco-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
                                 <div>
-                                    <h2>Fundação Bradesco</h2>
-                                    <h3>Microsoft Excel Básico</h3>
+                                    <h4>Fundação Bradesco</h4>
+                                    <p class="formacao-curso">Microsoft Excel Básico</p>
                                 </div>
                             </div>
-                            <p>Emitida em out de 2022</p>
+                            <p class="formacao-periodo">Emitido em out de 2022</p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- SEÇÃO CURRÍCULO - HABILIDADES -->
-            <section id="habilidades" class="secao-conteudo">
+            <!-- CURRÍCULO - HABILIDADES -->
+            <div id="habilidades" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-habilidades" tabindex="0" hidden>
                 <div class="conhecimentos-container reveal">
 
                     <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Backend</h3>
-                        <div class="conhecimentos-container-cards">
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/csharp-logo.svg" alt="C# - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>C#</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/dotnet-logo.svg" alt=".NET - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>.NET</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/aspnet-logo.svg" alt="ASP.NET - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>ASP.NET</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/nodejs-logo.svg" alt="Node.js - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>NODE.JS</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/fastify-logo.svg" alt="Fastify - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>FASTIFY</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/jwt-logo.svg" alt="JWT - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>JWT</h2>
-                            </div>
-                        </div>
+                        <h3 class="habilidades-grupo-titulo">Backend <span class="habilidades-grupo-contexto">especialização e estudos</span></h3>
+                        <ul class="conhecimentos-container-cards">
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/csharp-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">C#</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/dotnet-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">.NET</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/aspnet-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">ASP.NET Core</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <i class="bi bi-arrow-left-right conhecimentos-icone" aria-hidden="true"></i>
+                                <span class="conhecimentos-nome">APIs REST</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <i class="bi bi-diagram-3 conhecimentos-icone" aria-hidden="true"></i>
+                                <span class="conhecimentos-nome">Orientação a objetos</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Banco de Dados</h3>
-                        <div class="conhecimentos-container-cards">
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/sql-logo.svg" alt="SQL Server - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>SQL SERVER</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/postgresql-logo.svg" alt="PostgreSQL - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>POSTGRESQL</h2>
-                            </div>
-                        </div>
+                        <h3 class="habilidades-grupo-titulo">Backend <span class="habilidades-grupo-contexto">experiência em projetos</span></h3>
+                        <ul class="conhecimentos-container-cards">
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/nodejs-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Node.js</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/fastify-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Fastify</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/javascript-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">JavaScript</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Frontend & UI</h3>
-                        <div class="conhecimentos-container-cards">
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/html-5-logo.svg" alt="HTML 5 - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>HTML 5</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/css-3-logo.svg" alt="CSS 3 - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>CSS 3</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/javascript-logo.svg" alt="JAVASCRIPT - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>JAVASCRIPT</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/react-logo.svg" alt="REACT JS - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>REACT JS</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/bootstrap-logo.svg" alt="BOOTSTRAP - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>BOOTSTRAP</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/figma-logo.svg" alt="FIGMA - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>FIGMA</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/tailwindcss-logo.svg" alt="Tailwind CSS - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>TAILWIND CSS</h2>
-                            </div>
-                        </div>
+                        <h3 class="habilidades-grupo-titulo">Bancos de dados</h3>
+                        <ul class="conhecimentos-container-cards">
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/postgresql-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">PostgreSQL</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <i class="bi bi-geo-alt conhecimentos-icone" aria-hidden="true"></i>
+                                <span class="conhecimentos-nome">PostGIS</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <i class="bi bi-database conhecimentos-icone" aria-hidden="true"></i>
+                                <span class="conhecimentos-nome">SQL</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="habilidades-grupo">
+                        <h3 class="habilidades-grupo-titulo">Frontend</h3>
+                        <ul class="conhecimentos-container-cards">
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/react-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">React</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/html-5-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">HTML</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/css-3-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">CSS</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/javascript-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">JavaScript</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/tailwindcss-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Tailwind CSS</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <div class="habilidades-grupo">
                         <h3 class="habilidades-grupo-titulo">Ferramentas</h3>
-                        <div class="conhecimentos-container-cards">
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/git-logo.svg" alt="GIT - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>GIT</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/github-logo.svg" alt="GITHUB - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>GITHUB</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/postman-logo.svg" alt="POSTMAN - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>POSTMAN</h2>
-                            </div>
-                            <div class="conhecimentos-item">
-                                <img src="img/logos-empresas/azure-logo.svg" alt="Azure - Logotipo" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <h2>AZURE</h2>
-                            </div>
-                        </div>
+                        <ul class="conhecimentos-container-cards">
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/git-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Git</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/github-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">GitHub</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/postman-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Postman</span>
+                            </li>
+                            <li class="conhecimentos-item">
+                                <img src="img/logos-empresas/figma-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
+                                <span class="conhecimentos-nome">Figma</span>
+                            </li>
+                        </ul>
                     </div>
 
                 </div>
-            </section>
+            </div>
 
             </section>
 
             <!-- SEÇÃO CONTATOS -->
-            <section id="contato" class="section-contatos">
-                <h2 class="section-title reveal">Contatos</h2>
+            <section id="contato" class="section-contatos" aria-labelledby="contato-titulo">
+                <h2 class="section-title reveal" id="contato-titulo">Contatos</h2>
                 <div class="contatos-container reveal">
                     <a href="https://www.linkedin.com/in/gui-furlaneti/" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-linkedin"></i>
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
                         <span>LinkedIn</span>
                     </a>
                     <a href="https://github.com/GuiFurlaneti" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github"></i>
+                        <i class="bi bi-github" aria-hidden="true"></i>
                         <span>GitHub</span>
                     </a>
                     <a href="https://api.whatsapp.com/send?phone=5511987688538" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-whatsapp"></i>
+                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
                         <span>WhatsApp</span>
                     </a>
                     <a href="https://www.behance.net/guilherfurlane" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-behance"></i>
+                        <i class="bi bi-behance" aria-hidden="true"></i>
                         <span>Behance</span>
                     </a>
                 </div>
@@ -587,30 +621,31 @@
     </div>
     <footer>
         <div class="footer-conteudo">
-            <p class="footer-copyright">Copyright © 2026 – Todos os Direitos Reservados.</p>
-            <a href="#inicio" class="footer-topo">Voltar ao topo <i class="bi bi-arrow-up-short"></i></a>
+            <p class="footer-copyright">© 2026 Guilherme Furlaneti. Todos os direitos reservados.</p>
+            <a href="#inicio" class="footer-topo">Voltar ao topo <i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
         </div>
     </footer>
 
     <!-- LIGHTBOX DE SCREENSHOTS DOS PROJETOS -->
-    <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox" id="lightbox" hidden>
         <div class="lightbox-overlay" data-lightbox-fechar></div>
-        <div class="lightbox-caixa" role="dialog" aria-modal="true" aria-label="Screenshots do projeto">
-            <button class="lightbox-fechar" data-lightbox-fechar aria-label="Fechar"><i class="bi bi-x-lg"></i></button>
-            <button class="lightbox-seta anterior" aria-label="Screenshot anterior"><i class="bi bi-chevron-left"></i></button>
-            <img src="" alt="" class="lightbox-imagem">
-            <button class="lightbox-seta proxima" aria-label="Próximo screenshot"><i class="bi bi-chevron-right"></i></button>
-            <span class="lightbox-titulo"></span>
-            <span class="lightbox-contador"></span>
+        <div class="lightbox-caixa" role="dialog" aria-modal="true" aria-labelledby="lightbox-titulo">
+            <button type="button" class="lightbox-fechar" data-lightbox-fechar aria-label="Fechar"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+            <button type="button" class="lightbox-seta anterior" aria-label="Imagem anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+            <img src="data:," alt="" class="lightbox-imagem">
+            <button type="button" class="lightbox-seta proxima" aria-label="Próxima imagem"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            <span class="lightbox-titulo" id="lightbox-titulo"></span>
+            <span class="lightbox-contador" aria-live="polite"></span>
+            <span class="lightbox-nota"></span>
         </div>
     </div>
 
-    <script src="js/dark-mode.js"></script>
-    <script src="js/nav-active.js"></script>
-    <script src="js/curriculo-tabs.js"></script>
-    <script src="js/scroll-animation.js"></script>
-    <script src="js/projetos-slider.js"></script>
-    <script src="js/projeto-lightbox.js"></script>
-    <script src="js/mobile-menu.js"></script>
+    <script src="js/dark-mode.js?v=10"></script>
+    <script src="js/nav-active.js?v=10"></script>
+    <script src="js/curriculo-tabs.js?v=10"></script>
+    <script src="js/scroll-animation.js?v=10"></script>
+    <script src="js/projetos-slider.js?v=10"></script>
+    <script src="js/projeto-lightbox.js?v=10"></script>
+    <script src="js/mobile-menu.js?v=10"></script>
 </body>
 </html>

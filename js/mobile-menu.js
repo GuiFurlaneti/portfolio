@@ -1,20 +1,28 @@
 (function () {
   const menuToggle = document.getElementById('mobile-menu-toggle');
   const navItems = document.querySelector('.navbar-items');
+  if (!menuToggle || !navItems) return;
 
-  function closeMenu() {
-    navItems.classList.remove('mobile-open');
-    menuToggle.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
+  function setMenu(isOpen) {
+    navItems.classList.toggle('mobile-open', isOpen);
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
   }
 
   menuToggle.addEventListener('click', () => {
-    const isOpen = navItems.classList.toggle('mobile-open');
-    menuToggle.classList.toggle('open', isOpen);
-    menuToggle.setAttribute('aria-expanded', isOpen);
+    setMenu(!navItems.classList.contains('mobile-open'));
   });
 
   navItems.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  // Escape fecha o menu aberto e devolve o foco ao botão
+  document.addEventListener('keydown', (evento) => {
+    if (evento.key === 'Escape' && navItems.classList.contains('mobile-open')) {
+      setMenu(false);
+      menuToggle.focus();
+    }
   });
 })();

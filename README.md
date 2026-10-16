@@ -1,75 +1,81 @@
-# Portfólio Pessoal – Guilherme Furlaneti
+# Portfólio — Guilherme Furlaneti
 
-Este é meu portfólio pessoal desenvolvido como **Desenvolvedor Full Stack Júnior**, onde apresento minha trajetória, experiências, habilidades, formação e principais projetos realizados. O foco do projeto é proporcionar uma experiência visual moderna, acessível e responsiva, com destaque para animações, temas claro/escuro e estrutura organizada por seções.
+Portfólio pessoal de **Guilherme Furlaneti**, desenvolvedor backend com foco em **C#, .NET e APIs REST**. Reúne apresentação, projetos, currículo e contatos.
 
-**Acesse aqui o projeto online**:  
-[guifurlaneti.github.io/portfolio](https://guifurlaneti.github.io/portfolio)
+**Site publicado:** [guifurlaneti.github.io/portfolio](https://guifurlaneti.github.io/portfolio/)
 
----
+![Seção inicial do portfólio](img/readme/preview-inicio.webp)
 
-## 🛠️ Tecnologias Utilizadas
-
-- **HTML5**
-- **CSS3**
-  - Responsividade com media queries
-  - Design customizado com modo claro/escuro
-- **JavaScript (Vanilla JS)**
-  - Scroll reveal com IntersectionObserver
-  - Alternância de tema (dark/light mode)
-  - Exibição da dimensão da tela (debug)
-- **Bootstrap 5**
-  - Sistema de grid e componentes
-- **Bootstrap Icons**
-  - Ícones padronizados e modernos
-- **Figma** (para prototipação de UI/UX)
-- **Design Mobile First**
+![Seção de projetos com o Campin em destaque](img/readme/preview-projetos.webp)
 
 ---
 
-## 🧩 Principais Funcionalidades
+## Conteúdo do site
 
-✅ Tema claro e escuro com botão toggle  
-✅ Scroll reveal com animações suaves  
-✅ Seções interativas: Início, Serviços, Currículo, Projetos e Contato  
-✅ Filtros para navegação entre experiências, educação e habilidades  
-✅ Responsivo e acessível para mobile  
-✅ Links diretos para LinkedIn, GitHub, WhatsApp e Behance  
-✅ Download do currículo em PDF  
-✅ Estilização avançada com animações e gradientes
+- **Início:** nome, cargo-alvo, stack e atalhos para projetos, currículo, GitHub e LinkedIn.
+- **Sobre:** formação, objetivo profissional e contexto do trabalho atual.
+- **Projetos:**
+  - **Campin** (projeto principal): plataforma de gestão operacional com React, Node.js/Fastify e PostgreSQL/PostGIS. O código é privado; o link aponta para o [showcase público](https://github.com/GuiFurlaneti/ShowcaseCampin).
+  - **Classe Eventos:** site institucional comercial.
+  - **To-do App:** projeto pessoal de aprendizado em React.
+  - **Waca:** projeto backend .NET em desenvolvimento.
+  - **Contribuições em design de interfaces:** projetos colaborativos com participação em UI/UX.
+- **Currículo:** abas de Experiências, Educação e Habilidades.
+- **Contatos:** LinkedIn, GitHub, WhatsApp e Behance.
 
----
+O currículo em PDF fica em [`docs/curriculo-guilherme-furlaneti.pdf`](docs/curriculo-guilherme-furlaneti.pdf). As capturas do Campin exibidas no site são demonstrativas, com dados fictícios.
 
-## 💼 Projetos Apresentados
+## Tecnologias do site
 
-O portfólio exibe três projetos de destaque com funcionalidades modernas:
+- **HTML5** semântico
+- **CSS3** com variáveis, tema claro/escuro e layout responsivo (sem framework CSS)
+- **JavaScript vanilla**
+- **Bootstrap Icons** (via CDN)
 
-1. **Sistema para Empresa de Transportes Aéreos**  
-   - Site institucional com simulação de cotação, formulário e áreas informativas.
+## Recursos
 
-2. **Aluga Simples – Gestão de Reservas**  
-   - Sistema completo com painel administrativo para locadores e fluxo de reservas para clientes.
+- Tema claro e escuro com preferência salva no navegador
+- Menu mobile com `aria-expanded` e fechamento por `Esc`
+- Abas do currículo no padrão WAI-ARIA (setas, `Home` e `End`)
+- Carrossel de projetos com indicadores gerados a partir dos cards
+- Lightbox de imagens com foco preso no diálogo, `Esc` para fechar e retorno de foco
+- Animações de entrada que respeitam `prefers-reduced-motion`
+- Imagens em WebP com `loading="lazy"` abaixo da dobra
 
-3. **Menu Digital – Web App para Estabelecimentos**  
-   - Cardápio online com filtros, CRUD de produtos e painel responsivo.
+## Estrutura
 
----
+```
+portfolio/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── curriculo-tabs.js      # abas do currículo
+│   ├── dark-mode.js           # alternância de tema
+│   ├── mobile-menu.js         # menu de navegação no mobile
+│   ├── nav-active.js          # link ativo do menu conforme a rolagem
+│   ├── projeto-lightbox.js    # lightbox das imagens dos projetos
+│   ├── projetos-slider.js     # carrossel de "Outros projetos"
+│   └── scroll-animation.js    # animações de entrada
+├── img/
+│   ├── favicon_io/            # favicons e web manifest
+│   ├── logos-empresas/        # logos de empresas, instituições e tecnologias
+│   ├── readme/                # capturas usadas neste README
+│   └── secao-projetos/        # imagens dos projetos
+└── docs/
+    └── curriculo-guilherme-furlaneti.pdf
+```
 
-## 📁 Estrutura do Projeto
-📁 portfolio/</br>
-├── index.html</br>
-├── css/</br>
-│ └── styles.css</br>
-├── js/</br>
-│ ├── dark-mode.js</br>
-│ ├── nav-active.js</br>
-│ ├── curriculo-tabs.js</br>
-│ └── scroll-animation.js</br>
-├── img/</br>
-│ └── logos, favicons e imagens dos projetos</br>
-├── docs/</br>
-│ └── Currículo em PDF</br>
+## Como executar localmente
 
----
+O site é estático e não precisa de build. Basta servir a pasta com qualquer servidor HTTP, por exemplo:
 
-📌 _Este projeto está em constante evolução. Fique à vontade para sugerir melhorias, ideias ou entrar em contato!_
+```bash
+python -m http.server 8000
+```
 
+Depois acesse `http://localhost:8000`.
+
+## Publicação
+
+O site é publicado pelo **GitHub Pages** a partir deste repositório.
