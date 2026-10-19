@@ -1,6 +1,6 @@
 # Portfólio — Guilherme Furlaneti
 
-Portfólio pessoal de **Guilherme Furlaneti**, desenvolvedor backend com foco em **C#, .NET e APIs REST**. Reúne apresentação, projetos, currículo e contatos.
+Portfólio pessoal de **Guilherme Furlaneti**, desenvolvedor full stack com experiência prática em **React, Node.js/Fastify e PostgreSQL** e estudos em C# e .NET. Reúne apresentação, projetos, currículo e contatos.
 
 **Site publicado:** [guifurlaneti.github.io/portfolio](https://guifurlaneti.github.io/portfolio/)
 
@@ -15,7 +15,7 @@ Portfólio pessoal de **Guilherme Furlaneti**, desenvolvedor backend com foco em
 - **Início:** nome, cargo-alvo, stack e atalhos para projetos, currículo, GitHub e LinkedIn.
 - **Sobre:** formação, objetivo profissional e contexto do trabalho atual.
 - **Projetos:**
-  - **Campin** (projeto principal): plataforma de gestão operacional com React, Node.js/Fastify e PostgreSQL/PostGIS. O código é privado; o link aponta para o [showcase público](https://github.com/GuiFurlaneti/ShowcaseCampin).
+  - **Campin** (projeto principal): plataforma de gestão operacional com React, Node.js/Fastify e PostgreSQL/PostGIS. Galeria com 5 telas demonstrativas (dashboard, campanhas, evidências e mapa, relatórios e interfaces móveis). O código é privado; o card leva ao [showcase público](https://github.com/GuiFurlaneti/ShowcaseCampin) e ao case técnico em PDF hospedado nele.
   - **Classe Eventos:** site institucional comercial.
   - **To-do App:** projeto pessoal de aprendizado em React.
   - **Waca:** projeto backend .NET em desenvolvimento.

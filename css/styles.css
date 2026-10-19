@@ -1259,7 +1259,8 @@ body.lightbox-travado { overflow: hidden; }
 }
 
 .lightbox-imagem {
-  max-width: min(90vw, 1100px);
+  /* reserva 2 × 64px para as setas laterais (posicionadas fora da imagem) não saírem da tela */
+  max-width: min(90vw, 100vw - 160px, 1100px);
   max-height: 80vh;
   object-fit: contain;
   border-radius: var(--card-radius);
