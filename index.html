@@ -11,11 +11,16 @@
     <meta name="description" content="Portfólio de Guilherme Furlaneti, desenvolvedor full stack com experiência prática em React, Node.js/Fastify e PostgreSQL/PostGIS. Estudando C# e .NET. São Paulo, SP.">
     <link rel="canonical" href="https://guifurlaneti.github.io/portfolio/">
     <meta name="theme-color" content="#121212">
+    <meta name="color-scheme" content="dark light">
+    <!-- FONTE: Manrope (uma família, eixo de peso variável) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&amp;display=swap">
     <!-- BOOTSTRAP ICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
           integrity="sha384-Ay26V7L8bsJTsX9Sxclnvsn+hkdiwRnrjZJXqKmkIDobPgIIWBOVguEcQQLDuhfN" crossorigin="anonymous">
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="css/styles.css?v=10">
+    <link rel="stylesheet" href="css/styles.css?v=26">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
@@ -40,590 +45,536 @@
 </head>
 <body>
     <script>
-        // Aplica o tema salvo antes do primeiro paint, evitando flash de tema errado
+        // Aplica o tema antes do primeiro paint: escolha salva > preferência do sistema > escuro
         (function () {
-            try {
-                if (localStorage.getItem('theme') === 'light') {
-                    document.body.classList.add('light-mode');
-                }
-            } catch (e) {}
+            var tema = null;
+            try { tema = localStorage.getItem('theme'); } catch (e) {}
+            if (tema === 'light' || (!tema && window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+            }
         })();
     </script>
 
     <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
 
-    <div class="container">
-        <header class="navbar-container">
-            <nav class="nav" aria-label="Navegação principal">
-                <a href="#inicio" class="logo" aria-label="Gui Furlaneti — início">
-                    <span class="logo-text">Gui</span><span class="logo-dot">.</span>
-                </a>
-                <ul class="navbar-items" id="menu-principal">
-                    <li><a href="#inicio" class="default-btn">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#projetos">Projetos</a></li>
-                    <li><a href="#curriculo">Currículo</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-                <div class="nav-actions">
-                    <button type="button" id="theme-toggle" class="theme-toggle-btn" aria-label="Tema claro" aria-pressed="false">
-                        <i class="bi bi-moon-fill" id="icon-moon" aria-hidden="true"></i>
-                        <i class="bi bi-sun-fill" id="icon-sun" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
-                        <i class="bi bi-list" id="icon-menu-open" aria-hidden="true"></i>
-                        <i class="bi bi-x-lg" id="icon-menu-close" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </nav>
-        </header>
-        <div class="content-wrap">
-        <main id="conteudo">
-            <!-- SEÇÃO INÍCIO -->
-            <section id="inicio" class="section-apresentacao" aria-label="Apresentação">
-                <div class="main-banner">
-                    <div class="main-text reveal" data-animate="left">
-                        <div class="text-main">
-                            <h1>
-                                <span class="text-secundaria">Guilherme</span>
-                                <span class="text-destaque nome">Furlaneti</span>
-                            </h1>
-                            <p class="hero-cargo">Desenvolvedor Full Stack</p>
-                            <p class="hero-stack">React · Node.js · Fastify · PostgreSQL</p>
-                            <p class="hero-descricao">Desenvolvo aplicações web do frontend ao banco de dados para resolver problemas reais. Atualmente estudo C# e .NET.</p>
-                        </div>
-                        <div class="bottoms-main">
-                            <a href="#projetos" class="hero-btn hero-btn-primario">
-                                Ver projetos <i class="bi bi-arrow-down-short" aria-hidden="true"></i>
-                            </a>
-                            <a href="docs/curriculo-guilherme-furlaneti.pdf" download="Curriculo-Guilherme-Furlaneti.pdf" type="application/pdf" class="hero-btn hero-btn-secundario">
-                                Baixar currículo <span class="visually-hidden">(PDF)</span> <i class="bi bi-download" aria-hidden="true"></i>
-                            </a>
-                            <div class="hero-sociais">
-                                <div class="bottom-github">
-                                    <a href="https://github.com/GuiFurlaneti" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)">
-                                        <i class="bi bi-github" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="bottom-linkedin">
-                                    <a href="https://www.linkedin.com/in/gui-furlaneti/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)">
-                                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-image reveal" data-animate="right">
-                        <div class="main-image-foto">
-                            <img src="img/foto-principal.webp" alt="Foto de Guilherme Furlaneti" width="737" height="737" fetchpriority="high">
-                            <div class="glow-circle" aria-hidden="true"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Navegação principal">
+            <a href="#inicio" class="logo" aria-label="Guilherme Furlaneti — início">Guilherme<span class="logo-dot" aria-hidden="true">.</span></a>
+            <ul class="navbar-items" id="menu-principal">
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#curriculo">Currículo</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button type="button" id="theme-toggle" class="icon-btn theme-toggle-btn" aria-label="Tema claro" aria-pressed="false">
+                    <i class="bi bi-moon-stars" id="icon-moon" aria-hidden="true"></i>
+                    <i class="bi bi-sun" id="icon-sun" aria-hidden="true"></i>
+                </button>
+                <button type="button" id="mobile-menu-toggle" class="icon-btn mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="menu-principal">
+                    <i class="bi bi-list" id="icon-menu-open" aria-hidden="true"></i>
+                    <i class="bi bi-x-lg" id="icon-menu-close" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-            <!-- SEÇÃO SOBRE -->
-            <section id="sobre" class="section-sobre" aria-labelledby="sobre-titulo">
-                <h2 class="section-title reveal" id="sobre-titulo">Sobre mim</h2>
-                <div class="sobre-content reveal">
-                    <div class="sobre-coluna">
-                        <p class="sobre-lead">Sou estudante de Análise e Desenvolvimento de Sistemas na UNICID e desenvolvo aplicações web completas, com React no frontend e Node.js/Fastify no backend.</p>
-                        <dl class="sobre-fatos">
-                            <div>
-                                <dt>Objetivo</dt>
-                                <dd>Desenvolvedor Full Stack Júnior</dd>
-                            </div>
-                            <div>
-                                <dt>Formação</dt>
-                                <dd>ADS · UNICID · 2025 – 2027 (previsão)</dd>
-                            </div>
-                            <div>
-                                <dt>Localização</dt>
-                                <dd>São Paulo, SP</dd>
-                            </div>
-                        </dl>
-                    </div>
-                    <div class="sobre-detalhe">
-                        <p>Idealizei e desenvolvo o Campin, uma plataforma de gestão operacional criada para atender a necessidades reais da empresa onde trabalho. No projeto, utilizo React, Node.js/Fastify e PostgreSQL/PostGIS para desenvolver funcionalidades web, APIs e integração de dados.</p>
-                        <p>Paralelamente, aprofundo meus conhecimentos em C#, ASP.NET Core, orientação a objetos e arquitetura de software por meio de estudos e projetos autorais.</p>
-                        <p>Busco minha primeira oportunidade formal como Desenvolvedor Full Stack Júnior.</p>
+    <div class="content-wrap">
+    <main id="conteudo">
+
+        <!-- HERO -->
+        <section id="inicio" class="hero" aria-label="Apresentação">
+            <div class="container hero-grid">
+                <div class="hero-texto reveal">
+                    <p class="eyebrow">Desenvolvedor Full Stack</p>
+                    <h1 class="hero-nome">
+                        <span>Guilherme</span>
+                        <span class="hero-nome-destaque">Furlaneti</span>
+                    </h1>
+                    <p class="hero-frase">Construindo soluções para problemas reais.</p>
+                    <p class="hero-stack"><i class="bi bi-code-slash" aria-hidden="true"></i><span>React</span><span>Node.js</span><span>Fastify</span><span>PostgreSQL</span></p>
+                    <div class="hero-acoes">
+                        <a href="#projetos" class="btn btn-primario">Ver projetos <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+                        <a href="docs/curriculo-guilherme-furlaneti.pdf" download="Curriculo-Guilherme-Furlaneti.pdf" type="application/pdf" class="btn btn-secundario">
+                            <i class="bi bi-download" aria-hidden="true"></i> Baixar currículo <span class="visually-hidden">(PDF)</span>
+                        </a>
+                        <div class="hero-sociais">
+                            <a href="https://github.com/GuiFurlaneti" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub (abre em nova aba)"><i class="bi bi-github" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/gui-furlaneti/" class="icon-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (abre em nova aba)"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+                        </div>
                     </div>
                 </div>
-            </section>
+                <div class="hero-foto reveal">
+                    <div class="hero-foto-moldura">
+                        <span class="hero-foto-anel" aria-hidden="true"></span>
+                        <img src="img/foto-principal.webp" alt="Foto de Guilherme Furlaneti" width="737" height="737" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- SEÇÃO PROJETOS -->
-            <section id="projetos" class="section-projetos" aria-labelledby="projetos-titulo">
-                <h2 class="section-title section-title-compact reveal" id="projetos-titulo">Projetos</h2>
+        <!-- SOBRE -->
+        <section id="sobre" class="secao secao-sobre" aria-labelledby="sobre-titulo">
+            <div class="container sobre-grid reveal">
+                <div class="sobre-texto">
+                    <h2 class="secao-titulo" id="sobre-titulo">Sobre mim</h2>
+                    <p class="sobre-lead">Sou estudante de Análise e Desenvolvimento de Sistemas na UNICID e desenvolvo aplicações web completas, com React no frontend e Node.js/Fastify no backend.</p>
+                    <p>Idealizei e desenvolvo o Campin, uma plataforma de gestão operacional criada para atender a necessidades reais da empresa onde trabalho. No projeto, utilizo React, Node.js/Fastify e PostgreSQL/PostGIS para desenvolver funcionalidades web, APIs e integração de dados.</p>
+                    <p>Paralelamente, aprofundo meus conhecimentos em C#, ASP.NET Core, orientação a objetos e arquitetura de software por meio de estudos e projetos autorais.</p>
+                    <p>Busco minha primeira oportunidade formal como Desenvolvedor Full Stack Júnior.</p>
+                </div>
+                <dl class="sobre-fatos">
+                    <div class="fato">
+                        <i class="bi bi-mortarboard" aria-hidden="true"></i>
+                        <div>
+                            <dt>Formação</dt>
+                            <dd>ADS · UNICID · 2025 – 2027 (previsão)</dd>
+                        </div>
+                    </div>
+                    <div class="fato">
+                        <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                        <div>
+                            <dt>Localização</dt>
+                            <dd>São Paulo, SP</dd>
+                        </div>
+                    </div>
+                    <div class="fato">
+                        <i class="bi bi-code-slash" aria-hidden="true"></i>
+                        <div>
+                            <dt>Objetivo</dt>
+                            <dd>Desenvolvedor Full Stack Júnior</dd>
+                        </div>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="secao secao-projetos" aria-labelledby="projetos-titulo">
+            <div class="container">
+                <header class="secao-cabecalho reveal">
+                    <h2 class="secao-titulo" id="projetos-titulo">Projetos</h2>
+                    <p class="secao-intro">Do sistema em uso na empresa onde trabalho aos projetos de estudo e às contribuições em equipe.</p>
+                </header>
 
                 <!-- PROJETO PRINCIPAL: CAMPIN -->
-                <p class="projeto-destaque-eyebrow reveal"><i class="bi bi-star-fill" aria-hidden="true"></i>Projeto principal</p>
-                <article class="projeto-card projeto-card-destaque reveal" aria-labelledby="campin-titulo">
-                    <div class="projeto-midia">
-                        <button type="button" class="projeto-imagem-wrap"
-                                data-galeria="img/secao-projetos/campin-dashboard.webp|Dashboard e visão operacional, img/secao-projetos/campin-campanhas.webp|Planejamento e gestão de campanhas, img/secao-projetos/campin-evidencias-mapa.webp|Evidências fotográficas e mapa, img/secao-projetos/campin-relatorios.webp|Relatórios e indicadores, img/secao-projetos/campin-mobile-portal-cliente.webp|Interfaces móveis de campo e cliente"
-                                data-galeria-nome="Campin"
-                                data-galeria-nota="Imagens demonstrativas. Dados fictícios, sem relação com operações reais."
-                                aria-label="Ampliar telas do Campin (5 imagens)">
-                            <img src="img/secao-projetos/projeto-preview-img-campin.webp" alt="Dashboard do Campin em um notebook e a tela de rota do perueiro em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                            <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
-                        </button>
-                        <p class="projeto-nota-imagem">Imagens demonstrativas. Dados fictícios, sem relação com operações reais.</p>
+                <article class="campin reveal" aria-labelledby="campin-titulo">
+                    <div class="campin-topo">
+                        <div class="campin-intro">
+                            <p class="eyebrow"><span class="eyebrow-num">01</span> Projeto principal</p>
+                            <h3 class="campin-titulo" id="campin-titulo">Campin <span class="campin-subtitulo"><span class="visually-hidden">— </span>Plataforma de Gestão Operacional</span></h3>
+                            <ul class="badges" aria-label="Tipo de projeto">
+                                <li class="badge badge-autoral"><i class="bi bi-person" aria-hidden="true"></i>Projeto autoral</li>
+                                <li class="badge badge-uso-real"><i class="bi bi-check2-circle" aria-hidden="true"></i>Em uso na operação da empresa</li>
+                            </ul>
+                            <p class="campin-lead">Plataforma web que idealizei e desenvolvo a partir de necessidades reais da Classe A, empresa onde trabalho. O planejamento de regiões, as fotos enviadas pelas equipes de campo e o acompanhamento das campanhas ficavam em ferramentas separadas, e a consolidação para prestar contas era manual.</p>
+                            <p>Sou responsável pelo frontend, pela API REST e pela modelagem do banco de dados, que reúnem em uma única aplicação o cadastro de campanhas, a gestão das equipes e os registros feitos em campo.</p>
+                            <div class="projeto-links">
+                                <a href="https://github.com/GuiFurlaneti/ShowcaseCampin/blob/main/docs/Campin_Case_Tecnico_PUBLICO_2026.pdf" class="btn btn-primario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Case técnico em PDF<span class="visually-hidden"> (abre no GitHub em nova aba)</span></a>
+                                <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="btn btn-secundario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Showcase no GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
+                            </div>
+                            <p class="nota">Código-fonte privado. O showcase reúne arquitetura, funcionalidades e telas; o case em PDF (13 páginas) detalha problema, solução e decisões técnicas.</p>
+                        </div>
+
+                        <div class="campin-midia">
+                            <button type="button" class="projeto-imagem-wrap campin-imagem" id="campin-galeria"
+                                    data-galeria="img/secao-projetos/campin-dashboard.webp|Dashboard e visão operacional, img/secao-projetos/campin-campanhas.webp|Planejamento e gestão de campanhas, img/secao-projetos/campin-evidencias-mapa.webp|Evidências fotográficas e mapa, img/secao-projetos/campin-relatorios.webp|Relatórios e indicadores, img/secao-projetos/campin-mobile-portal-cliente.webp|Interfaces móveis de campo e cliente"
+                                    data-galeria-nome="Campin"
+                                    data-galeria-nota="Imagens demonstrativas. Dados fictícios, sem relação com operações reais."
+                                    aria-label="Ampliar telas do Campin (5 imagens)">
+                                <img src="img/secao-projetos/projeto-preview-img-campin.webp" alt="Dashboard do Campin em um notebook e a tela de rota do perueiro em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                                <span class="zoom-icone" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+                                <span class="galeria-contagem" aria-hidden="true"><i class="bi bi-images"></i> 5 telas</span>
+                            </button>
+                            <ul class="campin-miniaturas" aria-label="Telas do Campin">
+                                <li><button type="button" class="miniatura" data-galeria-ref="campin-galeria" data-galeria-indice="0"><img src="img/secao-projetos/campin-dashboard-mini.webp" alt="" width="480" height="240" loading="lazy"><span class="visually-hidden">Ampliar: Dashboard e visão operacional</span></button></li>
+                                <li><button type="button" class="miniatura" data-galeria-ref="campin-galeria" data-galeria-indice="1"><img src="img/secao-projetos/campin-campanhas-mini.webp" alt="" width="480" height="236" loading="lazy"><span class="visually-hidden">Ampliar: Planejamento e gestão de campanhas</span></button></li>
+                                <li><button type="button" class="miniatura" data-galeria-ref="campin-galeria" data-galeria-indice="2"><img src="img/secao-projetos/campin-evidencias-mapa-mini.webp" alt="" width="480" height="270" loading="lazy"><span class="visually-hidden">Ampliar: Evidências fotográficas e mapa</span></button></li>
+                                <li><button type="button" class="miniatura" data-galeria-ref="campin-galeria" data-galeria-indice="3"><img src="img/secao-projetos/campin-relatorios-mini.webp" alt="" width="480" height="237" loading="lazy"><span class="visually-hidden">Ampliar: Relatórios e indicadores</span></button></li>
+                                <li><button type="button" class="miniatura" data-galeria-ref="campin-galeria" data-galeria-indice="4"><img src="img/secao-projetos/campin-mobile-portal-cliente-mini.webp" alt="" width="480" height="263" loading="lazy"><span class="visually-hidden">Ampliar: Interfaces móveis de campo e cliente</span></button></li>
+                            </ul>
+                            <p class="nota">Imagens demonstrativas. Dados fictícios, sem relação com operações reais.</p>
+                        </div>
                     </div>
-                    <div class="projeto-info">
-                        <div class="projeto-titulo">
-                            <h3 class="projeto-nome" id="campin-titulo">Campin — Plataforma de Gestão Operacional</h3>
+
+                    <div class="campin-detalhes">
+                        <div>
+                            <h4 class="rotulo">Funcionalidades</h4>
+                            <ul class="destaques destaques-colunas">
+                                <li><i class="bi bi-calendar3" aria-hidden="true"></i>Campanhas com calendário, clientes, lojas e equipes</li>
+                                <li><i class="bi bi-shield-lock" aria-hidden="true"></i>Autenticação e permissões por perfil verificadas na API</li>
+                                <li><i class="bi bi-camera" aria-hidden="true"></i>Registro de turnos e fotos pelos promotores em campo</li>
+                                <li><i class="bi bi-geo-alt" aria-hidden="true"></i>Mapa ao vivo das equipes e dados geográficos com PostGIS</li>
+                                <li><i class="bi bi-file-earmark-bar-graph" aria-hidden="true"></i>Relatórios com exportação em CSV e PDF e fotos em ZIP</li>
+                                <li><i class="bi bi-person-badge" aria-hidden="true"></i>Portal do cliente com campanhas, evidências e mapa</li>
+                            </ul>
                         </div>
-                        <div class="projeto-badges">
-                            <span class="projeto-badge badge-autoral">Projeto autoral</span>
-                            <span class="projeto-badge badge-uso-real">Software em uso real</span>
-                        </div>
-                        <p>Plataforma de gestão operacional que idealizei e desenvolvo a partir de necessidades identificadas na Classe A.</p>
-                        <p>Centraliza informações de campanhas, equipes e atividades de campo, integrando frontend, APIs REST e banco de dados em uma aplicação web utilizada em operações reais.</p>
-                        <ul class="projeto-destaques">
-                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Gestão de campanhas</li>
-                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Controle de acesso e perfis de usuário</li>
-                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Registros operacionais e fotográficos</li>
-                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Informações geográficas em mapa</li>
-                            <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Relatórios e acompanhamento das operações</li>
-                        </ul>
-                        <p class="projeto-arquitetura"><strong>Arquitetura:</strong> frontend em React, API REST em Node.js com Fastify e banco PostgreSQL com PostGIS para dados geográficos. Hospedagem em Cloudflare e Render.</p>
-                        <ul class="projeto-tags">
-                            <li class="projeto-tag">React</li>
-                            <li class="projeto-tag">JavaScript</li>
-                            <li class="projeto-tag">Node.js</li>
-                            <li class="projeto-tag">Fastify</li>
-                            <li class="projeto-tag">PostgreSQL</li>
-                            <li class="projeto-tag">PostGIS</li>
-                        </ul>
-                        <div class="projeto-links">
-                            <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Showcase no GitHub</a>
-                            <a href="https://github.com/GuiFurlaneti/ShowcaseCampin/blob/main/docs/Campin_Case_Tecnico_PUBLICO_2026.pdf" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Case técnico em PDF<span class="visually-hidden"> (abre no GitHub em nova aba)</span></a>
-                            <span class="projeto-link-nota">Código-fonte privado. O showcase reúne arquitetura, funcionalidades e telas; o case em PDF (13 páginas) detalha problema, solução e decisões técnicas.</span>
+                        <div class="campin-arquitetura">
+                            <h4 class="rotulo">Arquitetura</h4>
+                            <p>Frontend em React (PWA) hospedado na Cloudflare, API REST em Node.js com Fastify hospedada no Render e banco PostgreSQL com PostGIS para dados geográficos.</p>
+                            <ul class="tags" aria-label="Tecnologias">
+                                <li class="tag">React</li>
+                                <li class="tag">JavaScript</li>
+                                <li class="tag">Node.js</li>
+                                <li class="tag">Fastify</li>
+                                <li class="tag">PostgreSQL</li>
+                                <li class="tag">PostGIS</li>
+                            </ul>
                         </div>
                     </div>
                 </article>
 
-                <!-- OUTROS PROJETOS (carrossel) -->
-                <div class="projetos-titulo">
-                    <h3 class="projetos-subtitulo reveal" id="outros-projetos-titulo">Outros projetos</h3>
-                    <div class="carrossel-nav reveal">
-                        <button type="button" class="carrossel-seta anterior" aria-label="Projeto anterior" aria-controls="carrossel-projetos"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
-                        <div class="carrossel-indicadores" role="group" aria-label="Escolher projeto"></div>
-                        <button type="button" class="carrossel-seta proxima" aria-label="Próximo projeto" aria-controls="carrossel-projetos"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-                    </div>
-                </div>
-                <section class="carrossel-wrapper reveal" id="carrossel-projetos" aria-roledescription="carrossel" aria-labelledby="outros-projetos-titulo">
+                <!-- OUTROS PROJETOS -->
+                <h3 class="subtitulo reveal" id="outros-projetos-titulo">Outros projetos</h3>
                 <div class="projetos-grid">
 
                     <!-- CLASSE EVENTOS -->
-                    <article class="projeto-card" role="group" aria-roledescription="slide">
-                        <div class="projeto-midia">
-                            <button type="button" class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-classe-eventos.webp|Página inicial" data-galeria-nome="Classe Eventos" aria-label="Ampliar imagem do site Classe Eventos">
-                                <img src="img/secao-projetos/projeto-preview-img-classe-eventos.webp" alt="Página inicial do site Classe Eventos em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
-                            </button>
-                        </div>
+                    <article class="projeto-card reveal" aria-labelledby="classe-eventos-titulo">
+                        <button type="button" class="projeto-imagem-wrap projeto-midia" data-galeria="img/secao-projetos/projeto-preview-img-classe-eventos.webp|Página inicial" data-galeria-nome="Classe Eventos" aria-label="Ampliar imagem do site Classe Eventos">
+                            <img src="img/secao-projetos/projeto-preview-img-classe-eventos.webp" alt="Página inicial do site Classe Eventos em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="zoom-icone" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+                        </button>
                         <div class="projeto-info">
-                            <div class="projeto-titulo">
-                                <h4 class="projeto-nome" id="classe-eventos-titulo">Classe Eventos — Site Institucional</h4>
-                            </div>
-                            <div class="projeto-badges">
-                                <span class="projeto-badge badge-comercial">Projeto web comercial</span>
-                            </div>
-                            <p>Desenvolvimento de site institucional para agência de eventos, com foco em apresentação de serviços, experiência responsiva e geração de contatos comerciais por WhatsApp.</p>
-                            <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Catálogo de serviços organizado por categorias</li>
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Contato por WhatsApp com mensagem pré-preenchida</li>
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>SEO técnico: Open Graph, dados estruturados e sitemap</li>
+                            <p class="eyebrow"><span class="eyebrow-num">02</span> Site institucional</p>
+                            <h4 class="projeto-nome" id="classe-eventos-titulo">Classe Eventos — Site Institucional</h4>
+                            <ul class="badges" aria-label="Tipo de projeto">
+                                <li class="badge badge-comercial"><i class="bi bi-briefcase" aria-hidden="true"></i>Projeto web comercial</li>
                             </ul>
-                            <ul class="projeto-tags">
-                                <li class="projeto-tag">HTML</li>
-                                <li class="projeto-tag">CSS</li>
-                                <li class="projeto-tag">JavaScript</li>
-                                <li class="projeto-tag">Tailwind CSS</li>
+                            <p>Site institucional que desenvolvi para uma agência de eventos, publicado em domínio próprio. Apresenta os serviços e ações já realizadas e leva o visitante a pedir orçamento pelo WhatsApp da equipe comercial, sem backend.</p>
+                            <ul class="destaques">
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>Catálogo de serviços em 9 categorias, com layout responsivo</li>
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>Formulário de orçamento que monta a mensagem e abre o WhatsApp</li>
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>SEO técnico: Open Graph, dados estruturados e sitemap</li>
+                            </ul>
+                            <ul class="tags" aria-label="Tecnologias">
+                                <li class="tag">HTML</li>
+                                <li class="tag">CSS</li>
+                                <li class="tag">JavaScript</li>
+                                <li class="tag">Tailwind CSS</li>
                             </ul>
                             <div class="projeto-links">
-                                <a href="https://classeeventos.com.br/" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Ver site</a>
-                                <a href="https://github.com/GuiFurlaneti/ClasseEventos" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
+                                <a href="https://classeeventos.com.br/" class="link-acao" target="_blank" rel="noopener noreferrer">Ver site<span class="visually-hidden"> (abre em nova aba)</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                                <a href="https://github.com/GuiFurlaneti/ClasseEventos" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
                             </div>
                         </div>
                     </article>
 
                     <!-- TO-DO APP -->
-                    <article class="projeto-card" role="group" aria-roledescription="slide">
-                        <div class="projeto-midia">
-                            <button type="button" class="projeto-imagem-wrap" data-galeria="img/secao-projetos/projeto-preview-img-todo.webp|Lista de tarefas" data-galeria-nome="To-do App" aria-label="Ampliar imagem do To-do App">
-                                <img src="img/secao-projetos/projeto-preview-img-todo.webp" alt="Lista de tarefas do To-do App em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
-                                <span class="projeto-imagem-zoom" aria-hidden="true"><i class="bi bi-arrows-fullscreen"></i></span>
-                            </button>
-                        </div>
+                    <article class="projeto-card reveal" aria-labelledby="todo-titulo">
+                        <button type="button" class="projeto-imagem-wrap projeto-midia" data-galeria="img/secao-projetos/projeto-preview-img-todo.webp|Lista de tarefas" data-galeria-nome="To-do App" aria-label="Ampliar imagem do To-do App">
+                            <img src="img/secao-projetos/projeto-preview-img-todo.webp" alt="Lista de tarefas do To-do App em um notebook e em um celular" class="projeto-imagem" width="1004" height="572" loading="lazy">
+                            <span class="zoom-icone" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+                        </button>
                         <div class="projeto-info">
-                            <div class="projeto-titulo">
-                                <h4 class="projeto-nome" id="todo-titulo">To-do App</h4>
-                            </div>
-                            <div class="projeto-badges">
-                                <span class="projeto-badge badge-autoral">Autoral</span>
-                                <span class="projeto-badge badge-estudo">Projeto de aprendizado</span>
-                            </div>
-                            <p>Aplicação pessoal desenvolvida com React para organização de tarefas, com prioridades, datas-limite, filtros e persistência local.</p>
-                            <ul class="projeto-destaques">
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Tarefas com prioridade e data-limite</li>
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Filtros: do dia, atrasadas, pendentes e concluídas</li>
-                                <li><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Dados salvos no navegador com LocalStorage</li>
+                            <p class="eyebrow"><span class="eyebrow-num">03</span> Aplicação React</p>
+                            <h4 class="projeto-nome" id="todo-titulo">To-do App</h4>
+                            <ul class="badges" aria-label="Tipo de projeto">
+                                <li class="badge badge-autoral"><i class="bi bi-person" aria-hidden="true"></i>Autoral</li>
+                                <li class="badge badge-estudo"><i class="bi bi-book" aria-hidden="true"></i>Projeto de aprendizado</li>
                             </ul>
-                            <ul class="projeto-tags">
-                                <li class="projeto-tag">React</li>
-                                <li class="projeto-tag">JavaScript</li>
-                                <li class="projeto-tag">CSS</li>
-                                <li class="projeto-tag">LocalStorage</li>
-                                <li class="projeto-tag">Vite</li>
+                            <p>Aplicação pessoal de aprendizado em React para organizar tarefas: criar, editar, concluir e excluir, com prioridade, data-limite e dados salvos no navegador.</p>
+                            <ul class="destaques">
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>Componentes com estado e formulário em modal para criar e editar</li>
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>Visões de tarefas do dia, atrasadas e concluídas</li>
+                                <li><i class="bi bi-check2" aria-hidden="true"></i>Persistência no navegador com LocalStorage</li>
+                            </ul>
+                            <ul class="tags" aria-label="Tecnologias">
+                                <li class="tag">React</li>
+                                <li class="tag">JavaScript</li>
+                                <li class="tag">CSS</li>
+                                <li class="tag">LocalStorage</li>
+                                <li class="tag">Vite</li>
                             </ul>
                             <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/todo-app" class="projeto-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
-                                <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&amp;p=f&amp;t=NdYVcKZ8eaUeujeG-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo</a>
+                                <a href="https://github.com/GuiFurlaneti/todo-app" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
+                                <a href="https://www.figma.com/proto/KBx07C30K1jlKpuN8LLEdg/To-do-App--Projeto-Portfolio-?node-id=12-95&amp;p=f&amp;t=NdYVcKZ8eaUeujeG-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i> Protótipo<span class="visually-hidden"> no Figma (abre em nova aba)</span></a>
                             </div>
                         </div>
                     </article>
-
                 </div>
-                </section>
-                <p class="visually-hidden" aria-live="polite" id="carrossel-status"></p>
 
                 <!-- EM DESENVOLVIMENTO -->
-                <h3 class="projetos-subtitulo projetos-subtitulo-secao reveal">Em desenvolvimento</h3>
-                <article class="projeto-compacto reveal" aria-labelledby="waca-titulo">
-                    <div class="projeto-titulo">
-                        <h4 class="projeto-nome" id="waca-titulo">Waca — Projeto Backend .NET</h4>
-                        <span class="projeto-badge badge-dev">Em desenvolvimento</span>
-                    </div>
-                    <p>Projeto autoral voltado ao estudo de C#, ASP.NET Core, modelagem de domínio e organização de aplicações em camadas.</p>
-                    <p class="projeto-status"><strong>Estágio atual:</strong> solução organizada em camadas (Api, Application, Domain e Infrastructure) e primeiras entidades de domínio. Endpoints, persistência e testes ainda não foram implementados.</p>
-                    <ul class="projeto-tags">
-                        <li class="projeto-tag">C#</li>
-                        <li class="projeto-tag">.NET</li>
-                        <li class="projeto-tag">ASP.NET Core</li>
-                    </ul>
-                    <div class="projeto-links">
-                        <a href="https://github.com/GuiFurlaneti/Waca" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub</a>
+                <h3 class="subtitulo reveal">Em desenvolvimento</h3>
+                <article class="projeto-compacto waca reveal" aria-labelledby="waca-titulo">
+                    <img src="img/logos-empresas/csharp-logo.svg" alt="" class="waca-logo" width="48" height="48" loading="lazy">
+                    <div class="waca-corpo">
+                        <div class="projeto-titulo">
+                            <h4 class="projeto-nome" id="waca-titulo">Waca — Projeto Backend .NET</h4>
+                            <span class="badge badge-dev"><i class="bi bi-hourglass-split" aria-hidden="true"></i>Em desenvolvimento</span>
+                        </div>
+                        <p>Projeto autoral de estudo de C# e ASP.NET Core para gestão de vaquinhas (metas, membros, aportes e gastos), com foco em modelagem de domínio e organização em camadas.</p>
+                        <p class="projeto-status"><strong>Estágio atual:</strong> solução em .NET 10 organizada em camadas (Api, Application, Domain e Infrastructure), com as primeiras entidades de domínio (Vaquinha, Membro, Aporte e Gasto). Endpoints, persistência e testes ainda não foram implementados.</p>
+                        <div class="waca-rodape">
+                            <ul class="tags" aria-label="Tecnologias">
+                                <li class="tag">C#</li>
+                                <li class="tag">.NET</li>
+                                <li class="tag">ASP.NET Core</li>
+                            </ul>
+                            <a href="https://github.com/GuiFurlaneti/Waca" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
+                        </div>
                     </div>
                 </article>
 
-                <!-- CONTRIBUIÇÕES EM DESIGN -->
-                <h3 class="projetos-subtitulo projetos-subtitulo-secao reveal">Contribuições em design de interfaces</h3>
-                <p class="projetos-intro reveal">Projetos colaborativos nos quais minha contribuição foi o design das interfaces (UI/UX).</p>
-                <ul class="contribuicoes-lista reveal">
-                    <li class="projeto-compacto">
-                        <div class="projeto-titulo">
-                            <h4 class="projeto-nome">Menu Digital</h4>
-                            <span class="projeto-badge badge-colaborativo">Colaborativo</span>
-                        </div>
-                        <p>Cardápio digital para bares e restaurantes. Minha participação: design das interfaces e protótipo navegável no Figma.</p>
-                        <div class="projeto-links">
-                            <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&amp;p=f&amp;t=el5knHteCfYNrofS-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo no Figma</a>
+                <!-- CONTRIBUIÇÕES EM PROJETOS COLABORATIVOS -->
+                <h3 class="subtitulo reveal">Contribuições em projetos colaborativos</h3>
+                <p class="subtitulo-intro reveal">Projetos em equipe. Em cada um, indico se a minha parte foi o design das interfaces (UI/UX) ou também o código.</p>
+                <ul class="contribuicoes-lista">
+                    <li class="contribuicao reveal">
+                        <button type="button" class="projeto-imagem-wrap contribuicao-midia" data-galeria="img/secao-projetos/projeto-tela-menu-2024.webp|Tela da interface (2024)" data-galeria-nome="Menu Digital" data-galeria-nota="Recorte da tela da interface em 2024. Conteúdo de exemplo." aria-label="Ampliar tela do Menu Digital (2024)">
+                            <img src="img/secao-projetos/projeto-tela-menu-2024.webp" alt="Tela do cardápio digital com categorias de produtos e lista de lanches" class="projeto-imagem projeto-tela" width="633" height="369" loading="lazy">
+                            <span class="midia-legenda" aria-hidden="true">Interface · 2024</span>
+                            <span class="zoom-icone" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+                        </button>
+                        <div class="contribuicao-info">
+                            <div class="projeto-titulo">
+                                <h4 class="projeto-nome">Menu Digital</h4>
+                                <span class="badge badge-colaborativo"><i class="bi bi-people" aria-hidden="true"></i>Colaborativo</span>
+                            </div>
+                            <p class="participacao"><span class="participacao-rotulo">Minha parte</span> <span class="papel papel-design">UI/UX</span></p>
+                            <p>Cardápio digital para bares e restaurantes, desenvolvido em ASP.NET Core MVC por outro integrante da equipe. Minha participação: design das interfaces e protótipo navegável no Figma.</p>
+                            <div class="projeto-links">
+                                <a href="https://www.figma.com/proto/KinpJbrXk99AirzhI2GDlh/Menu-Digital---Prot%C3%B3tipo?node-id=1-2&amp;p=f&amp;t=el5knHteCfYNrofS-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i> Protótipo no Figma<span class="visually-hidden"> (abre em nova aba)</span></a>
+                            </div>
                         </div>
                     </li>
-                    <li class="projeto-compacto">
-                        <div class="projeto-titulo">
-                            <h4 class="projeto-nome">Aluga Simples (versão 2024)</h4>
-                            <span class="projeto-badge badge-colaborativo">Colaborativo</span>
-                        </div>
-                        <p>Plataforma de reservas de espaços para eventos. Minha participação: design das interfaces e protótipo navegável no Figma.</p>
-                        <div class="projeto-links">
-                            <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;node-id=1-2" class="projeto-link projeto-link-secundario" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i>Protótipo no Figma</a>
+                    <li class="contribuicao reveal">
+                        <button type="button" class="projeto-imagem-wrap contribuicao-midia" data-galeria="img/secao-projetos/projeto-tela-aluga-2024.webp|Tela da interface (versão 2024)" data-galeria-nome="Aluga Simples" data-galeria-nota="Versão 2024. A V2 não está representada nesta imagem. Conteúdo de exemplo." aria-label="Ampliar tela do Aluga Simples (versão 2024, não representa a V2)">
+                            <img src="img/secao-projetos/projeto-tela-aluga-2024.webp" alt="Tela da versão 2024 do Aluga Simples com calendário de julho de 2024 e formulário de reserva" class="projeto-imagem projeto-tela" width="633" height="369" loading="lazy">
+                            <span class="midia-legenda" aria-hidden="true">Versão 2024 · não é a V2</span>
+                            <span class="zoom-icone" aria-hidden="true"><i class="bi bi-arrows-angle-expand"></i></span>
+                        </button>
+                        <div class="contribuicao-info">
+                            <div class="projeto-titulo">
+                                <h4 class="projeto-nome">Aluga Simples — UI/UX e Desenvolvimento Frontend</h4>
+                            </div>
+                            <ul class="badges" aria-label="Tipo de projeto">
+                                <li class="badge badge-colaborativo"><i class="bi bi-people" aria-hidden="true"></i>Colaborativo</li>
+                                <li class="badge badge-dev"><i class="bi bi-hourglass-split" aria-hidden="true"></i>V2 em desenvolvimento</li>
+                            </ul>
+                            <p class="participacao"><span class="participacao-rotulo">Minha parte</span> <span class="papel papel-design">UI/UX · 2024</span> <span class="papel papel-codigo">Frontend · V2</span></p>
+                            <p>Plataforma de reservas de espaços para eventos. Em 2024, fiz o design das interfaces e o protótipo navegável no Figma.</p>
+                            <p>Na V2, contribuí no frontend com Next.js, React e Zod: formulários validados do painel administrativo para editar conteúdo, tema, fotos, vídeos, contato e avaliações do site, por enquanto com dados simulados no navegador. Backend e banco de dados são de outros integrantes da equipe.</p>
+                            <ul class="tags" aria-label="Tecnologias da minha parte">
+                                <li class="tag">Figma</li>
+                                <li class="tag">Next.js</li>
+                                <li class="tag">React</li>
+                                <li class="tag">Zod</li>
+                            </ul>
+                            <div class="projeto-links">
+                                <a href="https://www.figma.com/proto/ZG0IL5wVU2Fgjo6mi3DUB2/Aluga-Simples---Prot%C3%B3tipo?t=uKsnKnfeQggtnfJI-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;node-id=1-2" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-vector-pen" aria-hidden="true"></i> Protótipo no Figma (2024)<span class="visually-hidden"> (abre em nova aba)</span></a>
+                            </div>
                         </div>
                     </li>
                 </ul>
-            </section>
+            </div>
+        </section>
 
-            <!-- SEÇÃO CURRÍCULO -->
-            <section id="curriculo" class="section-curriculo" aria-labelledby="curriculo-titulo">
-                <h2 class="section-title reveal" id="curriculo-titulo">Currículo</h2>
-                <div class="secoes" role="tablist" aria-label="Seções do currículo">
-                    <button type="button" class="secoes-btn ativo" role="tab" id="aba-experiencias" aria-selected="true" aria-controls="experiencias">Experiências</button>
-                    <button type="button" class="secoes-btn" role="tab" id="aba-educacao" aria-selected="false" aria-controls="educacao" tabindex="-1">Educação</button>
-                    <button type="button" class="secoes-btn" role="tab" id="aba-habilidades" aria-selected="false" aria-controls="habilidades" tabindex="-1">Habilidades</button>
-                </div>
+        <!-- CURRÍCULO -->
+        <section id="curriculo" class="secao secao-curriculo" aria-labelledby="curriculo-titulo">
+            <div class="container">
+                <header class="secao-cabecalho curriculo-cabecalho reveal">
+                    <h2 class="secao-titulo" id="curriculo-titulo">Currículo</h2>
+                    <div class="secoes" role="tablist" aria-label="Seções do currículo">
+                        <button type="button" class="secoes-btn ativo" role="tab" id="aba-experiencias" aria-selected="true" aria-controls="experiencias">Experiências</button>
+                        <button type="button" class="secoes-btn" role="tab" id="aba-educacao" aria-selected="false" aria-controls="educacao" tabindex="-1">Educação</button>
+                        <button type="button" class="secoes-btn" role="tab" id="aba-habilidades" aria-selected="false" aria-controls="habilidades" tabindex="-1">Habilidades</button>
+                    </div>
+                </header>
 
-            <!-- CURRÍCULO - EXPERIÊNCIAS -->
-            <div id="experiencias" class="secao-conteudo ativa" role="tabpanel" aria-labelledby="aba-experiencias" tabindex="0">
-            <div class="timeline reveal">
-                <div class="timeline-item">
-                    <span class="timeline-dot" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-empresa">
-                                <img src="img/logos-empresas/classe-a-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <div>
+                <!-- CURRÍCULO - EXPERIÊNCIAS -->
+                <div id="experiencias" class="secao-conteudo ativa" role="tabpanel" aria-labelledby="aba-experiencias" tabindex="0">
+                    <ol class="timeline reveal">
+                        <li class="timeline-item">
+                            <div class="timeline-header">
+                                <img src="img/logos-empresas/classe-a-logo.png" alt="" class="timeline-logo" width="40" height="40" loading="lazy">
+                                <div class="timeline-empresa">
                                     <h3>Classe A</h3>
                                     <span class="timeline-cargo">Auxiliar Administrativo</span>
                                 </div>
+                                <span class="timeline-data">Mar 2025 – Presente</span>
                             </div>
-                            <span class="timeline-data">Mar 2025 – Presente</span>
-                        </div>
-                        <ul>
-                            <li>Suporte às rotinas administrativas e logísticas</li>
-                            <li>Organização de documentos e controle de planilhas</li>
-                            <li>Uso de auditoria e geomarketing (Onmaps) para apoiar a distribuição de mídia</li>
-                            <li>Iniciativa própria: idealizei e desenvolvo o Campin, plataforma de gestão operacional utilizada pela empresa</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-dot" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-empresa">
-                                <img src="img/logos-empresas/matarazzo-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <div>
+                            <ul class="timeline-lista">
+                                <li>Suporte às rotinas administrativas e logísticas</li>
+                                <li>Organização de documentos e controle de planilhas</li>
+                                <li>Uso de auditoria e geomarketing (Onmaps) para apoiar a distribuição de mídia</li>
+                                <li>Iniciativa própria: idealizei e desenvolvo o Campin, plataforma de gestão operacional utilizada pela empresa</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-header">
+                                <img src="img/logos-empresas/matarazzo-logo.png" alt="" class="timeline-logo" width="40" height="40" loading="lazy">
+                                <div class="timeline-empresa">
                                     <h3>Matarazzo Decor</h3>
                                     <span class="timeline-cargo">Auxiliar Administrativo</span>
                                 </div>
+                                <span class="timeline-data">Jan 2025 – Mar 2025</span>
                             </div>
-                            <span class="timeline-data">Jan 2025 – Mar 2025</span>
-                        </div>
-                        <ul>
-                            <li>Atendimento ao cliente e emissão de notas fiscais</li>
-                            <li>Organização de produtos e suporte à equipe de produção</li>
-                            <li>Controle de planilhas e monitoramento de chamados em marketplaces</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <span class="timeline-dot" aria-hidden="true"></span>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="timeline-empresa">
-                                <img src="img/logos-empresas/vegas-logo.png" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <div>
+                            <ul class="timeline-lista">
+                                <li>Atendimento ao cliente e emissão de notas fiscais</li>
+                                <li>Organização de produtos e suporte à equipe de produção</li>
+                                <li>Controle de planilhas e monitoramento de chamados em marketplaces</li>
+                            </ul>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-header">
+                                <img src="img/logos-empresas/vegas-logo.png" alt="" class="timeline-logo" width="40" height="40" loading="lazy">
+                                <div class="timeline-empresa">
                                     <h3>Vegas Transportes</h3>
                                     <span class="timeline-cargo">Atuação administrativa e coordenação de projeto digital</span>
                                 </div>
+                                <span class="timeline-data">Set 2023 – Dez 2024</span>
                             </div>
-                            <span class="timeline-data">Set 2023 – Dez 2024</span>
+                            <ul class="timeline-lista">
+                                <li>Atuação inicial em atividades administrativas e operacionais</li>
+                                <li>Posterior participação na coordenação do projeto de criação do site institucional da empresa</li>
+                                <li>Colaboração no planejamento das interfaces, funcionalidades e organização das telas</li>
+                                <li>Acompanhamento das etapas do projeto e alinhamento das necessidades do negócio</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+
+                <!-- CURRÍCULO - EDUCAÇÃO -->
+                <div id="educacao" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-educacao" tabindex="0" hidden>
+                    <div class="educacao-grid">
+                        <div class="educacao-bloco">
+                            <h3 class="rotulo">Formação acadêmica</h3>
+                            <ul class="credenciais">
+                                <li class="credencial">
+                                    <img src="img/logos-empresas/unicid-logo.png" alt="" width="44" height="44" loading="lazy">
+                                    <div>
+                                        <h4>UNICID</h4>
+                                        <p class="credencial-curso">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
+                                        <p class="credencial-data">2025 – 2027 (previsão)</p>
+                                    </div>
+                                </li>
+                                <li class="credencial">
+                                    <img src="img/logos-empresas/etec-logo.png" alt="" width="44" height="44" loading="lazy">
+                                    <div>
+                                        <h4>ETEC</h4>
+                                        <p class="credencial-curso">Curso Técnico em Administração</p>
+                                        <p class="credencial-data">2020 – 2022</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <ul>
-                            <li>Atuação inicial em atividades administrativas e operacionais</li>
-                            <li>Posterior participação na coordenação do projeto de criação do site institucional da empresa</li>
-                            <li>Colaboração no planejamento das interfaces, funcionalidades e organização das telas</li>
-                            <li>Acompanhamento das etapas do projeto e alinhamento das necessidades do negócio</li>
-                        </ul>
+                        <div class="educacao-bloco">
+                            <h3 class="rotulo">Licenças e certificados</h3>
+                            <ul class="credenciais">
+                                <li class="credencial">
+                                    <img src="img/logos-empresas/balta-logo.png" alt="" width="44" height="44" loading="lazy">
+                                    <div>
+                                        <h4>balta</h4>
+                                        <p class="credencial-curso">Fundamentos do C#</p>
+                                        <p class="credencial-data">Emitido em jun de 2026</p>
+                                    </div>
+                                </li>
+                                <li class="credencial">
+                                    <img src="img/logos-empresas/alura-logo.png" alt="" width="44" height="44" loading="lazy">
+                                    <div>
+                                        <h4>Alura</h4>
+                                        <p class="credencial-curso">Trilha JavaScript e Lógica de Programação — 5 módulos</p>
+                                        <p class="credencial-data">Emitido em fev de 2024</p>
+                                    </div>
+                                </li>
+                                <li class="credencial">
+                                    <img src="img/logos-empresas/fundacao-bradesco-logo.png" alt="" width="44" height="44" loading="lazy">
+                                    <div>
+                                        <h4>Fundação Bradesco</h4>
+                                        <p class="credencial-curso">Microsoft Excel Básico</p>
+                                        <p class="credencial-data">Emitido em out de 2022</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CURRÍCULO - HABILIDADES -->
+                <div id="habilidades" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-habilidades" tabindex="0" hidden>
+                    <p class="habilidades-pratica"><span class="rotulo">Experiência prática</span> React, Node.js, Fastify e PostgreSQL/PostGIS no desenvolvimento do Campin.</p>
+                    <div class="habilidades-grid">
+                        <div class="habilidades-grupo">
+                            <h3 class="habilidades-titulo">Frontend</h3>
+                            <ul class="habilidades-lista">
+                                <li><img src="img/logos-empresas/react-logo.svg" alt="" width="20" height="20" loading="lazy">React</li>
+                                <li><img src="img/logos-empresas/javascript-logo.svg" alt="" width="20" height="20" loading="lazy">JavaScript</li>
+                                <li><img src="img/logos-empresas/html-5-logo.svg" alt="" width="20" height="20" loading="lazy">HTML</li>
+                                <li><img src="img/logos-empresas/css-3-logo.svg" alt="" width="20" height="20" loading="lazy">CSS</li>
+                                <li><img src="img/logos-empresas/tailwindcss-logo.svg" alt="" width="20" height="20" loading="lazy">Tailwind CSS</li>
+                            </ul>
+                            <p class="habilidades-sub" id="habilidades-aluga">Contribuição no frontend do Aluga Simples V2</p>
+                            <ul class="habilidades-lista" aria-labelledby="habilidades-aluga">
+                                <li><i class="bi bi-boxes" aria-hidden="true"></i>Next.js</li>
+                                <li><i class="bi bi-check2-square" aria-hidden="true"></i>Zod</li>
+                            </ul>
+                        </div>
+                        <div class="habilidades-grupo">
+                            <h3 class="habilidades-titulo">Backend</h3>
+                            <ul class="habilidades-lista">
+                                <li><img src="img/logos-empresas/nodejs-logo.svg" alt="" width="20" height="20" loading="lazy">Node.js</li>
+                                <li><img src="img/logos-empresas/fastify-logo.svg" alt="" width="20" height="20" loading="lazy">Fastify</li>
+                                <li><i class="bi bi-arrow-left-right" aria-hidden="true"></i>APIs REST</li>
+                                <li><img src="img/logos-empresas/javascript-logo.svg" alt="" width="20" height="20" loading="lazy">JavaScript</li>
+                            </ul>
+                        </div>
+                        <div class="habilidades-grupo">
+                            <h3 class="habilidades-titulo">Banco de dados</h3>
+                            <ul class="habilidades-lista">
+                                <li><img src="img/logos-empresas/postgresql-logo.svg" alt="" width="20" height="20" loading="lazy">PostgreSQL</li>
+                                <li><i class="bi bi-geo-alt" aria-hidden="true"></i>PostGIS</li>
+                                <li><i class="bi bi-database" aria-hidden="true"></i>SQL</li>
+                            </ul>
+                        </div>
+                        <div class="habilidades-grupo">
+                            <h3 class="habilidades-titulo">Ferramentas</h3>
+                            <ul class="habilidades-lista">
+                                <li><img src="img/logos-empresas/git-logo.svg" alt="" width="20" height="20" loading="lazy">Git</li>
+                                <li><img src="img/logos-empresas/github-logo.svg" alt="" width="20" height="20" loading="lazy" class="logo-monocromatico">GitHub</li>
+                                <li><img src="img/logos-empresas/postman-logo.svg" alt="" width="20" height="20" loading="lazy">Postman</li>
+                                <li><img src="img/logos-empresas/figma-logo.svg" alt="" width="20" height="20" loading="lazy">Figma</li>
+                            </ul>
+                        </div>
+                        <div class="habilidades-grupo habilidades-estudo">
+                            <h3 class="habilidades-titulo">Em estudo <span class="habilidades-contexto">C# e .NET</span></h3>
+                            <ul class="habilidades-lista">
+                                <li><img src="img/logos-empresas/csharp-logo.svg" alt="" width="20" height="20" loading="lazy">C#</li>
+                                <li><img src="img/logos-empresas/dotnet-logo.svg" alt="" width="20" height="20" loading="lazy">.NET</li>
+                                <li><img src="img/logos-empresas/aspnet-logo.svg" alt="" width="20" height="20" loading="lazy">ASP.NET Core</li>
+                                <li><i class="bi bi-diagram-3" aria-hidden="true"></i>Orientação a objetos</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
+        </section>
 
-            <!-- CURRÍCULO - EDUCAÇÃO -->
-            <div id="educacao" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-educacao" tabindex="0" hidden>
-                <div class="formacao-container reveal">
-                    <h3 class="curriculo-subtitulo">Formação acadêmica</h3>
-                    <div class="formacao-container-cards">
-                        <div class="formacao-item">
-                            <div class="formacao-topo">
-                                <img src="img/logos-empresas/unicid-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                                <div>
-                                    <h4>UNICID</h4>
-                                    <p class="formacao-curso">Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas</p>
-                                </div>
-                            </div>
-                            <p class="formacao-periodo">2025 – 2027 (previsão)</p>
-                        </div>
-                        <div class="formacao-item">
-                            <div class="formacao-topo">
-                                <img src="img/logos-empresas/etec-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                                <div>
-                                    <h4>ETEC</h4>
-                                    <p class="formacao-curso">Curso Técnico em Administração</p>
-                                </div>
-                            </div>
-                            <p class="formacao-periodo">2020 – 2022</p>
-                        </div>
+        <!-- CONTATO -->
+        <section id="contato" class="secao secao-contato" aria-labelledby="contato-titulo">
+            <div class="container">
+                <div class="contato-painel reveal">
+                    <div class="contato-texto">
+                        <p class="eyebrow">Contato</p>
+                        <h2 class="contato-titulo" id="contato-titulo">Vamos conversar?</h2>
+                        <p>Estou aberto a oportunidades como Desenvolvedor Full Stack Júnior. Escolha o canal que preferir.</p>
                     </div>
-                </div>
-                <div class="certificados-container reveal">
-                    <h3 class="curriculo-subtitulo">Licenças e certificados</h3>
-                    <div class="certificados-container-cards">
-                        <div class="certificados-item">
-                            <div class="formacao-topo">
-                                <img src="img/logos-empresas/balta-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                                <div>
-                                    <h4>balta</h4>
-                                    <p class="formacao-curso">Fundamentos do C#</p>
-                                </div>
-                            </div>
-                            <p class="formacao-periodo">Emitido em jun de 2026</p>
-                        </div>
-                        <div class="certificados-item">
-                            <div class="formacao-topo">
-                                <img src="img/logos-empresas/alura-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                                <div>
-                                    <h4>Alura</h4>
-                                    <p class="formacao-curso">Trilha JavaScript e Lógica de Programação — 5 módulos</p>
-                                </div>
-                            </div>
-                            <p class="formacao-periodo">Emitido em fev de 2024</p>
-                        </div>
-                        <div class="certificados-item">
-                            <div class="formacao-topo">
-                                <img src="img/logos-empresas/fundacao-bradesco-logo.png" alt="" class="imagem-titulo-lg" width="50" height="50" loading="lazy">
-                                <div>
-                                    <h4>Fundação Bradesco</h4>
-                                    <p class="formacao-curso">Microsoft Excel Básico</p>
-                                </div>
-                            </div>
-                            <p class="formacao-periodo">Emitido em out de 2022</p>
-                        </div>
-                    </div>
+                    <ul class="contato-canais">
+                        <li class="canal-destaque"><a href="mailto:gfurlaneti@gmail.com" class="canal canal-email"><i class="bi bi-envelope" aria-hidden="true"></i><span class="canal-email-rotulo">E-mail</span><span class="canal-email-endereco">gfurlaneti@gmail.com</span></a></li>
+                        <li><a href="https://www.linkedin.com/in/gui-furlaneti/" class="canal" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin" aria-hidden="true"></i>LinkedIn<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://github.com/GuiFurlaneti" class="canal" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>GitHub<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=5511987688538" class="canal" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp" aria-hidden="true"></i>WhatsApp<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+                        <li><a href="https://www.behance.net/guilherfurlane" class="canal" target="_blank" rel="noopener noreferrer"><i class="bi bi-behance" aria-hidden="true"></i>Behance<span class="visually-hidden"> (abre em nova aba)</span></a></li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- CURRÍCULO - HABILIDADES -->
-            <div id="habilidades" class="secao-conteudo" role="tabpanel" aria-labelledby="aba-habilidades" tabindex="0" hidden>
-                <div class="conhecimentos-container reveal">
-
-
-                    <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Backend <span class="habilidades-grupo-contexto">experiência em projetos</span></h3>
-                        <ul class="conhecimentos-container-cards">
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/nodejs-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Node.js</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/fastify-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Fastify</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <i class="bi bi-arrow-left-right conhecimentos-icone" aria-hidden="true"></i>
-                                <span class="conhecimentos-nome">APIs REST</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/javascript-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">JavaScript</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Bancos de dados</h3>
-                        <ul class="conhecimentos-container-cards">
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/postgresql-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">PostgreSQL</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <i class="bi bi-geo-alt conhecimentos-icone" aria-hidden="true"></i>
-                                <span class="conhecimentos-nome">PostGIS</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <i class="bi bi-database conhecimentos-icone" aria-hidden="true"></i>
-                                <span class="conhecimentos-nome">SQL</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Frontend</h3>
-                        <ul class="conhecimentos-container-cards">
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/react-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">React</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/html-5-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">HTML</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/css-3-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">CSS</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/javascript-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">JavaScript</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/tailwindcss-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Tailwind CSS</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">C# e .NET <span class="habilidades-grupo-contexto">em estudo</span></h3>
-                        <ul class="conhecimentos-container-cards">
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/csharp-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">C#</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/dotnet-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">.NET</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/aspnet-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">ASP.NET Core</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <i class="bi bi-diagram-3 conhecimentos-icone" aria-hidden="true"></i>
-                                <span class="conhecimentos-nome">Orientação a objetos</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="habilidades-grupo">
-                        <h3 class="habilidades-grupo-titulo">Ferramentas</h3>
-                        <ul class="conhecimentos-container-cards">
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/git-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Git</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/github-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">GitHub</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/postman-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Postman</span>
-                            </li>
-                            <li class="conhecimentos-item">
-                                <img src="img/logos-empresas/figma-logo.svg" alt="" class="imagem-titulo" width="40" height="40" loading="lazy">
-                                <span class="conhecimentos-nome">Figma</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-
-            </section>
-
-            <!-- SEÇÃO CONTATOS -->
-            <section id="contato" class="section-contatos" aria-labelledby="contato-titulo">
-                <h2 class="section-title reveal" id="contato-titulo">Contatos</h2>
-                <div class="contatos-container reveal">
-                    <a href="https://www.linkedin.com/in/gui-furlaneti/" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/GuiFurlaneti" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-github" aria-hidden="true"></i>
-                        <span>GitHub</span>
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=5511987688538" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-whatsapp" aria-hidden="true"></i>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="https://www.behance.net/guilherfurlane" class="contatos-botao" target="_blank" rel="noopener noreferrer">
-                        <i class="bi bi-behance" aria-hidden="true"></i>
-                        <span>Behance</span>
-                    </a>
-                </div>
-            </section>
-        </main>
-        </div>
+        </section>
+    </main>
     </div>
-    <footer>
-        <div class="footer-conteudo">
+
+    <footer class="site-footer">
+        <div class="container footer-conteudo">
             <p class="footer-copyright">© 2026 Guilherme Furlaneti. Todos os direitos reservados.</p>
-            <a href="#inicio" class="footer-topo">Voltar ao topo <i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
+            <a href="#inicio" class="footer-topo">Voltar ao topo <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
         </div>
     </footer>
 
@@ -631,22 +582,27 @@
     <div class="lightbox" id="lightbox" hidden>
         <div class="lightbox-overlay" data-lightbox-fechar></div>
         <div class="lightbox-caixa" role="dialog" aria-modal="true" aria-labelledby="lightbox-titulo">
-            <button type="button" class="lightbox-fechar" data-lightbox-fechar aria-label="Fechar"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
-            <button type="button" class="lightbox-seta anterior" aria-label="Imagem anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
-            <img src="data:," alt="" class="lightbox-imagem">
-            <button type="button" class="lightbox-seta proxima" aria-label="Próxima imagem"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
-            <span class="lightbox-titulo" id="lightbox-titulo"></span>
-            <span class="lightbox-contador" aria-live="polite"></span>
-            <span class="lightbox-nota"></span>
+            <div class="lightbox-topo">
+                <span class="lightbox-titulo" id="lightbox-titulo"></span>
+                <button type="button" class="lightbox-fechar icon-btn" data-lightbox-fechar aria-label="Fechar"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+            </div>
+            <div class="lightbox-palco">
+                <button type="button" class="lightbox-seta anterior icon-btn" aria-label="Imagem anterior"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+                <img src="data:," alt="" class="lightbox-imagem">
+                <button type="button" class="lightbox-seta proxima icon-btn" aria-label="Próxima imagem"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+            </div>
+            <div class="lightbox-rodape">
+                <span class="lightbox-contador" aria-live="polite"></span>
+                <span class="lightbox-nota"></span>
+            </div>
         </div>
     </div>
 
-    <script src="js/dark-mode.js?v=10"></script>
-    <script src="js/nav-active.js?v=10"></script>
-    <script src="js/curriculo-tabs.js?v=10"></script>
-    <script src="js/scroll-animation.js?v=10"></script>
-    <script src="js/projetos-slider.js?v=10"></script>
-    <script src="js/projeto-lightbox.js?v=10"></script>
-    <script src="js/mobile-menu.js?v=10"></script>
+    <script src="js/dark-mode.js?v=21"></script>
+    <script src="js/nav-active.js?v=22"></script>
+    <script src="js/curriculo-tabs.js?v=21"></script>
+    <script src="js/scroll-animation.js?v=21"></script>
+    <script src="js/projeto-lightbox.js?v=21"></script>
+    <script src="js/mobile-menu.js?v=21"></script>
 </body>
 </html>

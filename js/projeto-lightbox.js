@@ -11,8 +11,12 @@
   const btnProxima = lightbox.querySelector('.lightbox-seta.proxima');
 
   // Conteudo da pagina que fica inacessivel (inert) enquanto o dialogo esta aberto
-  const fundo = [document.querySelector('.skip-link'), document.querySelector('.container'), document.querySelector('footer')]
-    .filter(Boolean);
+  const fundo = [
+    document.querySelector('.skip-link'),
+    document.querySelector('.site-header'),
+    document.querySelector('.content-wrap'),
+    document.querySelector('.site-footer'),
+  ].filter(Boolean);
 
   let slides = [];
   let nomeProjeto = '';
@@ -32,7 +36,8 @@
     btnProxima.hidden = !temVariasImagens;
   }
 
-  function abrirLightbox(botao) {
+  // botao: elemento com data-galeria; gatilhoFoco: elemento que recebe o foco ao fechar (padrão: o próprio botão)
+  function abrirLightbox(botao, indiceInicial, gatilhoFoco) {
     const galeria = botao.dataset.galeria;
     if (!galeria) return;
 
@@ -42,10 +47,10 @@
     }).filter((slide) => slide.src);
     if (slides.length === 0) return;
 
-    gatilho = botao;
+    gatilho = gatilhoFoco || botao;
     nomeProjeto = botao.dataset.galeriaNome || '';
     nota.textContent = botao.dataset.galeriaNota || '';
-    mostrarSlide(0);
+    mostrarSlide(indiceInicial || 0);
 
     lightbox.hidden = false;
     document.body.classList.add('lightbox-travado');
@@ -85,7 +90,16 @@
   }
 
   document.querySelectorAll('.projeto-imagem-wrap[data-galeria]').forEach((botao) => {
-    botao.addEventListener('click', () => abrirLightbox(botao));
+    botao.addEventListener('click', () => abrirLightbox(botao, 0));
+  });
+
+  // Miniaturas: abrem a galeria do botão referenciado já na imagem correspondente
+  document.querySelectorAll('[data-galeria-ref]').forEach((miniatura) => {
+    const origem = document.getElementById(miniatura.dataset.galeriaRef);
+    if (!origem) return;
+    miniatura.addEventListener('click', () => {
+      abrirLightbox(origem, Number(miniatura.dataset.galeriaIndice) || 0, miniatura);
+    });
   });
 
   lightbox.querySelectorAll('[data-lightbox-fechar]').forEach((el) => {
