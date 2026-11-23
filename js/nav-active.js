@@ -1,39 +1,51 @@
 (function () {
-  // Navegação Ativa com IntersectionObserver
-  // Apenas as seções de primeiro nível têm link no menu
-  const sections = document.querySelectorAll("main > section[id]");
-  const navLinks = document.querySelectorAll(".navbar-items a");
+  // Destaca no menu a seção visível. Apenas as seções de primeiro nível têm link no menu.
+  const sections = Array.from(document.querySelectorAll('main > section[id]'));
+  const navLinks = document.querySelectorAll('.navbar-items a');
+  if (sections.length === 0 || navLinks.length === 0) return;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute("id");
-        const link = document.querySelector(`.navbar-items a[href="#${id}"]`);
+  let atual = null;
 
-        // Verifica se a seção está visível na tela
-        if (entry.isIntersecting) {
-          // Remove a classe active de todos os links
-          navLinks.forEach((link) => {
-            link.classList.remove("active");
-            link.removeAttribute("aria-current");
-          });
+  function marcar(id) {
+    if (id === atual) return;
+    atual = id;
+    navLinks.forEach((link) => {
+      const ativo = id !== null && link.getAttribute('href') === `#${id}`;
+      link.classList.toggle('active', ativo);
+      if (ativo) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  }
 
-          // Adiciona a classe active ao link correspondente à seção visível
-          if (link) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "location");
-          }
-        }
-      });
-    },
-    {
-      // A "janela" de detecção é a linha no meio da tela: a seção que cruza essa linha fica ativa.
-      // Como essa área tem altura zero, o threshold precisa ser 0 (um percentual nunca seria atingido).
-      rootMargin: "-50% 0px -50% 0px",
-      threshold: 0,
-    }
-  );
+  // Ativa a última seção cujo topo já passou do meio da tela.
+  // No fim da página, a última seção (Contato, que é curta e nunca chega ao meio) fica ativa.
+  function atualizar() {
+    const alturaPagina = document.documentElement.scrollHeight;
+    // Sem rolagem possível (janela do tamanho da página inteira), nenhuma seção é destacada
+    if (alturaPagina - window.innerHeight <= 2) return marcar(null);
 
-  // Observe cada seção no DOM
-  sections.forEach((section) => observer.observe(section));
+    const noFim = window.innerHeight + window.scrollY >= alturaPagina - 2;
+    if (noFim) return marcar(sections[sections.length - 1].id);
+
+    const meio = window.innerHeight / 2;
+    let ativa = null;
+    sections.forEach((section) => {
+      if (section.getBoundingClientRect().top <= meio) ativa = section.id;
+    });
+    marcar(ativa);
+  }
+
+  let agendado = false;
+  function agendar() {
+    if (agendado) return;
+    agendado = true;
+    requestAnimationFrame(() => {
+      agendado = false;
+      atualizar();
+    });
+  }
+
+  window.addEventListener('scroll', agendar, { passive: true });
+  window.addEventListener('resize', agendar);
+  atualizar();
 })();
