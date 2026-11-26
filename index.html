@@ -170,7 +170,6 @@
                             <p class="campin-lead">Plataforma web que idealizei e desenvolvo a partir de necessidades reais da Classe A, empresa onde trabalho. O planejamento de regiões, as fotos enviadas pelas equipes de campo e o acompanhamento das campanhas ficavam em ferramentas separadas, e a consolidação para prestar contas era manual.</p>
                             <p>Sou responsável pelo frontend, pela API REST e pela modelagem do banco de dados, que reúnem em uma única aplicação o cadastro de campanhas, a gestão das equipes e os registros feitos em campo.</p>
                             <div class="projeto-links">
-                                <button type="button" class="btn btn-primario btn-sm" id="campin-video-abrir" aria-haspopup="dialog" hidden><i class="bi bi-play-circle" aria-hidden="true"></i>Assistir prévia (22s)</button>
                                 <a href="https://github.com/GuiFurlaneti/ShowcaseCampin/blob/main/docs/Campin_Case_Tecnico_PUBLICO_2026.pdf" class="btn btn-primario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Case técnico em PDF<span class="visually-hidden"> (abre no GitHub em nova aba)</span></a>
                                 <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="btn btn-secundario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Showcase no GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
                             </div>
@@ -581,22 +580,6 @@
         </div>
     </footer>
 
-    <!-- Prévia em vídeo do Campin: o MP4 censurado deve ser adicionado a media/ antes do merge. -->
-    <dialog id="campin-video-dialog" class="campin-video-dialog" aria-labelledby="campin-video-titulo" aria-describedby="campin-video-descricao">
-        <div class="campin-video-cabecalho">
-            <div>
-                <h2 id="campin-video-titulo">Campin · Prévia do sistema</h2>
-                <p id="campin-video-descricao">22 segundos de navegação pelo dashboard, módulos e relatórios.</p>
-            </div>
-            <button type="button" class="campin-video-fechar" id="campin-video-fechar" aria-label="Fechar vídeo"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
-        </div>
-        <video id="campin-video-player" controls playsinline preload="none" poster="img/secao-projetos/projeto-preview-img-campin.webp" aria-label="Demonstração resumida do Campin">
-            <source src="media/Campin_Preview_Portfolio_V7_Blur_Revisado.mp4" type="video/mp4">
-            Seu navegador não suporta a reprodução deste vídeo.
-        </video>
-        <p class="campin-video-nota">Imagens demonstrativas. Os nomes de clientes e campanhas apresentados estão desfocados.</p>
-    </dialog>
-
     <!-- LIGHTBOX DE SCREENSHOTS DOS PROJETOS -->
     <div class="lightbox" id="lightbox" hidden>
         <div class="lightbox-overlay" data-lightbox-fechar></div>
@@ -622,7 +605,6 @@
     <script src="js/curriculo-tabs.js?v=21"></script>
     <script src="js/scroll-animation.js?v=21"></script>
     <script src="js/projeto-lightbox.js?v=21"></script>
-    <script src="js/campin-video.js?v=2"></script>
     <script src="js/mobile-menu.js?v=21"></script>
 </body>
 </html>
