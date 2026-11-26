@@ -1407,6 +1407,9 @@ body.light-mode #icon-sun { display: inline; }
 }
 body.light-mode .campin-logo { background: #19212c; padding: 4px; }
 .waca-logo { object-fit: contain; }
+/* A marca do Waca é escura (#292d30): no tema escuro ela fica sobre um bloco claro,
+   assim como a marca branca do Campin fica sobre um bloco escuro no tema claro. */
+body:not(.light-mode) .waca-logo { background: #E9EEF2; border-color: transparent; }
 
 /* Prévia em vídeo do Campin: janela sob demanda, sem autoplay. */
 #campin-video-abrir[hidden] { display: none; }

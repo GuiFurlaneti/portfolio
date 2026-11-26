@@ -8,16 +8,9 @@
 
   if (!abrir || !dialogo || !fechar || !video || typeof dialogo.showModal !== 'function') return;
 
-  // O vídeo será disponibilizado apenas após uma revisão final da anonimização.
-  // Não exibir um botão que abriria um player com arquivo ausente.
-  const source = video.querySelector('source');
-  if (source && typeof fetch === 'function') {
-    fetch(source.getAttribute('src'), { method: 'HEAD' })
-      .then(function (response) {
-        if (response.ok) abrir.hidden = false;
-      })
-      .catch(function () {});
-  }
+  // O botão só aparece quando o atributo `hidden` é removido do HTML, no mesmo commit
+  // que adiciona o MP4 aprovado em media/ (ver media/README.md). Não há verificação
+  // de rede no carregamento: um HEAD com o arquivo ausente gerava erro 404 no console.
 
   abrir.addEventListener('click', function () {
     dialogo.showModal();
