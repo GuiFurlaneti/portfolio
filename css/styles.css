@@ -1396,6 +1396,7 @@ body.light-mode #icon-sun { display: inline; }
 }
 
 /* Prévia em vídeo do Campin: janela sob demanda, sem autoplay. */
+#campin-video-abrir[hidden] { display: none; }
 .campin-video-dialog {
   box-sizing: border-box;
   width: min(96vw, 1024px);
