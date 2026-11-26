@@ -1395,6 +1395,19 @@ body.light-mode #icon-sun { display: inline; }
   .contato-painel { gap: 1.5rem; }
 }
 
+/* Identidade dos projetos, sem competir com as capturas de tela. */
+.campin-marca { display: inline-flex; align-items: center; gap: clamp(0.5rem, 1.2vw, 0.9rem); }
+.campin-logo {
+  display: block;
+  width: clamp(40px, 3.3vw, 52px);
+  height: clamp(40px, 3.3vw, 52px);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: var(--r-sm);
+}
+body.light-mode .campin-logo { background: #19212c; padding: 4px; }
+.waca-logo { object-fit: contain; }
+
 /* Prévia em vídeo do Campin: janela sob demanda, sem autoplay. */
 #campin-video-abrir[hidden] { display: none; }
 .campin-video-dialog {
