@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
           integrity="sha384-Ay26V7L8bsJTsX9Sxclnvsn+hkdiwRnrjZJXqKmkIDobPgIIWBOVguEcQQLDuhfN" crossorigin="anonymous">
     <!-- ESTILOS -->
-    <link rel="stylesheet" href="css/styles.css?v=28">
+    <link rel="stylesheet" href="css/styles.css?v=29">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon_io/favicon-16x16.png">
@@ -170,10 +170,11 @@
                             <p class="campin-lead">Plataforma web que idealizei e desenvolvo a partir de necessidades reais da Classe A, empresa onde trabalho. O planejamento de regiões, as fotos enviadas pelas equipes de campo e o acompanhamento das campanhas ficavam em ferramentas separadas, e a consolidação para prestar contas era manual.</p>
                             <p>Sou responsável pelo frontend, pela API REST e pela modelagem do banco de dados, que reúnem em uma única aplicação o cadastro de campanhas, a gestão das equipes e os registros feitos em campo.</p>
                             <div class="projeto-links">
-                                <a href="https://github.com/GuiFurlaneti/ShowcaseCampin/blob/main/docs/Campin_Case_Tecnico_PUBLICO_2026.pdf" class="btn btn-primario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Case técnico em PDF<span class="visually-hidden"> (abre no GitHub em nova aba)</span></a>
+                                <button type="button" class="btn btn-primario btn-sm" id="campin-video-abrir" aria-haspopup="dialog"><i class="bi bi-play-circle" aria-hidden="true"></i>Assistir demonstração<span class="visually-hidden"> do Campin (vídeo de 22 segundos, sem áudio)</span></button>
+                                <a href="https://github.com/GuiFurlaneti/ShowcaseCampin/blob/main/docs/Campin_Case_Tecnico_PUBLICO_2026.pdf" class="btn btn-secundario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-file-earmark-pdf" aria-hidden="true"></i>Case técnico em PDF<span class="visually-hidden"> (abre no GitHub em nova aba)</span></a>
                                 <a href="https://github.com/GuiFurlaneti/ShowcaseCampin" class="btn btn-secundario btn-sm" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i>Showcase no GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
                             </div>
-                            <p class="nota">Código-fonte privado. O showcase reúne arquitetura, funcionalidades e telas; o case em PDF (13 páginas) detalha problema, solução e decisões técnicas.</p>
+                            <p class="nota">A demonstração (22 s) percorre dashboard, mapa, campanhas, fotos e relatórios, com dados sensíveis mascarados. Código-fonte privado; o case em PDF (13 páginas) detalha problema, solução e decisões técnicas.</p>
                         </div>
 
                         <div class="campin-midia">
@@ -580,6 +581,22 @@
         </div>
     </footer>
 
+    <!-- Demonstração em vídeo do Campin (V8 anonimizada, auditada em 26/11/2026; ver media/README.md). Carregada só ao reproduzir. -->
+    <dialog id="campin-video-dialog" class="campin-video-dialog" aria-labelledby="campin-video-titulo" aria-describedby="campin-video-descricao">
+        <div class="campin-video-cabecalho">
+            <div>
+                <h2 id="campin-video-titulo">Campin · Demonstração do sistema</h2>
+                <p id="campin-video-descricao">22 segundos, sem áudio: dashboard, mapa, campanhas, fotos e relatórios.</p>
+            </div>
+            <button type="button" class="campin-video-fechar" id="campin-video-fechar" aria-label="Fechar vídeo"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+        </div>
+        <video id="campin-video-player" controls playsinline preload="none" poster="img/secao-projetos/projeto-preview-img-campin.webp" aria-label="Demonstração do Campin">
+            <source src="media/Campin_Preview_Portfolio_V8_Anonimizada.mp4" type="video/mp4">
+            Seu navegador não suporta a reprodução deste vídeo.
+        </video>
+        <p class="campin-video-nota">Telas do sistema com dados de exemplo. Nomes de clientes, campanhas e pessoas, indicadores e registros foram mascarados nesta demonstração.</p>
+    </dialog>
+
     <!-- LIGHTBOX DE SCREENSHOTS DOS PROJETOS -->
     <div class="lightbox" id="lightbox" hidden>
         <div class="lightbox-overlay" data-lightbox-fechar></div>
@@ -605,6 +622,7 @@
     <script src="js/curriculo-tabs.js?v=21"></script>
     <script src="js/scroll-animation.js?v=21"></script>
     <script src="js/projeto-lightbox.js?v=21"></script>
+    <script src="js/campin-video.js?v=2"></script>
     <script src="js/mobile-menu.js?v=21"></script>
 </body>
 </html>
