@@ -1395,6 +1395,53 @@ body.light-mode #icon-sun { display: inline; }
   .contato-painel { gap: 1.5rem; }
 }
 
+/* Prévia em vídeo do Campin: janela sob demanda, sem autoplay. */
+.campin-video-dialog {
+  box-sizing: border-box;
+  width: min(96vw, 1024px);
+  max-width: none;
+  max-height: 94dvh;
+  padding: 0;
+  overflow: auto;
+  color: #fff;
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--r-lg);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.66);
+}
+.campin-video-dialog::backdrop { background: rgba(0, 0, 0, 0.84); }
+.campin-video-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+.campin-video-cabecalho h2 { margin: 0; font-size: clamp(1.05rem, 2.5vw, 1.45rem); }
+.campin-video-cabecalho p { margin: 0.25rem 0 0; font-size: 0.88rem; color: #b4bec9; }
+.campin-video-fechar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  background: #28313c;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--r-md);
+  cursor: pointer;
+}
+.campin-video-fechar:hover,
+.campin-video-fechar:focus-visible { border-color: #00a3ff; }
+.campin-video-dialog video {
+  display: block;
+  width: 100%;
+  max-height: 72dvh;
+  aspect-ratio: 16 / 9;
+  background: #080b10;
+}
+.campin-video-nota { margin: 0; padding: 0.75rem 1.2rem 1rem; color: #b4bec9; font-size: 0.8rem; }
+
 /* 14. LIGHTBOX (sempre escuro, independente do tema)
    ------------------------------------------------------------------------ */
 body.lightbox-travado { overflow: hidden; }
