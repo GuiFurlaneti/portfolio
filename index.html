@@ -301,20 +301,38 @@
                     <img src="img/logos-projetos/waca-logo.svg" alt="" class="waca-logo" width="52" height="52" loading="lazy">
                     <div class="waca-corpo">
                         <div class="projeto-titulo">
-                            <h4 class="projeto-nome" id="waca-titulo">Waca — Projeto Backend .NET</h4>
+                            <h4 class="projeto-nome" id="waca-titulo">Waca — Backend C#/.NET</h4>
                             <span class="badge badge-dev"><i class="bi bi-hourglass-split" aria-hidden="true"></i>Em desenvolvimento</span>
                         </div>
-                        <p>Projeto autoral de estudo de C# e ASP.NET Core para gestão de vaquinhas, participantes, aportes e gastos, com foco em regras de domínio, organização em camadas e persistência de dados.</p>
-                        <p class="projeto-status"><strong>Estágio atual:</strong> solução em .NET 10 com camadas Api, Application, Domain e Infrastructure, casos de uso iniciais (criar e listar vaquinhas), persistência com EF Core/PostgreSQL e migrations, base de identidade com códigos de acesso por e-mail e testes automatizados de domínio, aplicação e infraestrutura executados no GitHub Actions. Os endpoints de negócio ainda não estão expostos na API.</p>
+                        <p>Projeto autoral para aprender engenharia de backend construindo um sistema de gestão de vaquinhas. O foco é transformar regras de negócio em código testável, com persistência e autenticação.</p>
+                        <ul class="waca-evidencias" aria-label="Implementações verificáveis do Waca">
+                            <li>
+                                <strong><i class="bi bi-diagram-3" aria-hidden="true"></i> Domínio e casos de uso</strong>
+                                <span>Camadas separadas e operações para criar e listar vaquinhas do organizador autenticado.</span>
+                            </li>
+                            <li>
+                                <strong><i class="bi bi-database" aria-hidden="true"></i> Persistência</strong>
+                                <span>Entity Framework Core, PostgreSQL, mapeamentos e migrations para dados do negócio e identidade.</span>
+                            </li>
+                            <li>
+                                <strong><i class="bi bi-shield-check" aria-hidden="true"></i> Identidade e qualidade</strong>
+                                <span>Rotas de autenticação por código de e-mail, sessão em cookie, CSRF, limites de requisições e testes no CI.</span>
+                            </li>
+                        </ul>
+                        <p class="projeto-status"><strong>Próxima etapa:</strong> expor os casos de uso de vaquinhas por endpoints HTTP e completar a integração da aplicação. A autenticação atual é preparada e testada em desenvolvimento; não há serviço público do Waca disponível.</p>
                         <div class="waca-rodape">
                             <ul class="tags" aria-label="Tecnologias">
                                 <li class="tag">C#</li>
-                                <li class="tag">.NET</li>
+                                <li class="tag">.NET 10</li>
                                 <li class="tag">ASP.NET Core</li>
                                 <li class="tag">EF Core</li>
                                 <li class="tag">PostgreSQL</li>
                             </ul>
-                            <a href="https://github.com/GuiFurlaneti/Waca" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
+                            <div class="waca-links">
+                                <a href="https://github.com/GuiFurlaneti/Waca" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> Código no GitHub<span class="visually-hidden"> (abre em nova aba)</span></a>
+                                <a href="https://github.com/GuiFurlaneti/Waca/blob/main/Waca.Api/Autenticacao/EndpointsDeAutenticacao.cs" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-code-slash" aria-hidden="true"></i> Exemplo de API<span class="visually-hidden"> (abre em nova aba)</span></a>
+                                <a href="https://github.com/GuiFurlaneti/Waca/actions/workflows/dotnet-ci.yml" class="link-acao" target="_blank" rel="noopener noreferrer"><i class="bi bi-check2-circle" aria-hidden="true"></i> Testes e CI<span class="visually-hidden"> (abre em nova aba)</span></a>
+                            </div>
                         </div>
                     </div>
                 </article>
