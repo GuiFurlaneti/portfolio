@@ -942,6 +942,48 @@ body.light-mode #icon-sun { display: inline; }
 }
 .waca-rodape .tags { margin: 0; }
 
+/* Evidências técnicas do Waca: leitura rápida sem simular uma interface pronta. */
+.waca-evidencias {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+  padding: 0;
+  list-style: none;
+}
+.waca-evidencias li {
+  min-width: 0;
+  padding: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  background: var(--surface-2);
+}
+.waca-evidencias strong {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+.waca-evidencias strong i { margin-right: 0.28rem; color: var(--accent); }
+.waca-evidencias span {
+  display: block;
+  color: var(--text-2);
+  font-size: 0.83rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+.waca-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+@media (max-width: 850px) {
+  .waca-evidencias { grid-template-columns: 1fr; }
+}
+
+
 @media (max-width: 559px) {
   .projeto-compacto.waca { grid-template-columns: 1fr; }
   .waca-logo { width: 44px; height: 44px; }
